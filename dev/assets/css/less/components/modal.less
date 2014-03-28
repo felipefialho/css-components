@@ -1,0 +1,75 @@
+//
+// Modal - Pure CSS (no javascript)
+// --------------------------------
+
+.modal {
+   
+  // This is modal bg
+  &:before {
+    content: ""; 
+    display: none;
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0; 
+    z-index: 1001;
+  }
+  
+  &:target {
+     
+    // Active animate in modal
+    &:before {
+      display: block;
+    }  
+    .modal-dialog {
+      .translate(0, 0); 
+      top: 20%;  
+    }
+     
+  }
+  
+}
+
+// Modal Dialog
+// ----------------------
+
+.modal-dialog {
+  background: #fefefe;
+  border: @gray solid 1px;
+  border-radius: 5px;
+  margin-left: -300px;
+  position: fixed; 
+  left: 50%; 
+  top: -100%;  
+  .translate(0, -500%);
+  .transition-transform(~"0.3s ease-out");
+  z-index: 1111; 
+  width: 600px;
+}
+
+.modal-body {
+  padding: @space;
+  p {
+    margin: 0;
+  }
+}
+
+.modal-header,
+.modal-footer {
+  padding: @space @space;
+}
+
+.modal-header {
+  border-bottom: @gray-lighter solid 1px;
+  
+  h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+}
+
+.modal-footer {
+  border-top: @gray-lighter solid 1px;
+  text-align: right;
+}
+ 

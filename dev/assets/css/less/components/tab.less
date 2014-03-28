@@ -1,0 +1,46 @@
+//
+// Tab - Pure CSS (no javascript)
+// --------------------------------
+
+.tab{ 
+  position: relative;
+}
+
+.tab-painel{
+  display: inline-block;
+  min-height: 150px;
+}
+
+// Tab - Nav
+// --------------------------------
+
+.tab-nav {
+  border: @gray-light solid 1px; 
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  padding: @space/2 @space; 
+}
+
+.tab-nav:hover,
+.tab-open:checked ~ .tab-nav {
+  background-color: @gray-lighter;
+} 
+
+
+// Tab - Container
+// --------------------------------
+
+.tab-inner { 
+  .opacity(0);
+  margin-top: @space/2;
+  position: absolute; left: 0;
+  .transition(opacity .1s);
+  visibility: hidden;
+}
+
+.tab-open:checked ~ .tab-inner{ 
+  .opacity(100);
+  visibility: visible;
+}
+ 

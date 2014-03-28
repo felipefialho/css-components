@@ -1,0 +1,29 @@
+//
+// Container 
+// ----------------------
+
+.container{
+  margin: 0 auto;
+  width: 90%;
+  max-width: @screen-lg-min;
+}
+
+//
+// Content 
+// ----------------------
+
+.inner{
+  @media (min-width: @screen-sm-min) {
+    float: left;
+    width: 70%;
+  } 
+}
+
+.content{ 
+  border-bottom: @gray-light solid 1px;
+  margin-bottom: @space;
+  padding-bottom: @space;
+  @media (min-width: @screen-sm-min) {
+    padding-top: 30px;
+  } 
+}

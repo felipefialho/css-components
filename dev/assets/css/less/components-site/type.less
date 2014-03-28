@@ -1,0 +1,85 @@
+//
+// Type
+// -------------------------
+
+a{
+  color: @gray;
+  text-decoration: none;
+  &:hover{
+    color: @gray-dark;
+  }
+}
+
+p{
+  margin: 0 0 @space/2;
+}
+
+//
+// Headings
+// -------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  line-height: 1;
+}
+
+h1, h2, h3{
+  color: @gray-dark;
+  margin-bottom: @space;
+}
+
+h4, h5{
+  margin-bottom: @space/2;
+}
+
+h1{ 
+  font-size: 40px; 
+}
+
+h2{
+  color: @gray;
+  font-size: 26px;
+}
+
+h3{
+  font-size: 20px;
+}   
+
+h6{
+  color: @gray-light;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: @space/4;
+  margin-top: @space;
+}
+
+//
+// Page Header 
+// ----------------------
+
+.page-header{
+  border-bottom: solid 1px @gray-light;
+  font-size: 22px;
+  padding-bottom: @space;
+  text-align: center;
+
+  .btn{
+    margin-top: @space;
+  }
+ 
+  @media (max-width: @screen-xs-min) {
+    h1{
+      display: none;
+    }
+  } 
+  @media (min-width: @screen-sm-min) {
+    padding-top: @space*2;
+
+    h1{
+      font-size: 60px;
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    width: 70%;  
+  } 
+}

@@ -1,0 +1,47 @@
+//
+// Collapse - Pure CSS (no javascript)
+// --------------------------------
+
+// Open collapse 
+.collapse-jumper {
+  display:block;
+  position:fixed;
+  top: 0;
+  left: 0;
+
+  & ~ .collapse-painel {
+    display: none;
+  }
+
+  &:target ~ .collapse-painel {
+    display: block; 
+  }
+}
+ 
+
+// Collapse List
+// --------------------------------
+ .collapse-list {
+  .list-style-no();
+
+  li {
+    margin-bottom: @space/2; 
+  }
+
+  .collapse-open {
+    border: @gray-lighter solid 1px;
+    background: lighten(@gray-lighter, 3%);
+    border-radius: 4px;
+    display: block; 
+    padding: @space/4 @space/2; 
+    &:hover {
+      background: lighten(@gray-lighter, 1%);
+    }
+  }
+
+  .collapse-inner {
+    padding: @space/2; 
+  }
+
+  
+ }

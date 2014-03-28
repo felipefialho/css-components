@@ -1,0 +1,36 @@
+//
+// Dropdown - Pure CSS (no javascript)
+// --------------------------------
+
+// Button
+// --------------------------------
+
+.btn-dropdown { 
+  &:after {
+    content: ' ▼';
+  }
+}
+
+// Dropdown
+// --------------------------------
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-inner {
+  background: #fff;
+  border: @gray-light solid 1px;
+  border-radius: 3px;
+  position: absolute;
+  padding: @space;
+  .opacity(0);
+  .transition(opacity .1s);
+  visibility: hidden; 
+}
+
+.dropdown-hover:hover .dropdown-inner,
+.dropdown-open:checked ~ .dropdown-inner{ 
+  .opacity(100);
+  visibility: visible; 
+}
