@@ -17,7 +17,10 @@ grunt.initConfig({
   config: PathConfig,
 
   // Clean files
-  clean: { 
+  clean: {  
+    dist: {
+      src: [ '<%= config.dist %>assets/'],
+    },
     build: {
       src: ['<%= config.build %>']
     },
@@ -31,6 +34,20 @@ grunt.initConfig({
 
   // Copy files
   copy: { 
+    dist: {
+      files: [
+        {
+          expand: true,
+          dot: true,
+          cwd: '<%= config.dev %>assets/',
+          src: [
+            '**', 
+            '!css/less/**',
+          ],
+          dest: '<%= config.dist %>assets/'
+        }
+      ]
+    },
     build: {
       files: [
         {
@@ -219,7 +236,7 @@ grunt.initConfig({
 grunt.registerTask( 'test', ['jshint'] );
 
 // Dist
-grunt.registerTask( 'dist', ['less:dist', 'htmlmin:dist'] );
+grunt.registerTask( 'dist', ['clean:dist', 'copy:dist', 'less:dist', 'htmlmin:dist'] );
 
 // Build
 grunt.registerTask( 'build', ['clean:build', 'copy:build', 'less:build', 'compress', 'clean:cleanzip'] );
