@@ -1,1 +1,1 @@
-grunt build
+grunt build && grunt dist

@@ -227,7 +227,24 @@ grunt.initConfig({
           src: ['tab/**']
         }
       ]
-    }
+    },
+    all: {
+      options: {
+        archive: '<%= config.build %>css-components.zip'
+      },
+      files: [
+        {
+          expand: true,
+          cwd: '<%= config.build %>',
+          src: [
+            'collapse/**',
+            'dropdown/**',
+            'modal/**',
+            'tab/**'
+          ]
+        }
+      ]
+    } 
   }
 
 });

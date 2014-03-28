@@ -1,12 +1,12 @@
 {
-  "name": "purecss-components",
+  "name": "css-components",
   "version": "1.0.0",
   "title": "Pure CSS Components",
   "homepage": "",
   "author": {
     "name": "Luiz Felipe Tartarotti Fialho",
-    "email": "luizfelipe.tf.13@gmail.com",
-    "url": "http://www.felipefialho.com/"
+    "email": "hi@felipefialho.com",
+    "url": "http://www.felipefialho.com/css-components/"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
