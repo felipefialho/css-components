@@ -66,7 +66,7 @@ h6{color:#aaaaaa;font-size:12px;text-transform:uppercase;margin-bottom:5px;margi
 .example-box{border:#eeeeee solid 1px;border-radius:5px 5px 0 0;padding:20px;}
 code,.code{font-family:"Courier New",monospace;}
 code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;white-space:nowrap;border-radius:3px;}
-.code{background-color:#222222;border-radius:0 0 5px 5px;color:#fff;display:block;font-size:13px;padding:10px;margin:0 0 20px;word-break:break-all;word-wrap:break-word;}.code code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0;}
+.code{background-color:#eeeeee;border-radius:0 0 5px 5px;color:#fff;display:block;font-size:13px;padding:10px;margin:0 0 20px;word-break:break-all;word-wrap:break-word;}.code code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0;}
 .code .html .nt{color:#ff4c4c;}
 .code .html .s{color:#edf25e;}
 .code .html .na{color:#5ef260;}
