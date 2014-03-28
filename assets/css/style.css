@@ -99,7 +99,7 @@ code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;white-
 .modal-footer{border-top:#eeeeee solid 1px;text-align:right;}
 .tab{position:relative;}
 .tab-painel{display:inline-block;min-height:150px;}
-.tab-nav{border:#aaaaaa solid 1px;cursor:pointer;font-size:14px;display:inline-block;padding:10px 20px;}
+.tab-nav{border:#aaaaaa solid 1px;cursor:pointer;font-size:14px;display:inline-block;padding:10px 20px;margin-right:20px;}
 .tab-nav:hover,.tab-open:checked~.tab-nav{background-color:#eeeeee;}
 .tab-inner{opacity:0;filter:alpha(opacity=0);margin-top:10px;position:absolute;left:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s;visibility:hidden;}
 .tab-open:checked~.tab-inner{opacity:100;filter:alpha(opacity=10000);visibility:visible;}
