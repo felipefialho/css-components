@@ -1,7 +1,7 @@
 Pure CSS Components
 =========
 
-A repository of components development in CSS only, no Javascript.
+A set of common UI Components using the power of CSS.
 
 [View the project](http://www.felipefialho.com/css-components)
 
