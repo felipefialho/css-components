@@ -98,7 +98,7 @@
           <div class="collapse">
             <ul class="collapse-list">
               <li>
-                <label class="collapse-btn" for="#collapse-1">Lorem ipsum dolor sit amet</label>
+                <label class="collapse-btn" for="collapse-1">Lorem ipsum dolor sit amet</label>
                 <input class="collapse-open" type="checkbox" id="collapse-1" aria-hidden="true" hidden>
                 <div class="collapse-painel">
                   <div class="collapse-inner">
@@ -108,7 +108,7 @@
                 </div>
               </li>
               <li>
-                <label class="collapse-btn" for="#collapse-2">Lorem ipsum dolor sit amet</label>
+                <label class="collapse-btn" for="collapse-2">Lorem ipsum dolor sit amet</label>
                 <input class="collapse-open" type="checkbox" id="collapse-2" aria-hidden="true" hidden>
                 <div class="collapse-painel">
                   <div class="collapse-inner">
@@ -118,7 +118,7 @@
                 </div>
               </li>
               <li>
-                <label class="collapse-btn" for="#collapse-3">Lorem ipsum dolor sit amet</label>
+                <label class="collapse-btn" for="collapse-3">Lorem ipsum dolor sit amet</label>
                 <input class="collapse-open" type="checkbox" id="collapse-3" aria-hidden="true" hidden>
                 <div class="collapse-painel">
                   <div class="collapse-inner">
@@ -135,9 +135,64 @@
 
         <pre class="code"><code class="prettyprint">&lt;!-- Collapse --&gt;
 &lt;div class="collapse"&gt;
-  &lt;a class="collapse-open" href="#collapse-1"&gt;Lorem ipsum dolor sit amet&lt;/a&gt;
-  &lt;span class="collapse-jumper" id="collapse-1"&gt;&lt;/span&gt;
-  &lt;div class="collapse-content" id="collapse-1"&gt;
+  &lt;label class="collapse-open" for="collapse-1"&gt;Lorem ipsum dolor sit amet&lt;/label&gt;
+  &lt;input class="collapse-open" type="checkbox" id="collapse-1" aria-hidden="true" hidden /&gt;
+  &lt;div class="collapse-content"&gt;
+    &lt;div class="collapse-inner"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+        <h2>With Accordion</h2>
+
+        <h6>Example</h6>
+        <div class="example-box">
+
+          <!-- Collapse -->
+          <div class="collapse">
+            <ul class="collapse-list">
+              <li>
+                <label class="collapse-btn" for="collapse-4">Lorem ipsum dolor sit amet</label>
+                <input class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden checked>
+                <div class="collapse-painel">
+                  <div class="collapse-inner">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <label class="collapse-btn" for="accordion-2">Lorem ipsum dolor sit amet</label>
+                <input class="collapse-open" type="radio" id="accordion-2" name="accordion" aria-hidden="true" hidden>
+                <div class="collapse-painel">
+                  <div class="collapse-inner">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <label class="collapse-btn" for="accordion-3">Lorem ipsum dolor sit amet</label>
+                <input class="collapse-open" type="radio" id="accordion-3" name="accordion" aria-hidden="true" hidden>
+                <div class="collapse-painel">
+                  <div class="collapse-inner">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- /Collapse -->
+
+        </div>
+
+        <pre class="code"><code class="prettyprint">&lt;!-- Collapse --&gt;
+&lt;div class="collapse"&gt;
+  &lt;label class="collapse-open" for="accordion-1"&gt;Lorem ipsum dolor sit amet&lt;/label&gt;
+  &lt;input  class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden checked /&gt;
+  &lt;div class="collapse-content"&gt;
     &lt;div class="collapse-inner"&gt;
       ...
     &lt;/div&gt;
