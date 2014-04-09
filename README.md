@@ -1,7 +1,7 @@
 Pure CSS Components
 =========
 
-A set of common UI Components using the power of CSS.
+A set of common UI Components using the power of CSS and without Javascript.
 
 [View the project](http://www.felipefialho.com/css-components)
 
