@@ -2,46 +2,32 @@
 // Collapse - Pure CSS (no javascript)
 // --------------------------------
 
-// Open collapse 
-.collapse-jumper {
-  display:block;
-  position:fixed;
-  top: 0;
-  left: 0;
+ .collapse-painel {
+  display: none;
+ }
 
-  & ~ .collapse-painel {
-    display: none;
-  }
-
-  &:target ~ .collapse-painel {
-    display: block; 
-  }
-}
- 
+ .collapse-open:checked ~ .collapse-painel {
+  display: block;
+ }
 
 // Collapse List
 // --------------------------------
  .collapse-list {
   .list-style-no();
 
-  li {
-    margin-bottom: @space/2; 
-  }
+  li { margin-bottom: (@space / 2); }
 
-  .collapse-open {
+  .collapse-btn {
     border: @gray-lighter solid 1px;
     background: lighten(@gray-lighter, 3%);
-    border-radius: 4px;
+    border-radius: 2px;
+    cursor: pointer;
     display: block; 
-    padding: @space/4 @space/2; 
+    padding: (@space / 4) (@space / 2); 
     &:hover {
       background: lighten(@gray-lighter, 1%);
     }
   }
 
-  .collapse-inner {
-    padding: @space/2; 
-  }
-
-  
+  .collapse-inner { padding: (@space / 2); }
  }
