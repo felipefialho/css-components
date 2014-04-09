@@ -235,6 +235,7 @@ h6 {
 .page-header {
   border-bottom: solid 1px #aaaaaa;
   font-size: 22px;
+  padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
 }
