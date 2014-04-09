@@ -121,7 +121,7 @@ grunt.initConfig({
     },
     build: {
       files: {
-        '<%= config.build %>collapse/carousel.css': '<%= config.dev %>**/_carousel-style.less',
+        '<%= config.build %>carousel/carousel.css': '<%= config.dev %>**/_carousel-style.less',
         '<%= config.build %>collapse/collapse.css': '<%= config.dev %>**/_collapse-style.less',
         '<%= config.build %>dropdown/dropdown.css': '<%= config.dev %>**/_dropdown-style.less',
         '<%= config.build %>modal/modal.css': '<%= config.dev %>**/_modal-style.less',
@@ -261,6 +261,7 @@ grunt.initConfig({
           expand: true,
           cwd: '<%= config.build %>',
           src: [
+            'carousel/**',
             'collapse/**',
             'dropdown/**',
             'modal/**',
