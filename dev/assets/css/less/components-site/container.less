@@ -2,7 +2,7 @@
 // Container 
 // ----------------------
 
-.container{
+.container {
   margin: 0 auto;
   width: 90%;
   max-width: @screen-lg-min;
@@ -12,17 +12,22 @@
 // Content 
 // ----------------------
 
-.inner{
+.inner {
   @media (min-width: @screen-sm-min) {
     float: left;
     width: 70%;
   } 
 }
 
-.content{ 
+.content { 
   border-bottom: @gray-light solid 1px;
   margin-bottom: @space;
   padding-bottom: @space;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
   @media (min-width: @screen-sm-min) {
     padding-top: 30px;
   } 

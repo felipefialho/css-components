@@ -2,8 +2,9 @@
 // Nav List 
 // ----------------------
 
-.navbar-list{ 
+.navbar-list { 
   margin-top: @space;
+  
   @media (max-width: @screen-xs-min) {
     margin-bottom: @space;
   } 
@@ -13,16 +14,16 @@
   }
   @media (min-width: @screen-lg-min) {
     position: fixed; 
-    top: @space*2; right: @space;
+    top: (@space * 2); right: @space;
   } 
 }
 
-.nav-list{
+.nav-list {
   .list-style-no();
   li{
-    margin-bottom: @space/2;
+    margin-bottom: (@space / 2);
   }
-  .btn{
+  .btn {
     display: block;  
   }
 }

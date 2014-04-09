@@ -2,7 +2,7 @@
 // Btn
 // ----------------------
 
-.btn{
+.btn {
   background: #fff;
   border: @gray solid 1px;
   border-radius: 3px;
@@ -16,44 +16,42 @@
   position: relative; 
 
   &:hover,
-  &:focus{
+  &:focus {
     background: darken(#fff, 5%);
   }
 
-  &.btn-big{
+  &.btn-big {
     font-size: 18px;
     padding: 15px 20px;
     min-width: 100px;
   }
 
-  + .btn{
-    margin-left: @space;
-  }
+  + .btn { margin-left: @space; }
 
 }
 
 
 // Button Primary
-.btn-primary{
+.btn-primary {
   background: @color-primary;
   border-color: darken(@color-primary, 5%);
   color: #fff;
 
   &:hover,
-  &:focus{
+  &:focus {
     background: darken(@color-primary, 5%);
     color: #fff;
   } 
 }
 
 // Button Close
-.btn-close{
+.btn-close {
   color: @gray-light;
   font-size: 30px;
   text-decoration: none;
   position: absolute; right: 5px; top: 0;
 
-  &:hover{
+  &:hover {
      color: darken(@gray-light, 10%);
   } 
 }

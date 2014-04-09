@@ -335,6 +335,9 @@ h6 {
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
+.content:last-child {
+  border-bottom: 0;
+}
 @media (min-width: 768px) {
   .content {
     padding-top: 30px;
