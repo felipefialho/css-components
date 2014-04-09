@@ -33,3 +33,8 @@
   margin: 0;
   padding: 0;
 }
+
+// RBA Convert
+.bg-transparent(@color, @alpha: 1) {
+  background: rgba( red(@color), green(@color), blue(@color), @alpha);
+}

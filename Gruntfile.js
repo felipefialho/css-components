@@ -56,6 +56,17 @@ grunt.initConfig({
           src: [
             '<%= config.dev %>**/mixins.less',
             '<%= config.dev %>**/variables.less',
+            '<%= config.dev %>**/carousel.less'
+          ],
+          dest: '<%= config.build %>/carousel/less/',
+          filter: 'isFile'
+        },
+        {
+          expand: true,
+          flatten: true,
+          src: [
+            '<%= config.dev %>**/mixins.less',
+            '<%= config.dev %>**/variables.less',
             '<%= config.dev %>**/collapse.less'
           ],
           dest: '<%= config.build %>/collapse/less/',
@@ -110,6 +121,7 @@ grunt.initConfig({
     },
     build: {
       files: {
+        '<%= config.build %>collapse/carousel.css': '<%= config.dev %>**/_carousel-style.less',
         '<%= config.build %>collapse/collapse.css': '<%= config.dev %>**/_collapse-style.less',
         '<%= config.build %>dropdown/dropdown.css': '<%= config.dev %>**/_dropdown-style.less',
         '<%= config.build %>modal/modal.css': '<%= config.dev %>**/_modal-style.less',
@@ -180,6 +192,18 @@ grunt.initConfig({
 
   // Make a Zipfile
   compress: {
+    carousel: {
+      options: {
+        archive: '<%= config.build %>carousel.zip'
+      },
+      files: [
+        {
+          expand: true,
+          cwd: '<%= config.build %>',
+          src: ['carousel/**']
+        }
+      ]
+    },
     collapse: {
       options: {
         archive: '<%= config.build %>collapse.zip'
