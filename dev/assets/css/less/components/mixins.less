@@ -1,6 +1,13 @@
 //
 // Mixins 
 // --------------------------------
+  
+// Animations
+.animation(@animation) {
+  -webkit-animation: @animation;
+       -o-animation: @animation;
+          animation: @animation;
+}
 
 // Mixin for transition/transform
 .translate(@x; @y) {
@@ -21,10 +28,7 @@
 
 // Opacity
 .opacity(@opacity) {
-  opacity: @opacity;
-  // IE8 filter
-  @opacity-ie: (@opacity * 100);
-  filter: ~"alpha(opacity=@{opacity-ie})";
+  opacity: @opacity; 
 }
 
 // Reset list style 

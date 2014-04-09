@@ -11,9 +11,7 @@ a {
   }
 }
 
-p {
-  margin: 0 0 (@space / 2);
-}
+p { margin: 0 0 @space; }
 
 //
 // Headings
@@ -27,6 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3 {
   color: @gray-dark;
   margin-bottom: @space;
+  margin-top:    (@space * 2);
 }
 
 h4, h5 { margin-bottom: (@space / 2); }
@@ -45,7 +44,7 @@ h6 {
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: (@space / 4);
-  margin-top: @space;
+  margin-top: (@space * 2);
 }
 
 //

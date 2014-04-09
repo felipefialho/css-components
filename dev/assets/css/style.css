@@ -86,7 +86,7 @@ a:hover {
   color: #222222;
 }
 p {
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 h1,
 h2,
@@ -102,6 +102,7 @@ h2,
 h3 {
   color: #222222;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 h4,
 h5 {
@@ -122,7 +123,7 @@ h6 {
   font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 5px;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .page-header {
   border-bottom: solid 1px #aaaaaa;
@@ -395,13 +396,11 @@ code {
 .carousel-open:checked + .carousel-item {
   position: static;
   opacity: 100;
-  filter: alpha(opacity=10000);
 }
 .carousel-item {
   display: inline-block;
   position: absolute;
   opacity: 0;
-  filter: alpha(opacity=0);
   -webkit-transition: opacity 0.6s ease-out;
   transition: opacity 0.6s ease-out;
 }
@@ -512,7 +511,6 @@ code {
   position: absolute;
   padding: 20px;
   opacity: 0;
-  filter: alpha(opacity=0);
   -webkit-transition: opacity 0.1s;
   transition: opacity 0.1s;
   visibility: hidden;
@@ -520,7 +518,6 @@ code {
 .dropdown-hover:hover .dropdown-inner,
 .dropdown-open:checked ~ .dropdown-inner {
   opacity: 100;
-  filter: alpha(opacity=10000);
   visibility: visible;
 }
 .modal:before {
@@ -603,8 +600,7 @@ code {
 }
 .tab-inner {
   opacity: 0;
-  filter: alpha(opacity=0);
-  margin-top: 10px;
+  margin-top: 20px;
   position: absolute;
   left: 0;
   -webkit-transition: opacity 0.1s;
@@ -613,6 +609,5 @@ code {
 }
 .tab-open:checked ~ .tab-inner {
   opacity: 100;
-  filter: alpha(opacity=10000);
   visibility: visible;
 }
