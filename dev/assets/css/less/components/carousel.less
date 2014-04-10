@@ -1,7 +1,7 @@
 //
 // Carousel - Pure CSS (no javascript)
 // --------------------------------------------------
- 
+
 .carousel {
   position: relative;
 }
@@ -17,17 +17,18 @@
   .opacity(100);
 }
 
-.carousel-item {  
-  display: inline-block;
+.carousel-item {
   position: absolute;
   .opacity(0);
   .transition(opacity .6s ease-out);
 
   img {
+    display: block;
+    height: auto;
     max-width: 100%;
   }
 }
- 
+
 // Carousel Control
 // --------------------------------
 
@@ -65,7 +66,7 @@
 // --------------------------------
 
 .carousel-indicators {
-  .list-style-no(); 
+  .list-style-no();
   position: absolute; bottom: 2%; left: 0; right: 0;
   text-align: center;
   z-index: 10;
