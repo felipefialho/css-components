@@ -101,8 +101,10 @@ h1,
 h2,
 h3 {
   color: #222222;
+  margin: 0;
   margin-bottom: 20px;
-  margin-top: 40px;
+  /*margin-top:    (@space * 2);*/
+  padding-top: 40px;
 }
 h4,
 h5 {
@@ -160,6 +162,7 @@ h6 {
 }
 .header h1 {
   line-height: 40px;
+  padding: 0;
 }
 @media (min-width: 768px) {
   .header {
@@ -366,7 +369,6 @@ code {
   text-transform: none;
   line-height: 1;
   /* Better Font Rendering =========== */
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -398,13 +400,14 @@ code {
   opacity: 100;
 }
 .carousel-item {
-  display: inline-block;
   position: absolute;
   opacity: 0;
   -webkit-transition: opacity 0.6s ease-out;
   transition: opacity 0.6s ease-out;
 }
 .carousel-item img {
+  display: block;
+  height: auto;
   max-width: 100%;
 }
 .carousel-control {
