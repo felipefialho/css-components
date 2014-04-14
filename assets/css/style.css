@@ -16,13 +16,14 @@ body{color:#222;background:#fff;font-size:18px;line-height:25px;font-family:helv
 a{color:#555555;text-decoration:none;}a:hover{color:#222222;}
 p{margin:0 0 20px;}
 h1,h2,h3,h4,h5,h6{font-weight:normal;line-height:1;}
-h1,h2,h3{color:#222222;margin-bottom:20px;margin-top:40px;}
+h1,h2,h3{color:#222222;margin:0 0 20px;padding-top:40px;}
 h4,h5{margin-bottom:10px;}
 h1{font-size:40px;}
 h2{color:#555555;font-size:26px;}
 h3{font-size:20px;}
 h6{color:#aaaaaa;font-size:12px;text-transform:uppercase;margin-bottom:5px;margin-top:40px;}
 .page-header{border-bottom:solid 1px #aaaaaa;font-size:22px;padding-top:20px;padding-bottom:20px;text-align:center;}.page-header .btn{margin-top:20px;}
+.logo{padding:0;}
 @media (max-width:480px){.page-header h1{display:none;}}@media (min-width:768px){.page-header{padding-top:40px;}.page-header h1{font-size:60px;}}@media (min-width:1200px){.page-header{width:70%;}}
 .header{background:#000;height:40px;line-height:40px;}.header h1{line-height:40px;}
 @media (min-width:768px){.header{position:fixed;top:0;left:0;right:0;z-index:1000;}}
