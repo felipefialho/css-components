@@ -1,5 +1,4 @@
-Pure CSS Components
-=========
+![Pure CSS Components Logo](logo-pcc.jpg "Pure CSS Components")
 
 A set of common UI Components using the power of CSS and without Javascript.
 
@@ -16,29 +15,34 @@ A set of common UI Components using the power of CSS and without Javascript.
 
 ## Contributing
 
-Please read through my [Coding Style](https://github.com/LFeh/coding-style/). Included are directions for opening issues and coding standards.
+Please read this [Coding Style](https://github.com/LFeh/coding-style/) for [Issues](https://github.com/LFeh/css-components/issues) and coding standards.
 
-All changes must be made in `/dev`. The CSS should always be modified by `.less` files.
+All changes must be made in `/dev` folder. The CSS should be modified using the **LESS** preprocessor.
 
-1. [Fork](http://help.github.com/fork-a-repo/) the project, clone your fork,
-   and configure the remotes:
+  ```bash
 
-   ```bash
-   # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/css-components.git
-   # Navigate to the newly cloned directory
-   cd pure-css-components
-   # Install the dependencies
-   npm install
-   ```
+  # Getting Started
+  # ---------------
 
-2. Start your modifications
-   ```bash
-   # For watching your .less files changes and compile CSS
-   grunt w
-   # For compile the project for publication
-   grunt build
-   ```
+  # 1. Fork this repository and clone it into the current directory
+  git clone https://github.com/<your-username>/css-components.git pure-css-components
+
+  # 2. Navigate to the newly cloned directory
+  cd pure-css-components
+
+  # 3. Install the dependencies
+  npm install
+
+
+  # Development
+  # -----------
+
+  # For watching your .less files changes and compile CSS
+  grunt w
+
+  # Build the project for deploy
+  grunt build
+  ```
 
 ## License
 
