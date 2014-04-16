@@ -25,10 +25,10 @@ All changes must be made in `/dev` folder. The CSS should be modified using the 
   # ---------------
 
   # 1. Fork this repository and clone it into the current directory
-  git clone https://github.com/<your-username>/css-components.git pure-css-components
+  git clone https://github.com/<your-username>/css-components.git  
 
   # 2. Navigate to the newly cloned directory
-  cd pure-css-components
+  cd css-components
 
   # 3. Install the dependencies
   npm install
