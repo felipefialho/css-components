@@ -3,30 +3,30 @@
 // --------------------------------
 
 .modal {
-   
+
   // This is modal bg
   &:before {
-    content: ""; 
+    content: "";
     display: none;
     background: rgba(0,0,0,.6);
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0; 
+    top: 0; left: 0; right: 0; bottom: 0;
     z-index: 1001;
   }
-  
+
   &:target {
-     
+
     // Active animate in modal
     &:before {
       display: block;
-    }  
-    .modal-dialog {
-      .translate(0, 0); 
-      top: 20%;  
     }
-     
+    .modal-dialog {
+      .translate(0, 0);
+      top: 20%;
+    }
+
   }
-  
+
 }
 
 // Modal Dialog
@@ -37,13 +37,14 @@
   border: @gray solid 1px;
   border-radius: 5px;
   margin-left: -300px;
-  position: fixed; 
-  left: 50%; 
-  top: -100%;  
+  position: fixed;
+  left: 50%;
+  top: -100%;
   .translate(0, -500%);
   .transition-transform(~"0.3s ease-out");
-  z-index: 1111; 
-  width: 600px;
+  z-index: 1111;
+  width: 80%;
+  max-width: 600px;
 }
 
 .modal-body {
@@ -60,16 +61,15 @@
 
 .modal-header {
   border-bottom: @gray-lighter solid 1px;
-  
+
   h2 {
     font-size: 20px;
     margin: 0;
   }
-  
+
 }
 
 .modal-footer {
   border-top: @gray-lighter solid 1px;
   text-align: right;
 }
- 
