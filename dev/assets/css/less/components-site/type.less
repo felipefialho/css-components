@@ -39,7 +39,7 @@ h2{
   font-size: 26px;
 }
 
-h3 { font-size: 20px; }   
+h3 { font-size: 20px; }
 
 h6 {
   color: @gray-light;
@@ -50,21 +50,21 @@ h6 {
 }
 
 //
-// Page Header 
+// Page Header
 // ----------------------
 
 .page-header {
   border-bottom: solid 1px @gray-light;
   font-size: 22px;
   padding-top: @space;
-  padding-bottom: @space;
+  padding-bottom: (@space * 2);
   text-align: center;
 
   .btn{ margin-top: @space; }
- 
+
   @media (max-width: @screen-xs-min) {
     h1 { display: none; }
-  } 
+  }
 
   @media (min-width: @screen-sm-min) {
     padding-top: (@space * 2);
@@ -73,6 +73,6 @@ h6 {
   }
 
   @media (min-width: @screen-lg-min) {
-    width: 70%;  
-  } 
+    width: 70%;
+  }
 }
