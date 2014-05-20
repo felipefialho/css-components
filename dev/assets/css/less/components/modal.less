@@ -21,7 +21,7 @@
       display: block;
     }
     .modal-dialog {
-      .translate(0, 0);
+      .translate(-50%, 0);
       top: 20%;
     }
 
@@ -36,11 +36,10 @@
   background: #fefefe;
   border: @gray solid 1px;
   border-radius: 5px;
-  margin-left: -300px;
-  position: fixed;
+  position: fixed; 
   left: 50%;
   top: -100%;
-  .translate(0, -500%);
+  .translate(50%, -500%);
   .transition-transform(~"0.3s ease-out");
   z-index: 1111;
   width: 80%;
