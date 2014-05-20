@@ -75,7 +75,7 @@ code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;white-
 .modal:before{content:"";display:none;background:rgba(0, 0, 0, 0.6);position:fixed;top:0;left:0;right:0;bottom:0;z-index:1001;}
 .modal:target:before{display:block;}
 .modal:target .modal-dialog{-webkit-transform:translate(-50%, 0);-ms-transform:translate(-50%, 0);transform:translate(-50%, 0);top:20%;}
-.modal-dialog{background:#fefefe;border:#555555 solid 1px;border-radius:5px;position:fixed;left:50%;top:-100%;-webkit-transform:translate(50%, -500%);-ms-transform:translate(50%, -500%);transform:translate(50%, -500%);-webkit-transition:-webkit-transform 0.3s ease-out;-moz-transition:-moz-transform 0.3s ease-out;-o-transition:-o-transform 0.3s ease-out;transition:transform 0.3s ease-out;z-index:1111;width:80%;max-width:600px;}
+.modal-dialog{background:#fefefe;border:#555555 solid 1px;border-radius:5px;position:fixed;left:50%;top:-100%;-webkit-transform:translate(-50%, -500%);-ms-transform:translate(-50%, -500%);transform:translate(-50%, -500%);-webkit-transition:-webkit-transform 0.3s ease-out;-moz-transition:-moz-transform 0.3s ease-out;-o-transition:-o-transform 0.3s ease-out;transition:transform 0.3s ease-out;z-index:1111;width:80%;max-width:600px;}
 .modal-body{padding:20px;}.modal-body p{margin:0;}
 .modal-header,.modal-footer{padding:20px 20px;}
 .modal-header{border-bottom:#eeeeee solid 1px;}.modal-header h2{font-size:20px;margin:0;}

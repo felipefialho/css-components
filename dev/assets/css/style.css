@@ -527,9 +527,9 @@ code {
   position: fixed;
   left: 50%;
   top: -100%;
-  -webkit-transform: translate(50%, -500%);
-  -ms-transform: translate(50%, -500%);
-  transform: translate(50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
