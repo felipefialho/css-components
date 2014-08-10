@@ -652,7 +652,7 @@ code {
 .tooltip-top:hover:before,
 .tooltip-top:focus:before,
 .tooltip-top:focus:before {
-  bottom: 80%;
+  bottom: 85%;
   left: 0;
 }
 .tooltip-top:hover:before,
@@ -679,7 +679,7 @@ code {
 .tooltip-bottom:focus:after,
 .tooltip-bottom:hover:before,
 .tooltip-bottom:focus:before {
-  top: 80%;
+  top: 85%;
   left: 0;
 }
 .tooltip-bottom:hover:before,
@@ -706,7 +706,7 @@ code {
 .tooltip-right:focus:after,
 .tooltip-right:hover:before,
 .tooltip-right:focus:before {
-  left: 100%;
+  left: 95%;
   top: 0;
 }
 .tooltip-right:hover:before,
@@ -733,7 +733,7 @@ code {
 .tooltip-left:focus:after,
 .tooltip-left:hover:before,
 .tooltip-left:focus:before {
-  right: 100%;
+  right: 95%;
   top: 0;
 }
 .tooltip-left:hover:before,
