@@ -380,6 +380,7 @@ code {
   position: absolute;
   opacity: 0;
   -webkit-transition: opacity 0.6s ease-out;
+  -o-transition: opacity 0.6s ease-out;
   transition: opacity 0.6s ease-out;
 }
 .carousel-item img {
@@ -401,6 +402,7 @@ code {
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
   text-align: center;
   width: 40px;
@@ -492,6 +494,7 @@ code {
   padding: 20px;
   opacity: 0;
   -webkit-transition: opacity 0.1s;
+  -o-transition: opacity 0.1s;
   transition: opacity 0.1s;
   visibility: hidden;
 }
@@ -517,6 +520,7 @@ code {
 .modal:target .modal-dialog {
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   top: 20%;
 }
@@ -529,6 +533,7 @@ code {
   top: -100%;
   -webkit-transform: translate(-50%, -500%);
   -ms-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
   transform: translate(-50%, -500%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;
@@ -584,6 +589,7 @@ code {
   position: absolute;
   left: 0;
   -webkit-transition: opacity 0.1s;
+  -o-transition: opacity 0.1s;
   transition: opacity 0.1s;
   visibility: hidden;
 }
@@ -602,7 +608,6 @@ code {
   opacity: 0;
 }
 [class*="tooltip"]:after {
-  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
   content: attr(aria-label);
@@ -611,10 +616,10 @@ code {
   padding: 0 10px;
   font-size: 12px;
   text-align: center;
-  color: white;
+  color: #fff;
   background: #222222;
   border-radius: 4px;
-  text-shadow: 0 0 5px black;
+  text-shadow: 0 0 5px #000;
   white-space: nowrap;
 }
 [class*="tooltip"]:before {
@@ -632,12 +637,9 @@ code {
 }
 .tooltip-top:after,
 .tooltip-top:before {
-  -moz-transition: bottom 0.25s ease-in-out;
   -webkit-transition: bottom 0.25s ease-in-out;
+  -o-transition: bottom 0.25s ease-in-out;
   transition: bottom 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
   bottom: 90%;
   left: -9999px;
   margin-bottom: 12px;
@@ -661,12 +663,9 @@ code {
 }
 .tooltip-bottom:after,
 .tooltip-bottom:before {
-  -moz-transition: top 0.25s ease-in-out;
   -webkit-transition: top 0.25s ease-in-out;
+  -o-transition: top 0.25s ease-in-out;
   transition: top 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
   top: 90%;
   left: -9999px;
   margin-top: 12px;
@@ -688,12 +687,9 @@ code {
 }
 .tooltip-right:after,
 .tooltip-right:before {
-  -moz-transition: left 0.25s ease-in-out;
   -webkit-transition: left 0.25s ease-in-out;
+  -o-transition: left 0.25s ease-in-out;
   transition: left 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
   top: -9999px;
   left: 96%;
   margin-left: 12px;
@@ -715,12 +711,9 @@ code {
 }
 .tooltip-left:after,
 .tooltip-left:before {
-  -moz-transition: right 0.25s ease-in-out;
   -webkit-transition: right 0.25s ease-in-out;
+  -o-transition: right 0.25s ease-in-out;
   transition: right 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  transition: opacity 0.25s ease-in-out;
   top: -9999px;
   right: 96%;
   margin-right: 12px;
@@ -739,4 +732,10 @@ code {
 .tooltip-left:hover:before,
 .tooltip-left:focus:before {
   top: 7px;
+}
+[class*="tooltip"]:after,
+[class*="tooltip"]:before {
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }

@@ -10,7 +10,7 @@
   position: relative;
   text-decoration: none;
 
-  &:after, 
+  &:after,
   &:before {
     position: absolute;
     z-index: 100;
@@ -18,19 +18,17 @@
   }
 
   &:after {
-    -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    .box-shadow(0 0 5px 0 rgba(0, 0, 0, 0.3));
     content: attr(aria-label);
     height: 25px;
     line-height: 25px;
     padding: 0 10px;
     font-size: 12px;
     text-align: center;
-    color: white;
-    background: #222222;
+    color: #fff;
+    background: @gray-dark;
     border-radius: 4px;
-    text-shadow: 0 0 5px black;
+    text-shadow: 0 0 5px #000;
     white-space: nowrap;
   }
 
@@ -42,9 +40,9 @@
     border-style: solid;
   }
 
-  &:hover:after, 
-  &:focus:after, 
-  &:hover:before, 
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
   &:focus:before {
     opacity: 1;
   }
@@ -53,35 +51,30 @@
 
 .tooltip-top{
 
-  &:after, 
+  &:after,
   &:before {
-    -moz-transition: bottom 0.25s ease-in-out;
-    -webkit-transition: bottom 0.25s ease-in-out;
-    transition: bottom 0.25s ease-in-out;
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
+    .transition(bottom .25s ease-in-out);
     bottom: 90%;
     left: -9999px;
     margin-bottom: 12px;
   }
 
   &:before {
-    border-color: #222222 transparent transparent transparent;
+    border-color: @gray-dark transparent transparent transparent;
     margin-bottom: 0;
   }
 
-  &:hover:after, 
-  &:focus:after, 
-  &:focus:after, 
-  &:hover:before, 
-  &:focus:before, 
+  &:hover:after,
+  &:focus:after,
+  &:focus:after,
+  &:hover:before,
+  &:focus:before,
   &:focus:before {
     bottom: 85%;
     left: 0;
   }
 
-  &:hover:before, 
+  &:hover:before,
   &:focus:before {
     left: 15px;
   }
@@ -89,99 +82,92 @@
 
 
 .tooltip-bottom{
-  
-  &:after, 
+
+  &:after,
   &:before {
-    -moz-transition: top 0.25s ease-in-out;
-    -webkit-transition: top 0.25s ease-in-out;
-    transition: top 0.25s ease-in-out;
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
+    .transition(top .25s ease-in-out);
     top: 90%;
     left: -9999px;
     margin-top: 12px;
   }
 
   &:before {
-    border-color: transparent transparent #222222 transparent;
+    border-color: transparent transparent @gray-dark transparent;
     margin-top: 0;
   }
-  &:hover:after, 
-  &:focus:after, 
-  &:hover:before, 
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
   &:focus:before {
     top: 85%;
     left: 0;
   }
-  &:hover:before, 
+  &:hover:before,
   &:focus:before {
     left: 15px;
   }
 
 }
 .tooltip-right{
-  &:after, 
+  &:after,
   &:before {
-    -moz-transition: left 0.25s ease-in-out;
-    -webkit-transition: left 0.25s ease-in-out;
-    transition: left 0.25s ease-in-out;
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
+    .transition(left .25s ease-in-out);
     top: -9999px;
     left: 96%;
     margin-left: 12px;
   }
 
   &:before {
-    border-color: transparent #222222 transparent transparent;
+    border-color: transparent @gray-dark transparent transparent;
     margin-left: 0;
   }
 
-  &:hover:after, 
-  &:focus:after, 
-  &:hover:before, 
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
   &:focus:before {
     left: 95%;
     top: 0;
   }
 
-  &:hover:before, 
+  &:hover:before,
   &:focus:before {
       top: 7px;
   }
 }
 
 .tooltip-left{
-  &:after, 
+  &:after,
   &:before {
-    -moz-transition: right 0.25s ease-in-out;
-    -webkit-transition: right 0.25s ease-in-out;
-    transition: right 0.25s ease-in-out;
-    -moz-transition: opacity 0.25s ease-in-out;
-    -webkit-transition: opacity 0.25s ease-in-out;
-    transition: opacity 0.25s ease-in-out;
+    .transition(right .25s ease-in-out);
     top: -9999px;
     right: 96%;
     margin-right: 12px;
   }
 
   &:before {
-    border-color: transparent transparent transparent #222222;
+    border-color: transparent transparent transparent @gray-dark;
     margin-right: 0;
   }
 
-  &:hover:after, 
-  &:focus:after, 
-  &:hover:before, 
+  &:hover:after,
+  &:focus:after,
+  &:hover:before,
   &:focus:before {
     right: 95%;
     top: 0;
   }
-  
-  &:hover:before, 
+
+  &:hover:before,
   &:focus:before {
     top: 7px;
+  }
+}
+
+// Add opacity animation
+[class*="tooltip"] {
+  &:after,
+  &:before {
+    .transition(opacity .25s ease-in-out);
   }
 }
