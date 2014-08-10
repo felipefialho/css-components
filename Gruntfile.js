@@ -104,6 +104,17 @@ grunt.initConfig({
           ],
           dest: '<%= config.build %>/tab/less/',
           filter: 'isFile'
+        },
+        {
+          expand: true,
+          flatten: true,
+          src: [
+            '<%= config.dev %>**/mixins.less',
+            '<%= config.dev %>**/variables.less',
+            '<%= config.dev %>**/tooltip.less'
+          ],
+          dest: '<%= config.build %>/tooltip/less/',
+          filter: 'isFile'
         }
       ]
     },
@@ -126,6 +137,7 @@ grunt.initConfig({
         '<%= config.build %>dropdown/dropdown.css': '<%= config.dev %>**/_dropdown-style.less',
         '<%= config.build %>modal/modal.css': '<%= config.dev %>**/_modal-style.less',
         '<%= config.build %>tab/tab.css': '<%= config.dev %>**/_tab-style.less',
+        '<%= config.build %>tooltip/tooltip.css': '<%= config.dev %>**/_tooltip-style.less',
       }
     },
     dev: {
@@ -252,6 +264,18 @@ grunt.initConfig({
         }
       ]
     },
+    tooltip: {
+      options: {
+        archive: '<%= config.build %>tooltip.zip'
+      },
+      files: [
+        {
+          expand: true,
+          cwd: '<%= config.build %>',
+          src: ['tooltip/**']
+        }
+      ]
+    },
     all: {
       options: {
         archive: '<%= config.build %>css-components.zip'
@@ -265,7 +289,8 @@ grunt.initConfig({
             'collapse/**',
             'dropdown/**',
             'modal/**',
-            'tab/**'
+            'tab/**',
+            'tooltip/**'
           ]
         }
       ]

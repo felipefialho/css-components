@@ -64,6 +64,9 @@
         <li>
           <a class="btn" href="#component-tab">Tab</a>
         </li>
+        <li>
+          <a class="btn" href="#component-tooltip">Tooltip</a>
+        </li>
       </ul>
     </nav>
     <!-- /Nav List -->
@@ -443,6 +446,37 @@
 
       </section>
       <!-- /Component - Tab -->
+
+       <!-- Component - Tooltip -->
+      <section class="content">
+
+        <h1 id="component-tooltip">Tooltip</h1>
+
+        <p>Tooltip displayed with hover or focus only css. Wai-aria was used which leaves the element accessible for screen readers.</p>
+
+        <a class="btn btn-primary" href="build/tooltip.zip">Download</a>
+
+        <h6>Example</h6>
+        <div class="example-box">
+
+          <!-- Tooltip -->
+            
+          <a href="#component-tooltip" role="tooltip" class="tooltip-top btn" aria-label="content displayed over ">Top</a>
+          <a href="#component-tooltip" role="tooltip" class="tooltip-right btn" aria-label="content displayed to the right">Right</a>
+          <a href="#component-tooltip" role="tooltip" class="tooltip-bottom btn" aria-label="content displayed below ">Bottom</a>
+          <a href="#component-tooltip" role="tooltip" class="tooltip-left btn" aria-label="content displayed to the left ">Left</a>
+
+        </div>
+
+        <pre class="code"><code class="prettyprint">&lt;!-- Tooltip --&gt;
+&lt;a href="#component-tooltip" role="tooltip" class="tooltip-top btn" aria-label="content displayed over ">Top&lt;/a&gt;
+&lt;a href="#component-tooltip" role="tooltip" class="tooltip-right btn" aria-label="content displayed to the right"&gt;Right&lt;/a&gt;
+&lt;a href="#component-tooltip" role="tooltip" class="tooltip-bottom btn" aria-label="content displayed below "&gt;Bottom&lt;/a&gt;
+&lt;a href="#component-tooltip" role="tooltip" class="tooltip-left btn" aria-label="content displayed to the left "&gt;Left&lt;/a&gt;
+</code></pre>
+
+      </section>
+      <!-- /Component - Tooltip -->
 
     </div>
     <!-- Inner -->
