@@ -266,7 +266,7 @@ grunt.initConfig({
     },
     tooltip: {
       options: {
-        archive: '<%= config.build %>tab.zip'
+        archive: '<%= config.build %>tooltip.zip'
       },
       files: [
         {
