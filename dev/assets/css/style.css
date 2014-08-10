@@ -452,6 +452,9 @@ code {
 #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
   color: #428bca;
 }
+.collapse-open {
+  display: none;
+}
 .collapse-painel {
   display: none;
 }
