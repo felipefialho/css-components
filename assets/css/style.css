@@ -81,10 +81,11 @@ code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;white-
 .modal-header{border-bottom:#eeeeee solid 1px;}.modal-header h2{font-size:20px;margin:0;}
 .modal-footer{border-top:#eeeeee solid 1px;text-align:right;}
 .tab{position:relative;}
-.tab-painel{display:inline-block;min-height:150px;}
+.tab-painel{display:inline-block;min-height:150px;}.tab-painel .tab-open{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);border:0;}
 .tab-nav{border:#aaaaaa solid 1px;cursor:pointer;font-size:14px;display:inline-block;padding:10px 20px;margin-right:20px;}
-.tab-nav:hover,.tab-open:checked~.tab-nav{background-color:#eeeeee;}
+.tab-open .tab-nav:hover,.tab-open:checked~.tab-nav{background-color:#eeeeee;}
 .tab-inner{opacity:0;margin-top:20px;position:absolute;left:0;-webkit-transition:opacity 0.1s;transition:opacity 0.1s;visibility:hidden;}
+.tab-open:focus:checked~.tab-nav{outline:thin dotted;}
 .tab-open:checked~.tab-inner{opacity:100;visibility:visible;}
 [class*="tooltip"]{position:relative;text-decoration:none;}[class*="tooltip"]:after,[class*="tooltip"]:before{position:absolute;z-index:100;opacity:0;}
 [class*="tooltip"]:after{-moz-box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.3);-webkit-box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.3);box-shadow:0 0 5px 0 rgba(0, 0, 0, 0.3);content:attr(aria-label);height:25px;line-height:25px;padding:0 10px;font-size:12px;text-align:center;color:white;background:#222222;border-radius:4px;text-shadow:0 0 5px black;white-space:nowrap;}
