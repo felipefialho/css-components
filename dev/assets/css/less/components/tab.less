@@ -7,6 +7,17 @@
 .tab-painel{
   display: inline-block;
   min-height: 150px;
+
+  .tab-open{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 }
 
 // Tab - Nav
@@ -20,7 +31,7 @@
   padding: (@space / 2) @space;
   margin-right: @space;
 }
-
+.tab-open
 .tab-nav:hover,
 .tab-open:checked ~ .tab-nav {
   background-color: @gray-lighter;
@@ -37,7 +48,9 @@
   .transition(opacity .1s);
   visibility: hidden;
 }
-
+.tab-open:focus:checked ~ .tab-nav{
+  outline: thin dotted
+}
 .tab-open:checked ~ .tab-inner{
   .opacity(100);
   visibility: visible;
