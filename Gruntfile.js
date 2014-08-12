@@ -17,7 +17,7 @@ grunt.initConfig({
   config: PathConfig,
 
   // Clean files
-  clean: {  
+  clean: {
     dist: {
       src: [ '<%= config.dist %>assets/'],
     },
@@ -33,7 +33,7 @@ grunt.initConfig({
   },
 
   // Copy files
-  copy: { 
+  copy: {
     dist: {
       files: [
         {
@@ -41,7 +41,7 @@ grunt.initConfig({
           dot: true,
           cwd: '<%= config.dev %>assets/',
           src: [
-            '**', 
+            '**',
             '!css/less/**',
           ],
           dest: '<%= config.dist %>assets/'
@@ -178,8 +178,8 @@ grunt.initConfig({
   },
 
   // Sync
-  browser_sync: {
-    files: {
+  browserSync: {
+    bsFiles: {
       src : [
         '<%= config.dev %>**/*.css',
         '<%= config.dev %>**/*.jpg',
@@ -294,7 +294,7 @@ grunt.initConfig({
           ]
         }
       ]
-    } 
+    }
   }
 
 });
@@ -309,7 +309,7 @@ grunt.registerTask( 'dist', ['clean:dist', 'copy:dist', 'less:dist', 'htmlmin:di
 grunt.registerTask( 'build', ['clean:build', 'copy:build', 'less:build', 'compress', 'clean:cleanzip'] );
 
 // Watch
-grunt.registerTask( 'w', ['browser_sync', 'watch' ] );
+grunt.registerTask( 'w', ['browserSync', 'watch' ] );
 
 
 };
