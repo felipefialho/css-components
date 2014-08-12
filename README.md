@@ -12,6 +12,7 @@ A set of common UI Components using the power of CSS and without Javascript.
 * [Dropdown](http://www.felipefialho.com/css-components/#component-dropdown "Dropdown")
 * [Modal](http://www.felipefialho.com/css-components/#component-modal "Modal")
 * [Tab](http://www.felipefialho.com/css-components/#component-tab "Tab")
+* [Tooltip](http://www.felipefialho.com/css-components/#component-tooltip "Tooltip")
 
 ## Contributing
 
