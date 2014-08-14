@@ -6,6 +6,7 @@
 // --------------------------------
 
 .btn-dropdown { 
+  z-index: 2;
   &:after {
     content: ' ▼';
   }
@@ -17,6 +18,15 @@
 .dropdown {
   display: inline-block;
 }
+.dropdown-overlay {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
 
 .dropdown-inner {
   background: #fff;
@@ -26,11 +36,17 @@
   padding: @space;
   .opacity(0);
   .transition(opacity .1s);
-  visibility: hidden; 
+  visibility: hidden;
+  z-index: 2;
 }
 
 .dropdown-hover:hover .dropdown-inner,
 .dropdown-open:checked ~ .dropdown-inner { 
   .opacity(100);
-  visibility: visible; 
+  visibility: visible;
+}
+
+.dropdown-hover:hover .dropdown-overlay,
+.dropdown-open:checked ~ .dropdown-overlay {
+  display: block;
 }
