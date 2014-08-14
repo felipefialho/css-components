@@ -16,7 +16,7 @@ A set of common UI Components using the power of CSS and without Javascript.
 
 ## Contributing
 
-Please read this [Coding Style](https://github.com/LFeh/coding-style/) for [Issues](https://github.com/LFeh/css-components/issues) and coding standards.
+Please read this [Coding Style](https://github.com/LFeh/coding-style/) for [Issues](https://github.com/LFeh/css-components/issues), pull requests and coding standards.
 
 All changes must be made in `/dev` folder. The CSS should be modified using the **LESS** preprocessor.
 
@@ -40,9 +40,19 @@ All changes must be made in `/dev` folder. The CSS should be modified using the 
 
   # For watching your .less files changes and compile CSS
   grunt w
+  
 
-  # Build the project for deploy
+  # Pull Requests
+  # -----------
+  
+  # Build the project for deploy and compress zip files
   grunt build
+   
+  # View your project release in GhPages 
+  https://<your-username>.github.io/css-components/
+  
+  # Open your Pull Request 
+
   ```
 
 ## License
