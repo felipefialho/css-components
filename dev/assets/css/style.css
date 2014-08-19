@@ -303,17 +303,6 @@ h6 {
   background: #357ebd;
   color: #fff;
 }
-.btn-close {
-  color: #aaaaaa;
-  font-size: 30px;
-  text-decoration: none;
-  position: absolute;
-  right: 5px;
-  top: 0;
-}
-.btn-close:hover {
-  color: #919191;
-}
 .example-box {
   border: #eeeeee solid 1px;
   border-radius: 5px 5px 0 0;
@@ -522,7 +511,19 @@ code {
 .dropdown-open:checked ~ .dropdown-overlay {
   display: block;
 }
-.modal:before {
+.modal .btn-close {
+  color: #aaaaaa;
+  cursor: pointer;
+  font-size: 30px;
+  text-decoration: none;
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+.modal .btn-close:hover {
+  color: #919191;
+}
+.modal-wrap:before {
   content: "";
   display: none;
   background: rgba(0, 0, 0, 0.6);
@@ -531,17 +532,36 @@ code {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1001;
+  z-index: 101;
 }
-.modal:target:before {
+.modal-overlay {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 102;
+}
+.modal-open:checked ~ .modal-wrap:before,
+.modal-open:checked ~ .modal-wrap .modal-overlay {
   display: block;
 }
-.modal:target .modal-dialog {
+.modal-open:checked ~ .modal-wrap .modal-dialog {
   -webkit-transform: translate(-50%, 0);
   -ms-transform: translate(-50%, 0);
   -o-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
   top: 20%;
+}
+.modal-overlay {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 102;
 }
 .modal-dialog {
   background: #fefefe;
@@ -558,9 +578,9 @@ code {
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  z-index: 1111;
   width: 80%;
   max-width: 600px;
+  z-index: 103;
 }
 .modal-body {
   padding: 20px;

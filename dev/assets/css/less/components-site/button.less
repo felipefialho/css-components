@@ -13,7 +13,7 @@
   text-decoration: none;
   text-align: center;
   min-width: 60px;
-  position: relative; 
+  position: relative;
 
   &:hover,
   &:focus {
@@ -29,8 +29,8 @@
   + .btn { margin-left: @space; }
 
   @media (max-width: @screen-xs-min) {
-    + .btn { margin-left: 0; } 
-  }  
+    + .btn { margin-left: 0; }
+  }
 }
 
 
@@ -44,17 +44,5 @@
   &:focus {
     background: darken(@color-primary, 5%);
     color: #fff;
-  } 
-}
-
-// Button Close
-.btn-close {
-  color: @gray-light;
-  font-size: 30px;
-  text-decoration: none;
-  position: absolute; right: 5px; top: 0;
-
-  &:hover {
-     color: darken(@gray-light, 10%);
-  } 
+  }
 }

@@ -4,6 +4,25 @@
 
 .modal {
 
+  // Button Close
+  .btn-close {
+    color: @gray-light;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    position: absolute; right: 5px; top: 0;
+
+    &:hover {
+       color: darken(@gray-light, 10%);
+    }
+  }
+}
+
+// Modal Wrap
+// ----------------------
+
+.modal-wrap {
+
   // This is modal bg
   &:before {
     content: "";
@@ -31,7 +50,7 @@
 // Modal Open
 // ----------------------
 
-.modal-open:checked ~ .modal {
+.modal-open:checked ~ .modal-wrap {
 
   // Active animate in modal
   &:before,
