@@ -20,40 +20,43 @@ Please read this [Coding Style](https://github.com/LFeh/coding-style/) for [Issu
 
 All changes must be made in `/dev` folder. The CSS should be modified using the **LESS** preprocessor.
 
-  ```bash
+### Getting Started
 
-  # Getting Started
-  # ---------------
+```bash
 
-  # 1. Fork this repository and clone it into the current directory
-  git clone https://github.com/<your-username>/css-components.git  
+# 1. Fork this repository and clone it into the current directory
+git clone https://github.com/<your-username>/css-components.git
 
-  # 2. Navigate to the newly cloned directory
-  cd css-components
+# 2. Navigate to the newly cloned directory
+cd css-components
 
-  # 3. Install the dependencies
-  npm install
+# 3. Install the dependencies
+npm install
 
+```
 
-  # Development
-  # -----------
+### Development
 
-  # For watching your .less files changes and compile CSS
-  grunt w
-  
+```bash
 
-  # Pull Requests
-  # -----------
-  
-  # Build the project for deploy and compress zip files
-  grunt build
-   
-  # View your project release in GhPages 
-  https://<your-username>.github.io/css-components/
-  
-  # Open your Pull Request 
+# For start the server, watching your .less files changes and compile CSS
+grunt w
 
-  ```
+```
+
+### Pull Requests
+
+```bash
+
+# Build the project for deploy and compress zip files
+grunt build
+
+# View your project release in GhPages
+https://<your-username>.github.io/css-components/
+
+# Open your Pull Request
+
+```
 
 ## License
 
