@@ -48,8 +48,11 @@ grunt w
 
 ```bash
 
-# Build the project for deploy and compress zip files
+# Compress zip files
 grunt build
+
+# Build the project for deploy
+grunt dist
 
 # View your project release in GhPages
 https://<your-username>.github.io/css-components/

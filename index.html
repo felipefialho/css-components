@@ -38,7 +38,7 @@
 &lt;/div&gt;</code></pre><h2>With Accordion</h2><h6>Example</h6><div class="example-box"><div class="collapse"><ul class="collapse-list"><li><label class="collapse-btn" for="accordion-1">Lorem ipsum dolor sit amet</label><input class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden="" checked="checked"><div class="collapse-painel"><div class="collapse-inner"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p></div></div></li><li><label class="collapse-btn" for="accordion-2">Lorem ipsum dolor sit amet</label><input class="collapse-open" type="radio" id="accordion-2" name="accordion" aria-hidden="true" hidden=""><div class="collapse-painel"><div class="collapse-inner"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p></div></div></li><li><label class="collapse-btn" for="accordion-3">Lorem ipsum dolor sit amet</label><input class="collapse-open" type="radio" id="accordion-3" name="accordion" aria-hidden="true" hidden=""><div class="collapse-painel"><div class="collapse-inner"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p></div></div></li></ul></div></div><pre class="code"><code class="prettyprint">&lt;!-- Collapse --&gt;
 &lt;div class="collapse"&gt;
   &lt;label class="collapse-open" for="accordion-1"&gt;Lorem ipsum dolor sit amet&lt;/label&gt;
-  &lt;input  class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden checked /&gt;
+  &lt;input class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden checked /&gt;
   &lt;div class="collapse-content"&gt;
     &lt;div class="collapse-inner"&gt;
       ...
@@ -59,20 +59,24 @@
   &lt;div class="dropdown-inner"&gt;
     ...
   &lt;/div&gt;
-&lt;/div&gt;</code></pre></section><section class="content"><h1 id="component-modal">Modal</h1><p>The Modal works through the <a href="http://caniuse.com/#feat=css-sel3">:target selector</a> and is stable enough to be used.</p><p><strong>NOTE</strong>: It's not possible to close it by clicking anywhere on the screen, this could be a problem in some situations.</p><a class="btn btn-primary" href="build/modal.zip">Download</a><h6>Example</h6><div class="example-box"><a class="btn" href="#modal-one">Modal!</a></div><pre class="code"><code class="prettyprint">&lt;a href="#modal-one" class="btn">Example&lt;/a&gt;
+&lt;/div&gt;</code></pre></section><section class="content"><h1 id="component-modal">Modal</h1><p>The Modal uses the <code>&lt;input hidden&gt;</code> technique and works fine! :D</p><p>It's possible close the modal by clicking on background.</p><a class="btn btn-primary" href="build/modal.zip">Download</a><h6>Example</h6><div class="example-box"><label class="btn" for="modal-one">Modal!</label></div><pre class="code"><code class="prettyprint">&lt;label class="btn" for="modal-one">Example&lt;/a&gt;
 
-&lt;!-- Modal --&gt;
-&lt;div class="modal" id="modal-one" aria-hidden="true"&gt;
-  &lt;div class="modal-dialog"&gt;
-    &lt;div class="modal-header"&gt;
-      ...
-      &lt;a class="btn-close" href="#" aria-hidden="true"&gt;×&lt;/a&gt;
-    &lt;/div&gt;
-    &lt;div class="modal-body"&gt;
-      ...
-    &lt;/div&gt;
-    &lt;div class="modal-footer"&gt;
-      ...
+&lt;!-- Modal One --&gt;
+&lt;div class="modal"&gt;
+  &lt;input class="modal-open" id="modal-one" type="checkbox" hidden&gt;
+  &lt;div class="modal-wrap" aria-hidden="true" role="dialog"&gt;
+    &lt;label class="modal-overlay" for="modal-one"&gt;&lt;/label&gt;
+    &lt;div class="modal-dialog"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h2&gt;Modal in CSS?&lt;/h2&gt;
+        &lt;label class="btn-close" for="modal-one" aria-hidden="true"&gt;×&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;
+        &lt;p&gt;One modal example here! :D&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;label class="btn btn-primary" for="modal-one"&gt;Nice!&lt;/label&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre></section><section class="content"><h1 id="component-tab">Tab</h1><p>The "tab" component presents an interesting behavior and could be used without any issues. You do not need any special adaptation in the CSS.</p><a class="btn btn-primary" href="build/tab.zip">Download</a><h6>Example</h6><div class="example-box"><div class="tab"><div class="tab-painel"><input class="tab-open" id="tab-1" name="tab-wrap-1" type="radio" checked="checked"><label class="tab-nav" for="tab-1">Tab 1</label><div class="tab-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, commodi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, commodi.</div></div><div class="tab-painel"><input class="tab-open" id="tab-2" name="tab-wrap-1" type="radio"><label class="tab-nav" for="tab-2">Tab 2</label><div class="tab-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, commodi.</div></div><div class="tab-painel"><input class="tab-open" id="tab-3" name="tab-wrap-1" type="radio"><label class="tab-nav" for="tab-3">Tab 3</label><div class="tab-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, commodi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, commodi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, commodi.</div></div></div></div><pre class="code"><code class="prettyprint">&lt;!-- Tab --&gt;
@@ -108,7 +112,7 @@
 &lt;a href="#component-tooltip" role="tooltip" class="tooltip-right btn" aria-label="content displayed to the right"&gt;Right&lt;/a&gt;
 &lt;a href="#component-tooltip" role="tooltip" class="tooltip-bottom btn" aria-label="content displayed below "&gt;Bottom&lt;/a&gt;
 &lt;a href="#component-tooltip" role="tooltip" class="tooltip-left btn" aria-label="content displayed to the left "&gt;Left&lt;/a&gt;
-</code></pre></section></div></div></div><footer class="footer"><p>Made with <b>CSS</b> and <span class="icon-love">♥</span> by <a href="http://www.felipefialho.com/">Luiz Felipe Tartarotti Fialho</a></p></footer><div class="modal" id="modal-one" aria-hidden="true"><div class="modal-dialog"><div class="modal-header"><h2>Modal in CSS?</h2><a href="#" class="btn-close" aria-hidden="true">×</a></div><div class="modal-body"><p>One modal example here! :D</p></div><div class="modal-footer"><a href="#" class="btn btn-primary">Nice!</a></div></div></div><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+</code></pre></section></div></div></div><footer class="footer"><p>Made with <b>CSS</b> and <span class="icon-love">♥</span> by <a href="http://www.felipefialho.com/">Luiz Felipe Tartarotti Fialho</a></p></footer><div class="modal"><input class="modal-open" id="modal-one" type="checkbox" hidden=""><div class="modal-wrap" aria-hidden="true" role="dialog"><label class="modal-overlay" for="modal-one"></label><div class="modal-dialog"><div class="modal-header"><h2>Modal in CSS?</h2><label class="btn-close" for="modal-one" aria-hidden="true">×</label></div><div class="modal-body"><p>One modal example here! :D</p></div><div class="modal-footer"><label class="btn btn-primary" for="modal-one">Nice!</label></div></div></div></div><script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
