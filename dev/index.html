@@ -347,7 +347,7 @@
 
         <h6>Example</h6>
         <div class="example-box">
-          <a class="btn" href="#modal-one">Modal!</a>
+          <label class="btn" for="modal-one">Modal!</label>
         </div>
 
         <pre class="code"><code class="prettyprint">&lt;a href="#modal-one" class="btn">Example&lt;/a&gt;
@@ -495,22 +495,24 @@
   <p>Made with <b>CSS</b> and <span class="icon-love">♥</span> by <a href="http://www.felipefialho.com/">Luiz Felipe Tartarotti Fialho</a></p>
 </footer>
 
-<!-- Modal -->
-<div class="modal" id="modal-one" aria-hidden="true">
+<!-- Modal One -->
+<input class="modal-open" id="modal-one" type="checkbox" hidden>
+<div class="modal" aria-hidden="true" role="dialog">
+  <label class="modal-overlay" for="modal-one"></label>
   <div class="modal-dialog">
     <div class="modal-header">
       <h2>Modal in CSS?</h2>
-      <a href="#" class="btn-close" aria-hidden="true">×</a>
+      <label class="btn-close" for="modal-one" aria-hidden="true">×</label>
     </div>
     <div class="modal-body">
       <p>One modal example here! :D</p>
     </div>
     <div class="modal-footer">
-      <a href="#" class="btn btn-primary">Nice!</a>
+      <label class="btn btn-primary" for="modal-one">Nice!</label>
     </div>
   </div>
 </div>
-<!-- /Modal -->
+<!-- /Modal One -->
 
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 <script>

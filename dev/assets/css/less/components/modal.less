@@ -11,22 +11,52 @@
     background: rgba(0,0,0,.6);
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 1001;
+    z-index: 101;
+  }
+}
+
+// Modal Overlay
+// ----------------------
+
+.modal-overlay {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 102;
+}
+
+// Modal Open
+// ----------------------
+
+.modal-open:checked ~ .modal {
+
+  // Active animate in modal
+  &:before,
+  & .modal-overlay {
+    display: block;
   }
 
-  &:target {
-
-    // Active animate in modal
-    &:before {
-      display: block;
-    }
-    .modal-dialog {
-      .translate(-50%, 0);
-      top: 20%;
-    }
-
+  .modal-dialog {
+    .translate(-50%, 0);
+    top: 20%;
   }
 
+}
+
+// Modal Overlay
+// ----------------------
+
+.modal-overlay {
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 102;
 }
 
 // Modal Dialog
@@ -36,14 +66,14 @@
   background: #fefefe;
   border: @gray solid 1px;
   border-radius: 5px;
-  position: fixed; 
+  position: fixed;
   left: 50%;
   top: -100%;
   .translate(-50%, -500%);
   .transition-transform(~"0.3s ease-out");
-  z-index: 1111;
   width: 80%;
   max-width: 600px;
+  z-index: 103;
 }
 
 .modal-body {
