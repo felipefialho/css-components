@@ -259,7 +259,7 @@
         <pre class="code"><code class="prettyprint">&lt;!-- Collapse --&gt;
 &lt;div class="collapse"&gt;
   &lt;label class="collapse-open" for="accordion-1"&gt;Lorem ipsum dolor sit amet&lt;/label&gt;
-  &lt;input  class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden checked /&gt;
+  &lt;input class="collapse-open" type="radio" id="accordion-1" name="accordion" aria-hidden="true" hidden checked /&gt;
   &lt;div class="collapse-content"&gt;
     &lt;div class="collapse-inner"&gt;
       ...
@@ -340,8 +340,9 @@
 
         <h1 id="component-modal">Modal</h1>
 
-        <p>The Modal works through the <a href="http://caniuse.com/#feat=css-sel3">:target selector</a> and is stable enough to be used.</p>
-        <p><strong>NOTE</strong>: It's not possible to close it by clicking anywhere on the screen, this could be a problem in some situations.</p>
+        <p>The Modal uses the <code>&lt;input hidden&gt;</code> technique and works fine! :D</p>
+
+        <p>It's possible close the modal by clicking on background.</p>
 
         <a class="btn btn-primary" href="build/modal.zip">Download</a>
 
@@ -350,23 +351,28 @@
           <label class="btn" for="modal-one">Modal!</label>
         </div>
 
-        <pre class="code"><code class="prettyprint">&lt;a href="#modal-one" class="btn">Example&lt;/a&gt;
+        <pre class="code"><code class="prettyprint">&lt;label class="btn" for="modal-one">Example&lt;/a&gt;
 
-&lt;!-- Modal --&gt;
-&lt;div class="modal" id="modal-one" aria-hidden="true"&gt;
-  &lt;div class="modal-dialog"&gt;
-    &lt;div class="modal-header"&gt;
-      ...
-      &lt;a class="btn-close" href="#" aria-hidden="true"&gt;×&lt;/a&gt;
-    &lt;/div&gt;
-    &lt;div class="modal-body"&gt;
-      ...
-    &lt;/div&gt;
-    &lt;div class="modal-footer"&gt;
-      ...
+&lt;!-- Modal One --&gt;
+&lt;div class="modal"&gt;
+  &lt;input class="modal-open" id="modal-one" type="checkbox" hidden&gt;
+  &lt;div class="modal-wrap" aria-hidden="true" role="dialog"&gt;
+    &lt;label class="modal-overlay" for="modal-one"&gt;&lt;/label&gt;
+    &lt;div class="modal-dialog"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h2&gt;Modal in CSS?&lt;/h2&gt;
+        &lt;label class="btn-close" for="modal-one" aria-hidden="true"&gt;×&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;
+        &lt;p&gt;One modal example here! :D&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;label class="btn btn-primary" for="modal-one"&gt;Nice!&lt;/label&gt;
+      &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;!-- /Modal One --&gt;</code></pre>
 
       </section>
       <!-- /Component - Modal -->
