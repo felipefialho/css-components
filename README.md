@@ -2,8 +2,16 @@
 
 A set of common UI Components using the power of CSS and without Javascript.
 
-[View the project](http://www.felipefialho.com/css-components) |
-[Download the zip](http://www.felipefialho.com/css-components/build/css-components.zip)
+[View the project](http://www.felipefialho.com/css-components)
+
+## Install
+
+Install via [Bower](http://bower.io/) or
+[download the zip](http://www.felipefialho.com/css-components/build/css-components.zip)
+
+```
+bower install css-components
+```
 
 ## Components
 
