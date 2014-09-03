@@ -1,0 +1,21 @@
+{
+  "name": "css-components",
+  "version": "1.1.3",
+  "homepage": "http://www.felipefialho.com/css-components/",
+  "authors": [
+    "LFeh <hi@felipefialho.com>"
+  ],
+  "description": "A set of common UI Components using the power of CSS and without Javascript.",
+  "main": "build/css-components.zip",
+  "moduleType": [
+    "node"
+  ],
+  "license": "http://felipefialho.mit-license.org/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
