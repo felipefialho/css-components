@@ -1,0 +1,52 @@
+/*
+* Pure CSS Components - http://www.felipefialho.com/css-components/
+* Author: Luiz Felipe Tartarotti Fialho
+* hi@felipefialho.com
+* http://www.felipefialho.com/
+*/
+.tab {
+  position: relative;
+}
+.tab-painel {
+  display: inline-block;
+  min-height: 150px;
+}
+.tab-painel .tab-open {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.tab-nav {
+  border: #aaaaaa solid 1px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 20px;
+}
+.tab-open .tab-nav:hover,
+.tab-open:checked ~ .tab-nav {
+  background-color: #eeeeee;
+}
+.tab-inner {
+  opacity: 0;
+  margin-top: 20px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity 0.1s;
+  -o-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+  visibility: hidden;
+}
+.tab-open:focus:checked ~ .tab-nav {
+  outline: thin dotted;
+}
+.tab-open:checked ~ .tab-inner {
+  opacity: 100;
+  visibility: visible;
+}

@@ -1,0 +1,37 @@
+/*
+* Pure CSS Components - http://www.felipefialho.com/css-components/
+* Author: Luiz Felipe Tartarotti Fialho
+* hi@felipefialho.com
+* http://www.felipefialho.com/
+*/
+.collapse-open {
+  display: none;
+}
+.collapse-painel {
+  display: none;
+}
+.collapse-open:checked ~ .collapse-painel {
+  display: block;
+}
+.collapse-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.collapse-list li {
+  margin-bottom: 10px;
+}
+.collapse-list .collapse-btn {
+  border: #eeeeee solid 1px;
+  background: #f6f6f6;
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  padding: 5px 10px;
+}
+.collapse-list .collapse-btn:hover {
+  background: #f1f1f1;
+}
+.collapse-list .collapse-inner {
+  padding: 10px;
+}

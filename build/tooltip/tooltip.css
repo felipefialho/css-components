@@ -1,0 +1,148 @@
+/*
+* Pure CSS Components - http://www.felipefialho.com/css-components/
+* Author: Luiz Felipe Tartarotti Fialho
+* hi@felipefialho.com
+* http://www.felipefialho.com/
+*/
+[class*="tooltip"] {
+  position: relative;
+  text-decoration: none;
+}
+[class*="tooltip"]:after,
+[class*="tooltip"]:before {
+  position: absolute;
+  z-index: 100;
+  opacity: 0;
+}
+[class*="tooltip"]:after {
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  content: attr(aria-label);
+  height: 25px;
+  line-height: 25px;
+  padding: 0 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #222222;
+  border-radius: 4px;
+  text-shadow: 0 0 5px #000;
+  white-space: nowrap;
+}
+[class*="tooltip"]:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-width: 6px;
+  border-style: solid;
+}
+[class*="tooltip"]:hover:after,
+[class*="tooltip"]:focus:after,
+[class*="tooltip"]:hover:before,
+[class*="tooltip"]:focus:before {
+  opacity: 1;
+}
+.tooltip-top:after,
+.tooltip-top:before {
+  -webkit-transition: bottom 0.25s ease-in-out;
+  -o-transition: bottom 0.25s ease-in-out;
+  transition: bottom 0.25s ease-in-out;
+  bottom: 90%;
+  left: -9999px;
+  margin-bottom: 12px;
+}
+.tooltip-top:before {
+  border-color: #222222 transparent transparent transparent;
+  margin-bottom: 0;
+}
+.tooltip-top:hover:after,
+.tooltip-top:focus:after,
+.tooltip-top:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:focus:before,
+.tooltip-top:focus:before {
+  bottom: 85%;
+  left: 0;
+}
+.tooltip-top:hover:before,
+.tooltip-top:focus:before {
+  left: 15px;
+}
+.tooltip-bottom:after,
+.tooltip-bottom:before {
+  -webkit-transition: top 0.25s ease-in-out;
+  -o-transition: top 0.25s ease-in-out;
+  transition: top 0.25s ease-in-out;
+  top: 90%;
+  left: -9999px;
+  margin-top: 12px;
+}
+.tooltip-bottom:before {
+  border-color: transparent transparent #222222 transparent;
+  margin-top: 0;
+}
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:after,
+.tooltip-bottom:hover:before,
+.tooltip-bottom:focus:before {
+  top: 85%;
+  left: 0;
+}
+.tooltip-bottom:hover:before,
+.tooltip-bottom:focus:before {
+  left: 15px;
+}
+.tooltip-right:after,
+.tooltip-right:before {
+  -webkit-transition: left 0.25s ease-in-out;
+  -o-transition: left 0.25s ease-in-out;
+  transition: left 0.25s ease-in-out;
+  top: -9999px;
+  left: 96%;
+  margin-left: 12px;
+}
+.tooltip-right:before {
+  border-color: transparent #222222 transparent transparent;
+  margin-left: 0;
+}
+.tooltip-right:hover:after,
+.tooltip-right:focus:after,
+.tooltip-right:hover:before,
+.tooltip-right:focus:before {
+  left: 95%;
+  top: 0;
+}
+.tooltip-right:hover:before,
+.tooltip-right:focus:before {
+  top: 7px;
+}
+.tooltip-left:after,
+.tooltip-left:before {
+  -webkit-transition: right 0.25s ease-in-out;
+  -o-transition: right 0.25s ease-in-out;
+  transition: right 0.25s ease-in-out;
+  top: -9999px;
+  right: 96%;
+  margin-right: 12px;
+}
+.tooltip-left:before {
+  border-color: transparent transparent transparent #222222;
+  margin-right: 0;
+}
+.tooltip-left:hover:after,
+.tooltip-left:focus:after,
+.tooltip-left:hover:before,
+.tooltip-left:focus:before {
+  right: 95%;
+  top: 0;
+}
+.tooltip-left:hover:before,
+.tooltip-left:focus:before {
+  top: 7px;
+}
+[class*="tooltip"]:after,
+[class*="tooltip"]:before {
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}

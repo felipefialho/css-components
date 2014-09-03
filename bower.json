@@ -6,7 +6,14 @@
     "LFeh <hi@felipefialho.com>"
   ],
   "description": "A set of common UI Components using the power of CSS and without Javascript.",
-  "main": "build/css-components.zip",
+  "main": [
+    "build/carousel/carousel.css",
+    "build/collapse/collapse.css",
+    "build/dropdown/dropdown.css",
+    "build/modal/modal.css",
+    "build/tab/tab.css",
+    "build/tooltip/tooltip.css"
+  ],
   "moduleType": [
     "node"
   ],

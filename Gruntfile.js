@@ -26,7 +26,7 @@ grunt.initConfig({
     },
     cleanzip: {
       src: [
-        '<%= config.build %>*',
+        '<%= config.build %>**/less/',
         '!<%= config.build %>*.zip'
       ]
     }
@@ -137,7 +137,7 @@ grunt.initConfig({
         '<%= config.build %>dropdown/dropdown.css': '<%= config.dev %>**/_dropdown-style.less',
         '<%= config.build %>modal/modal.css': '<%= config.dev %>**/_modal-style.less',
         '<%= config.build %>tab/tab.css': '<%= config.dev %>**/_tab-style.less',
-        '<%= config.build %>tooltip/tooltip.css': '<%= config.dev %>**/_tooltip-style.less',
+        '<%= config.build %>tooltip/tooltip.css': '<%= config.dev %>**/_tooltip-style.less'
       }
     },
     dev: {
