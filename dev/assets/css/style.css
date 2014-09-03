@@ -149,6 +149,10 @@ h6 {
   .page-header h1 {
     font-size: 60px;
   }
+  .page-header .code {
+    margin: 0 auto;
+    width: 50%;
+  }
 }
 @media (min-width: 1200px) {
   .page-header {
