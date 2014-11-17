@@ -86,13 +86,13 @@
   padding: 20px 20px;
 }
 .modal-header {
-  border-bottom: #eeeeee solid 1px;
+  border-bottom: #eaeaea solid 1px;
 }
 .modal-header h2 {
   font-size: 20px;
   margin: 0;
 }
 .modal-footer {
-  border-top: #eeeeee solid 1px;
+  border-top: #eaeaea solid 1px;
   text-align: right;
 }

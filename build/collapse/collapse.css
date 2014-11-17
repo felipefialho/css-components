@@ -22,15 +22,15 @@
   margin-bottom: 10px;
 }
 .collapse-list .collapse-btn {
-  border: #eeeeee solid 1px;
-  background: #f6f6f6;
+  border: #eaeaea solid 1px;
+  background: #e7e7e7;
   border-radius: 2px;
   cursor: pointer;
   display: block;
   padding: 5px 10px;
 }
 .collapse-list .collapse-btn:hover {
-  background: #f1f1f1;
+  background: #ededed;
 }
 .collapse-list .collapse-inner {
   padding: 10px;

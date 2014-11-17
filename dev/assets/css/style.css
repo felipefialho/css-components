@@ -308,7 +308,7 @@ h6 {
   color: #fff;
 }
 .example-box {
-  border: #eeeeee solid 1px;
+  border: #eaeaea solid 1px;
   border-radius: 5px 5px 0 0;
   padding: 20px;
 }
@@ -325,7 +325,7 @@ code {
   border-radius: 3px;
 }
 .code {
-  background-color: #eeeeee;
+  background-color: #eaeaea;
   border-radius: 0 0 5px 5px;
   color: #fff;
   display: block;
@@ -462,15 +462,15 @@ code {
   margin-bottom: 10px;
 }
 .collapse-list .collapse-btn {
-  border: #eeeeee solid 1px;
-  background: #f6f6f6;
+  border: #eaeaea solid 1px;
+  background: #e7e7e7;
   border-radius: 2px;
   cursor: pointer;
   display: block;
   padding: 5px 10px;
 }
 .collapse-list .collapse-btn:hover {
-  background: #f1f1f1;
+  background: #ededed;
 }
 .collapse-list .collapse-inner {
   padding: 10px;
@@ -597,14 +597,14 @@ code {
   padding: 20px 20px;
 }
 .modal-header {
-  border-bottom: #eeeeee solid 1px;
+  border-bottom: #eaeaea solid 1px;
 }
 .modal-header h2 {
   font-size: 20px;
   margin: 0;
 }
 .modal-footer {
-  border-top: #eeeeee solid 1px;
+  border-top: #eaeaea solid 1px;
   text-align: right;
 }
 .tab {
@@ -634,7 +634,7 @@ code {
 }
 .tab-open .tab-nav:hover,
 .tab-open:checked ~ .tab-nav {
-  background-color: #eeeeee;
+  background-color: #eaeaea;
 }
 .tab-inner {
   opacity: 0;

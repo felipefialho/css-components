@@ -31,7 +31,7 @@
 }
 .tab-open .tab-nav:hover,
 .tab-open:checked ~ .tab-nav {
-  background-color: #eeeeee;
+  background-color: #eaeaea;
 }
 .tab-inner {
   opacity: 0;
