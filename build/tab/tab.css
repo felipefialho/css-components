@@ -49,4 +49,7 @@
 .tab-open:checked ~ .tab-inner {
   opacity: 100;
   visibility: visible;
+  -webkit-transition: opacity 0.6 ease;
+  -o-transition: opacity 0.6 ease;
+  transition: opacity 0.6 ease;
 }

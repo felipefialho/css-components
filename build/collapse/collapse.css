@@ -12,6 +12,9 @@
 }
 .collapse-open:checked ~ .collapse-painel {
   display: block;
+  -webkit-transition: max-height 0.6 ease;
+  -o-transition: max-height 0.6 ease;
+  transition: max-height 0.6 ease;
 }
 .collapse-list {
   list-style: none;
