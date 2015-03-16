@@ -32,6 +32,7 @@
   padding: (@space / 2) @space;
   margin-right: @space;
 }
+
 .tab-open
 .tab-nav:hover,
 .tab-open:checked ~ .tab-nav {
@@ -49,11 +50,13 @@
   .transition(opacity .1s);
   visibility: hidden;
 }
+
 .tab-open:focus:checked ~ .tab-nav{
   outline: thin dotted
 }
+
 .tab-open:checked ~ .tab-inner{
   .opacity(100);
   visibility: visible;
-  transition: opacity 2s ease;
+  .transition(opacity 0.6 ease); 
 }
