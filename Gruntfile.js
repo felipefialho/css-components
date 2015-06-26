@@ -1,7 +1,13 @@
 module.exports = function( grunt ) {
 
+
+// Grunt Time
+// ---------------------------------
+require('time-grunt')(grunt);
+
 // Load all tasks
-require('load-grunt-tasks')(grunt);
+// ---------------------------------
+require('jit-grunt')(grunt);
 
 // Paths
 var PathConfig = {
