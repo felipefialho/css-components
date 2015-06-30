@@ -28,10 +28,7 @@ grunt.initConfig({
   config: PathConfig,
 
   // Clean files
-  clean: {
-    dist: {
-      src: [ '<%= config.dist %>/assets/'],
-    },
+  clean: { 
     build: {
       src: ['<%= config.build %>/']
     },
@@ -44,21 +41,7 @@ grunt.initConfig({
   },
 
   // Copy files
-  copy: {
-    dist: {
-      files: [
-        {
-          expand: true,
-          dot: true,
-          cwd: '<%= config.dev %>/assets/',
-          src: [
-            '**',
-            '!stylus/**',
-          ],
-          dest: '<%= config.dist %>/assets/'
-        }
-      ]
-    },
+  copy: { 
     build: {
       files: [
         {
@@ -138,7 +121,7 @@ grunt.initConfig({
         compress: true
       },
       files: {
-        '<%= config.dist %>/assets/css/style.css': '<%= config.dev %>//stylus/style.styl'
+        '<%= config.dist %>/assets/css/style.css': '<%= config.dev %>/stylus/style.styl'
       }
     },
     build: {
@@ -153,7 +136,7 @@ grunt.initConfig({
     },
     dev: {
       files: {
-        '<%= config.dev %>/assets/css/style.css': '<%= config.dev %>//stylus/style.styl'
+        '<%= config.dev %>/assets/css/style.css': '<%= config.dev %>/stylus/style.styl'
       }
     }
   },
@@ -169,7 +152,7 @@ grunt.initConfig({
         expand: true,
         cwd: '<%= config.dev %>/',
         src: ['*.html','**/*.html'],
-        dest: '<%= config.dist %>/',
+        dest: '<%= config.dist %>',
       }],
     }
   },
@@ -314,7 +297,7 @@ grunt.initConfig({
 grunt.registerTask( 'test', ['jshint'] );
 
 // Dist
-grunt.registerTask( 'dist', ['clean:dist', 'copy:dist', 'stylus:dist', 'htmlmin:dist'] );
+grunt.registerTask( 'dist', ['stylus:dist', 'htmlmin:dist'] );
 
 // Build
 grunt.registerTask( 'build', ['clean:build', 'copy:build', 'stylus:build', 'compress', 'clean:cleanzip'] );
