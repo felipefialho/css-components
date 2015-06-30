@@ -1,0 +1,48 @@
+//
+// Buttons
+// ===================================================
+
+.btn  
+  background #fff 
+  border $gray solid 1px 
+  border-radius 3px 
+  cursor pointer 
+  display inline-block 
+  font-size 1.4rem 
+  padding 8px 15px 
+  text-decoration none 
+  text-align center 
+  min-width 60px 
+  position relative 
+
+  @media (max-width $screen-xs-min)  
+    + &
+      margin-left 0   
+    
+  &:hover,
+  &:focus  
+    background darken(#fff, 5%) 
+    
+  &.btn-big  
+    font-size 1.8rem
+    padding 15px 20px 
+    min-width 100px 
+    
+  + &   
+    margin-left $space   
+
+    
+// Button Primary
+// --------------------------------------------------
+
+.btn-primary  
+  background $brand-primary 
+  border-color darken($brand-primary, 5%) 
+  color #fff 
+
+  &:hover,
+  &:focus  
+    background darken($brand-primary, 5%) 
+    color #fff 
+   
+ 

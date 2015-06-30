@@ -1,0 +1,44 @@
+//
+// Collapse - Pure CSS (no JavaScript)
+// ===================================================
+
+.collapse-open  
+  display none 
+ 
+
+.collapse-painel   
+  visibility hidden
+  max-height 0
+  opacity 0
+  transition max-height .1s, visibility .3s, opacity .3s
+ 
+
+.collapse-open:checked ~ .collapse-painel   
+  max-height 100%
+  opacity 100
+  visibility visible
+ 
+
+// Collapse List
+// -------------------------------------------------- 
+
+.collapse-list  
+  @extends $list-unstyled 
+
+  li   
+    margin-bottom ($space / 2)   
+
+  .collapse-btn  
+    border $gray-lighter solid 1px 
+    background darken($gray-lighter, 1%) 
+    border-radius 2px 
+    cursor pointer 
+    display block 
+    padding ($space / 4) ($space / 2) 
+    
+    &:hover  
+      background lighten($gray-lighter, 1%) 
+      
+  .collapse-inner   
+    padding ($space / 2)   
+ 

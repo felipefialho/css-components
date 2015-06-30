@@ -1,0 +1,101 @@
+//
+// Carousel - Pure CSS (no JavaScript)
+// ===================================================
+
+.carousel  
+  position relative 
+ 
+
+.carousel-inner  
+  position relative 
+  overflow hidden 
+  width 100% 
+ 
+
+.carousel-open:checked + .carousel-item  
+  position static 
+  opacity 100 
+ 
+
+.carousel-item  
+  position absolute 
+  opacity 0
+  transition opacity .6s ease-out
+
+  img  
+    display block 
+    height auto 
+    max-width 100% 
+   
+ 
+
+// Carousel Control
+// -------------------------------------------------- 
+
+.carousel-control  
+  $center(top)
+  background alpha(#000, 50%) 
+  border $gray-light solid 1px 
+  border-radius 50% 
+  color #fff 
+  cursor pointer 
+  display none 
+  font-size 4.0rem 
+  height 40px 
+  line-height 35px 
+  text-align center 
+  width 40px 
+  z-index 10 
+
+  &.prev  
+    left 2%  
+    
+  &.next  
+    right 2%  
+
+  &:hover  
+    background alpha(#000, 80%) 
+    color $gray-light 
+   
+ 
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3  
+  display block  
+
+
+// Carousel Indicators
+// --------------------------------------------------
+
+.carousel-indicators  
+  @extends $list-unstyled 
+  position absolute  
+  bottom 2%  
+  left 0  
+  right 0 
+  text-align center 
+  z-index 10 
+
+  li  
+    display inline-block 
+    margin 0 5px 
+   
+  
+.carousel-bullet  
+  color #fff 
+  cursor pointer 
+  display block 
+  font-size 3.5rem 
+
+  &:hover  
+    color $gray-light 
+   
+ 
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet  
+  color $brand-primary 
+ 
+

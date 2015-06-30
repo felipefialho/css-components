@@ -1,0 +1,107 @@
+//
+// Type
+// 
+// 1. Link
+// 2. Paragraph
+// 3. Headings
+// 4. Page Header
+//
+// ===================================================
+ 
+
+// 1. Link
+// --------------------------------------------------
+
+a  
+  color $gray 
+  text-decoration none 
+
+  &:hover  
+    color $gray-dark 
+   
+ 
+// 2. Paragraph
+// --------------------------------------------------
+
+p   
+  margin 0 0 $space   
+
+
+// 3. Headings
+// --------------------------------------------------
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6  
+  font-weight normal 
+  line-height 1 
+ 
+
+h1, 
+h2, 
+h3  
+  color $gray-dark 
+  margin 0 
+  margin-bottom $space  
+  padding-top ($space * 2)
+ 
+
+h4, h5   
+  margin-bottom ($space / 2)   
+
+h1   
+  font-size 4.0rem   
+
+h2 
+  color $gray 
+  font-size 2.6rem
+ 
+
+h3   
+  font-size 2.0rem
+
+h6  
+  color $gray-light 
+  font-size 1.2rem 
+  text-transform uppercase 
+  margin-bottom ($space / 4) 
+  margin-top ($space * 2) 
+ 
+
+//
+// 4. Page Header
+// --------------------------------------------------
+
+.page-header  
+  border-bottom solid 1px $gray-light 
+  font-size 22px 
+  padding-top $space 
+  padding-bottom ($space * 2) 
+  text-align center 
+
+  .btn  
+    margin-top $space   
+
+  @media (max-width $screen-xs-min)  
+    h1   
+      display none   
+   
+
+  @media (min-width $screen-sm-min)  
+    padding-top ($space * 2) 
+
+    h1   
+      font-size 6.0rem  
+
+    .code  
+      margin 0 auto 
+      width 50% 
+     
+    
+  @media (min-width $screen-lg-min)  
+    width 70% 
+   
+ 

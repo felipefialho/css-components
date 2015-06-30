@@ -1,0 +1,60 @@
+//
+// Tab - Pure CSS (no JavaScript)
+// ===================================================
+
+.tab  
+  position relative   
+
+.tab-painel 
+  display inline-block 
+  min-height 150px 
+
+  .tab-open 
+    position absolute 
+    width 1px 
+    height 1px 
+    margin -1px 
+    padding 0 
+    overflow hidden 
+    clip rect(0, 0, 0, 0) 
+    border 0 
+    
+
+// Tab - Nav
+// -------------------------------------------------- 
+
+.tab-nav  
+  border $gray-light solid 1px 
+  cursor pointer 
+  font-size 1.4rem 
+  display inline-block 
+  padding ($space / 2) $space 
+  margin-right $space 
+ 
+.tab-open
+.tab-nav:hover,
+.tab-open:checked ~ .tab-nav  
+  background-color $gray-lighter 
+ 
+
+// Tab - Container
+// -------------------------------------------------- 
+
+.tab-inner  
+  opacity 0
+  margin-top $space 
+  position absolute  
+  left 0 
+  transition opacity .1s 
+  visibility hidden 
+ 
+
+.tab-open:focus:checked ~ .tab-nav 
+  outline thin dotted
+ 
+
+.tab-open:checked ~ .tab-inner 
+  opacity 100 
+  visibility visible 
+  transition opacity 0.6 ease  
+ 

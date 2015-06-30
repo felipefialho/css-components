@@ -1,0 +1,31 @@
+//
+// Nav List 
+// ===================================================
+
+.navbar-list   
+  margin-top $space 
+
+  @media (max-width $screen-xs-min)  
+    margin-bottom $space 
+    
+  @media (min-width $screen-sm-min)  
+    float right 
+    width 25% 
+   
+  @media (min-width $screen-lg-min)  
+    position fixed  
+    top ($space * 2)  
+    right $space 
+    
+ 
+
+.nav-list  
+  @extends $list-unstyled 
+  
+  li 
+    margin-bottom ($space / 2) 
+   
+  .btn  
+    display block   
+   
+ 
