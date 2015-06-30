@@ -26,7 +26,7 @@ bower install css-components
 
 Please read this [Coding Style](https://github.com/LFeh/coding-style/) for [Issues](https://github.com/LFeh/css-components/issues), pull requests and coding standards.
 
-All changes must be made in `/dev` folder. The CSS should be modified using the **LESS** preprocessor.
+All changes must be made in `/dev` folder. The CSS should be modified using the [Stylus](https://learnboost.github.io/stylus/) preprocessor.
 
 ### Getting Started
 
