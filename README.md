@@ -9,7 +9,7 @@ A set of common UI Components using the power of CSS and without Javascript.
 Install via [Bower](http://bower.io/) or
 [download the zip](http://www.felipefialho.com/css-components/build/css-components.zip)
 
-```
+```bash
 bower install css-components
 ```
 
@@ -47,7 +47,7 @@ npm install
 
 ```bash
 
-# For start the server, watching your .less files changes and compile CSS
+# For start the server, watching your .styl files changes and compile CSS
 grunt w
 
 ```
