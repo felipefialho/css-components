@@ -1,7 +1,7 @@
 ![Pure CSS Components Logo](logo-pcc.jpg "Pure CSS Components")
 
 [![license](https://img.shields.io/github/license/LFeh/css-components.svg)](./license.md)
-[![GitHub contributors](https://img.shields.io/github/contributors/LFeh/css-components.svg)](https://github.com/LFeh/frontend-challenges/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/LFeh/css-components.svg)](https://github.com/LFeh/css-components/graphs/contributors)
 
 A set of common UI Components using the power of CSS and without Javascript.
 
