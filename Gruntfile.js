@@ -1,136 +1,142 @@
+//
+// Start modules
+// ======================================= 
 module.exports = function( grunt ) {
 
+
+// Grunt Time
+// ---------------------------------
+require('time-grunt')(grunt);
+
 // Load all tasks
-require('load-grunt-tasks')(grunt);
+// ---------------------------------
+require('jit-grunt')(grunt);
 
 // Paths
+// ---------------------------------
 var PathConfig = {
-  dev: 'dev/',
+  dev: 'dev',
   dist: '',
-  build: 'build/'
+  build: 'build'
 };
 
 // Grunt config
+// ---------------------------------
 grunt.initConfig({
 
   // Config path
   config: PathConfig,
 
   // Clean files
-  clean: {  
-    dist: {
-      src: [ '<%= config.dist %>assets/'],
-    },
+  clean: { 
     build: {
-      src: ['<%= config.build %>']
+      src: ['<%= config.build %>/']
     },
     cleanzip: {
       src: [
-        '<%= config.build %>*',
-        '!<%= config.build %>*.zip'
+        '<%= config.build %>/**/stylus/',
+        '!<%= config.build %>/*.zip'
       ]
     }
   },
 
   // Copy files
   copy: { 
-    dist: {
-      files: [
-        {
-          expand: true,
-          dot: true,
-          cwd: '<%= config.dev %>assets/',
-          src: [
-            '**', 
-            '!css/less/**',
-          ],
-          dest: '<%= config.dist %>assets/'
-        }
-      ]
-    },
     build: {
       files: [
         {
           expand: true,
           flatten: true,
-          src: [
-            '<%= config.dev %>**/mixins.less',
-            '<%= config.dev %>**/variables.less',
-            '<%= config.dev %>**/carousel.less'
+          src: [ 
+            '<%= config.dev %>/**/variables.styl',
+            '<%= config.dev %>/**/helpers.styl',
+            '<%= config.dev %>/**/carousel.styl'
           ],
-          dest: '<%= config.build %>/carousel/less/',
+          dest: '<%= config.build %>/carousel/stylus/',
           filter: 'isFile'
         },
         {
           expand: true,
           flatten: true,
-          src: [
-            '<%= config.dev %>**/mixins.less',
-            '<%= config.dev %>**/variables.less',
-            '<%= config.dev %>**/collapse.less'
+          src: [ 
+            '<%= config.dev %>/**/variables.styl',
+            '<%= config.dev %>/**/helpers.styl',
+            '<%= config.dev %>/**/collapse.styl'
           ],
-          dest: '<%= config.build %>/collapse/less/',
+          dest: '<%= config.build %>/collapse/stylus/',
           filter: 'isFile'
         },
         {
           expand: true,
           flatten: true,
-          src: [
-            '<%= config.dev %>**/mixins.less',
-            '<%= config.dev %>**/variables.less',
-            '<%= config.dev %>**/dropdown.less'
+          src: [ 
+            '<%= config.dev %>/**/variables.styl',
+            '<%= config.dev %>/**/helpers.styl',
+            '<%= config.dev %>/**/dropdown.styl'
           ],
-          dest: '<%= config.build %>/dropdown/less/',
+          dest: '<%= config.build %>/dropdown/stylus/',
           filter: 'isFile'
         },
         {
           expand: true,
           flatten: true,
-          src: [
-            '<%= config.dev %>**/mixins.less',
-            '<%= config.dev %>**/variables.less',
-            '<%= config.dev %>**/modal.less'
+          src: [ 
+            '<%= config.dev %>/**/variables.styl',
+            '<%= config.dev %>/**/helpers.styl',
+            '<%= config.dev %>/**/modal.styl'
           ],
-          dest: '<%= config.build %>/modal/less/',
+          dest: '<%= config.build %>/modal/stylus/',
           filter: 'isFile'
         },
         {
           expand: true,
           flatten: true,
-          src: [
-            '<%= config.dev %>**/mixins.less',
-            '<%= config.dev %>**/variables.less',
-            '<%= config.dev %>**/tab.less'
+          src: [ 
+            '<%= config.dev %>/**/variables.styl',
+            '<%= config.dev %>/**/helpers.styl',
+            '<%= config.dev %>/**/tab.styl'
           ],
-          dest: '<%= config.build %>/tab/less/',
+          dest: '<%= config.build %>/tab/stylus/',
+          filter: 'isFile'
+        },
+        {
+          expand: true,
+          flatten: true,
+          src: [ 
+            '<%= config.dev %>/**/variables.styl',
+            '<%= config.dev %>/**/helpers.styl',
+            '<%= config.dev %>/**/tooltip.styl'
+          ],
+          dest: '<%= config.build %>/tooltip/stylus/',
           filter: 'isFile'
         }
       ]
     },
   },
 
-  // Less
-  less: {
+  // Stylus
+  stylus: {
     dist: {
       options: {
         compress: true
       },
       files: {
-        '<%= config.dist %>assets/css/style.css': '<%= config.dev %>assets/css/less/style.less'
+        '<%= config.dist %>/assets/css/style.css': '<%= config.dev %>/stylus/style.styl'
       }
     },
     build: {
       files: {
-        '<%= config.build %>carousel/carousel.css': '<%= config.dev %>**/_carousel-style.less',
-        '<%= config.build %>collapse/collapse.css': '<%= config.dev %>**/_collapse-style.less',
-        '<%= config.build %>dropdown/dropdown.css': '<%= config.dev %>**/_dropdown-style.less',
-        '<%= config.build %>modal/modal.css': '<%= config.dev %>**/_modal-style.less',
-        '<%= config.build %>tab/tab.css': '<%= config.dev %>**/_tab-style.less',
+        '<%= config.build %>/carousel/carousel.css': '<%= config.dev %>/**/_carousel-style.styl',
+        '<%= config.build %>/collapse/collapse.css': '<%= config.dev %>/**/_collapse-style.styl',
+        '<%= config.build %>/dropdown/dropdown.css': '<%= config.dev %>/**/_dropdown-style.styl',
+        '<%= config.build %>/modal/modal.css': '<%= config.dev %>/**/_modal-style.styl',
+        '<%= config.build %>/tab/tab.css': '<%= config.dev %>/**/_tab-style.styl',
+        '<%= config.build %>/tooltip/tooltip.css': '<%= config.dev %>/**/_tooltip-style.styl'
       }
     },
     dev: {
       files: {
-        '<%= config.dev %>assets/css/style.css': '<%= config.dev %>assets/css/less/style.less'
+        '<%= config.dev %>/assets/css/style.css': '<%= config.dev %>/stylus/style.styl'
       }
     }
   },
@@ -144,7 +150,7 @@ grunt.initConfig({
       },
       files: [{
         expand: true,
-        cwd: '<%= config.dev %>',
+        cwd: '<%= config.dev %>/',
         src: ['*.html','**/*.html'],
         dest: '<%= config.dist %>',
       }],
@@ -157,30 +163,30 @@ grunt.initConfig({
         debounceDelay: 500,
         livereload: true
     },
-    less: {
+    styl: {
       files : [
-        '<%= config.dev %>**/*.less'
+        '<%= config.dev %>/**/*.styl'
       ],
-      tasks : ['less:dev']
+      tasks : ['stylus:dev']
     }
   },
 
   // Sync
-  browser_sync: {
-    files: {
+  browserSync: {
+    bsFiles: {
       src : [
-        '<%= config.dev %>**/*.css',
-        '<%= config.dev %>**/*.jpg',
-        '<%= config.dev %>**/*.png',
-        '<%= config.dev %>**/*.js',
-        '<%= config.dev %>*.html'
+        '<%= config.dev %>/**/*.css',
+        '<%= config.dev %>/**/*.jpg',
+        '<%= config.dev %>/**/*.png',
+        '<%= config.dev %>/**/*.js',
+        '<%= config.dev %>/*.html'
       ]
     },
     options: {
       watchTask: true,
       host : '',
       server: {
-        baseDir: '<%= config.dev %>'
+        baseDir: '<%= config.dev %>/'
       },
       ghostMode: {
         scroll: true,
@@ -194,82 +200,95 @@ grunt.initConfig({
   compress: {
     carousel: {
       options: {
-        archive: '<%= config.build %>carousel.zip'
+        archive: '<%= config.build %>/carousel.zip'
       },
       files: [
         {
           expand: true,
-          cwd: '<%= config.build %>',
+          cwd: '<%= config.build %>/',
           src: ['carousel/**']
         }
       ]
     },
     collapse: {
       options: {
-        archive: '<%= config.build %>collapse.zip'
+        archive: '<%= config.build %>/collapse.zip'
       },
       files: [
         {
           expand: true,
-          cwd: '<%= config.build %>',
+          cwd: '<%= config.build %>/',
           src: ['collapse/**']
         }
       ]
     },
     dropdown: {
       options: {
-        archive: '<%= config.build %>dropdown.zip'
+        archive: '<%= config.build %>/dropdown.zip'
       },
       files: [
         {
           expand: true,
-          cwd: '<%= config.build %>',
+          cwd: '<%= config.build %>/',
           src: ['dropdown/**']
         }
       ]
     },
     modal: {
       options: {
-        archive: '<%= config.build %>modal.zip'
+        archive: '<%= config.build %>/modal.zip'
       },
       files: [
         {
           expand: true,
-          cwd: '<%= config.build %>',
+          cwd: '<%= config.build %>/',
           src: ['modal/**']
         }
       ]
     },
     tab: {
       options: {
-        archive: '<%= config.build %>tab.zip'
+        archive: '<%= config.build %>/tab.zip'
       },
       files: [
         {
           expand: true,
-          cwd: '<%= config.build %>',
+          cwd: '<%= config.build %>/',
           src: ['tab/**']
+        }
+      ]
+    },
+    tooltip: {
+      options: {
+        archive: '<%= config.build %>/tooltip.zip'
+      },
+      files: [
+        {
+          expand: true,
+          cwd: '<%= config.build %>/',
+          src: ['tooltip/**']
         }
       ]
     },
     all: {
       options: {
-        archive: '<%= config.build %>css-components.zip'
+        archive: '<%= config.build %>/css-components.zip'
       },
       files: [
         {
           expand: true,
-          cwd: '<%= config.build %>',
+          cwd: '<%= config.build %>/',
           src: [
             'carousel/**',
             'collapse/**',
             'dropdown/**',
             'modal/**',
-            'tab/**'
+            'tab/**',
+            'tooltip/**'
           ]
         }
       ]
-    } 
+    }
   }
 
 });
@@ -278,13 +297,13 @@ grunt.initConfig({
 grunt.registerTask( 'test', ['jshint'] );
 
 // Dist
-grunt.registerTask( 'dist', ['clean:dist', 'copy:dist', 'less:dist', 'htmlmin:dist'] );
+grunt.registerTask( 'dist', ['stylus:dist', 'htmlmin:dist'] );
 
 // Build
-grunt.registerTask( 'build', ['clean:build', 'copy:build', 'less:build', 'compress', 'clean:cleanzip'] );
+grunt.registerTask( 'build', ['clean:build', 'copy:build', 'stylus:build', 'compress', 'clean:cleanzip'] );
 
 // Watch
-grunt.registerTask( 'w', ['browser_sync', 'watch' ] );
+grunt.registerTask( 'w', ['browserSync', 'watch' ] );
 
 
 };
