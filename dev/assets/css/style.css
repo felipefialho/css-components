@@ -623,3 +623,88 @@ code {
   opacity: 100;
   visibility: visible;
 }
+
+/* CSS FOR THE FLOATING BUTTON */
+
+.radial {
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: #ff4081;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.fab {    
+  border: none;
+  z-index: 10;    
+  color: white;
+  background-color: #001900;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.radial:hover .fab{
+  background-color: #f30053;
+  height: 400px;
+  width: 400px;
+  right: -125px;
+  bottom: -125px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15), 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#plus {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin-top: 7px;
+}
+
+#fa-1, #fa-2, #fa-3 {
+  position: fixed;
+  background: transparent;
+  border: none;
+  right: 60px;
+  bottom: 57px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #fff;
+}
+#fa-1:hover, #fa-2:hover, #fa-3:hover {
+  tansition-delay: 0s;
+  color: #ff8db3;
+}
+
+.radial:hover #plus {
+  -webkit-transform: rotateZ(135deg) translate(-1px, 3px);
+          transform: rotateZ(135deg) translate(-1px, 3px);
+}
+.radial:hover #fa-1 {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: translate(-110px, 10px);
+          transform: translate(-110px, 10px);
+    z-index:25;
+}
+.radial:hover #fa-2 {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: translate(-85px, -85px);
+          transform: translate(-85px, -85px);
+    z-index:25;
+}
+.radial:hover #fa-3 {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transform: translate(10px, -110px);
+          transform: translate(10px, -110px);
+    z-index:25;
+}
