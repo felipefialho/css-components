@@ -30,22 +30,21 @@ bower install css-components
 
 ## Browser Support
 
-|   |Chrome   |Firefox   |Internet Explorer   |Opera   |Safari   |Edge   |
-|---|---|---|---|---|---|---|---
-|Android   |Yes   |Yes   |N/A   |Untested   |N/A   |N/A   |
-|iOS   |No   |N/A   |N/A   |Untested   |Yes   |N/A   |
-|Mac OS X   |Yes   |Yes   |N/A   |Untested   |Yes   |N/A   |
-|Windows   |Yes   | Yes   |Yes (9+)   |Untested   |Yes   |Yes   |
+Chrome | Firefox | Internet Explorer | Opera | Safari | Edge |
+|---|---|---|---|---|---|
+Android | Yes | Yes | N/A | Untested | N/A | N/A |
+iOS | No | N/A | N/A | Untested | Yes |N/A |
+Mac OS X | Yes | Yes | N/A | Untested |Yes |N/A |
+Windows   | Yes | Yes | Yes (9+) | Untested | Yes | Yes |
 
-
-|   |Internet Explorer   |
+| |Internet Explorer   |
 |---|---|
-|Carousel   |9+ *   |
-|Collapse   |9+ *   |
-|Dropdown   |9+ *   |
-|Modal   |9+ *   |
-|Tab   |9+ *   |
-|Tooltip   |8+ * **   |
+| Carousel |9+ * |
+| Collapse |9+ * |
+| Dropdown |9+ * |
+| Modal |9+ * |
+| Tab | 9+ * |
+| Tooltip | 8+ * ** |
 
 \* [CSS3 transitions](http://caniuse.com/#search=css%20transition) are not supported in IE8 and below.
 ** Janky z-index. See [tooltip on right example](http://www.felipefialho.com/css-components/#component-tooltip).
