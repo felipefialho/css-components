@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "homepage": "http://www.felipefialho.com/css-components/",
   "authors": [
-    "LFeh <hi@felipefialho.com>"
+    "felipefialho <hi@felipefialho.com>"
   ],
   "description": "A set of common UI Components using the power of CSS and without Javascript.",
   "main": [

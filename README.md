@@ -1,7 +1,7 @@
 ![Pure CSS Components Logo](logo-pcc.jpg "Pure CSS Components")
 
-[![license](https://img.shields.io/github/license/LFeh/css-components.svg)](./license.md)
-[![GitHub contributors](https://img.shields.io/github/contributors/LFeh/css-components.svg)](https://github.com/LFeh/css-components/graphs/contributors)
+[![license](https://img.shields.io/github/license/felipefialho/css-components.svg)](./license.md)
+[![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/css-components.svg)](https://github.com/felipefialho/css-components/graphs/contributors)
 
 A set of common UI Components using the power of CSS and without Javascript.
 
@@ -61,7 +61,7 @@ Even though real hovering isn't possible on most touchscreens, most mobile brows
 
 ## Contributing
 
-Please read this [Coding Style](https://github.com/LFeh/coding-style/) for [Issues](https://github.com/LFeh/css-components/issues), pull requests and coding standards.
+Please read this [Coding Style](https://github.com/felipefialho/coding-style/) for [Issues](https://github.com/felipefialho/css-components/issues), pull requests and coding standards.
 
 All changes must be made in `/dev` folder. The CSS should be modified using the [Stylus](https://learnboost.github.io/stylus/) preprocessor.
 
