@@ -2,11 +2,15 @@
   "name": "css-components",
   "version": "2.0.0",
   "title": "Pure CSS Components",
-  "homepage": "",
   "author": {
-    "name": "Luiz Felipe Tartarotti Fialho",
+    "name": "Felipe Fialho",
     "email": "hi@felipefialho.com",
     "url": "http://www.felipefialho.com/css-components/"
+  },
+  "scripts": {
+    "start": "grunt w",
+    "build": "grunt build",
+    "dist": "grunt dist"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
