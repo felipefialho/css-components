@@ -1,5 +1,6 @@
 ![Pure CSS Components Logo](logo-pcc.jpg "Pure CSS Components")
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/566334bb-2cd1-4548-91b0-b2869a85158b/deploy-status)](https://app.netlify.com/sites/css-components/deploys)
 [![license](https://img.shields.io/github/license/felipefialho/css-components.svg)](./license.md)
 [![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/css-components.svg)](https://github.com/felipefialho/css-components/graphs/contributors)
 
