@@ -16,7 +16,7 @@ require('jit-grunt')(grunt);
 // ---------------------------------
 var PathConfig = {
   dev: 'dev',
-  dist: '',
+  dist: 'dist',
   build: 'build'
 };
 
