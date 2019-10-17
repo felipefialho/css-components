@@ -34,8 +34,8 @@ bower install css-components
 Chrome | Firefox | Internet Explorer | Opera | Safari | Edge |
 |---|---|---|---|---|---|
 Android | Yes | Yes | N/A | Untested | N/A | N/A |
-iOS | No | N/A | N/A | Untested | Yes |N/A |
-Mac OS X | Yes | Yes | N/A | Untested |Yes |N/A |
+iOS | No | N/A | N/A | Yes | Yes |N/A |
+Mac OS X | Yes | Yes | N/A | Yes |Yes |N/A |
 Windows   | Yes | Yes | Yes (9+) | Untested | Yes | Yes |
 
 | |Internet Explorer   |
