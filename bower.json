@@ -1,10 +1,8 @@
 {
   "name": "css-components",
   "version": "2.0.0",
-  "homepage": "http://www.felipefialho.com/css-components/",
-  "authors": [
-    "felipefialho <hi@felipefialho.com>"
-  ],
+  "homepage": "https://css-components.felipefialho.com",
+  "authors": ["felipefialho <hi@felipefialho.com>"],
   "description": "A set of common UI Components using the power of CSS and without Javascript.",
   "main": [
     "build/carousel/carousel.css",
@@ -14,15 +12,7 @@
     "build/tab/tab.css",
     "build/tooltip/tooltip.css"
   ],
-  "moduleType": [
-    "node"
-  ],
-  "license": "http://felipefialho.mit-license.org/",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "moduleType": ["node"],
+  "license": "MIT",
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"]
 }
