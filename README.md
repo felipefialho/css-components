@@ -10,7 +10,7 @@ A set of common UI Components using the power of CSS and without Javascript.
 
 ## Install
 
-Install via [Bower](http://bower.io/) or
+Install via [Bower](https://bower.io/) or
 [download the zip](https://css-components.felipefialho.com/build/css-components.zip)
 
 ```bash
@@ -44,15 +44,15 @@ bower install css-components
 | Tab      | 9+ \*             |
 | Tooltip  | 8+ \* \*\*        |
 
-\* [CSS3 transitions](http://caniuse.com/#search=css%20transition) are not supported in IE8 and below.
+\* [CSS3 transitions](https://caniuse.com/#search=css%20transition) are not supported in IE8 and below.
 \*\* Janky z-index. See [tooltip on right example](https://css-components.felipefialho.com/#component-tooltip).
 
 **Notes:**
 
 - Most tests performed with Browserstack.
-- Components that perform action on hover may not work on touchscreens eg. _dropdown with hover_. Oddly _tooltip_ does work. Bootstrap mentions this, “[Sticky :hover/:focus on mobile.](http://getbootstrap.com/getting-started/#support-sticky-hover-mobile)
+- Components that perform action on hover may not work on touchscreens eg. _dropdown with hover_. Oddly _tooltip_ does work. Bootstrap mentions this, “[Sticky :hover/:focus on mobile.](https://getbootstrap.com/getting-started/#support-sticky-hover-mobile)
   Even though real hovering isn't possible on most touchscreens, most mobile browsers emulate hovering support and make :hover ‘sticky’. In other words, :hover styles start applying after tapping an element and only stop applying after the user taps some other element.”
-- Probably the main reason why the components fail in earlier versions of IE is because they use [advanced CSS selectors](http://caniuse.com/#search=CSS3%20selectors) which aren’t supported. It may be possible to patch this with the use of something like [selectivizr](http://selectivizr.com). This may defeat the purpose of using these javascript free components but on the other hand it may be acceptable for older IE.
+- Probably the main reason why the components fail in earlier versions of IE is because they use [advanced CSS selectors](https://caniuse.com/#search=CSS3%20selectors) which aren’t supported. It may be possible to patch this with the use of something like [selectivizr](https://selectivizr.com). This may defeat the purpose of using these javascript free components but on the other hand it may be acceptable for older IE.
 - The components do not fail gracefully. In most cases some elements are visible but interaction will not have any effect. The _carousel_ component won't show anything.
 - Some layout issues with _tab_ when wrapping on smaller screen sizes.
 - Weird flash when _carousel_ loops around to first slide.
@@ -106,4 +106,4 @@ https://<your-username>.github.io/css-components/
 
 ## License
 
-[MIT License](http://felipefialho.mit-license.org/) © Felipe Fialho
+MIT License © Felipe Fialho
