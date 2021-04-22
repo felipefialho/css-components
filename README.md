@@ -1,10 +1,23 @@
+
+## ⚠️ Disclaimer
+
+This is an old project, when I made it in 2014 I was tried use some possibilities about HTML/CSS and I loved the result. So I know a lot of people that used these components in production projects (I've used a lot of times).
+
+But the things changed in the nexts years and there are better choices to made these components.
+
+So I just maintain this project as an experimental thing and I probability won't make changes anymore.
+
+But you is free to use it as you want 😁❤️
+
+___
+
 ![Pure CSS Components Logo](logo-pcc.jpg "Pure CSS Components")
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/566334bb-2cd1-4548-91b0-b2869a85158b/deploy-status)](https://app.netlify.com/sites/css-components/deploys)
 [![license](https://img.shields.io/github/license/felipefialho/css-components.svg)](./license.md)
 [![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/css-components.svg)](https://github.com/felipefialho/css-components/graphs/contributors)
 
-A set of common UI Components using the power of CSS and without Javascript.
+> A set of common UI Components using the power of CSS and without Javascript
 
 [View the project](https://css-components.felipefialho.com)
 
@@ -28,21 +41,13 @@ bower install css-components
 
 ## Browser Support
 
-| Chrome   | Firefox | Internet Explorer | Opera    | Safari   | Edge |
-| -------- | ------- | ----------------- | -------- | -------- | ---- | --- |
-| Android  | Yes     | Yes               | N/A      | Untested | N/A  | N/A |
-| iOS      | No      | N/A               | N/A      | Yes      | Yes  | N/A |
-| Mac OS X | Yes     | Yes               | N/A      | Yes      | Yes  | N/A |
-| Windows  | Yes     | Yes               | Yes (9+) | Untested | Yes  | Yes |
+|          | Chrome  | Firefox  | Edge     | Safari 
+| -------- | ------- | -------- | -------- | ---- |
+| Android  | Yes     | Yes      | Yes      | Yes  | 
+| iOS      | Yes     | Yes      | Yes      | Yes  | 
+| Mac OS X | Yes     | Yes      | Yes      | Yes  | 
+| Windows  | Yes     | Yes      | Yes.     | Yes  |
 
-|          | Internet Explorer |
-| -------- | ----------------- |
-| Carousel | 9+ \*             |
-| Collapse | 9+ \*             |
-| Dropdown | 9+ \*             |
-| Modal    | 9+ \*             |
-| Tab      | 9+ \*             |
-| Tooltip  | 8+ \* \*\*        |
 
 \* [CSS3 transitions](https://caniuse.com/#search=css%20transition) are not supported in IE8 and below.
 \*\* Janky z-index. See [tooltip on right example](https://css-components.felipefialho.com/#component-tooltip).
