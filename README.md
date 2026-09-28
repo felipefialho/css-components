@@ -83,4 +83,4 @@ If this project helped you, back then or today, you can [sponsor my work on GitH
 
 ## License
 
-MIT License © Felipe Fialho
+MIT License © [Felipe Fialho](https://www.linkedin.com/in/felipefialho/)
