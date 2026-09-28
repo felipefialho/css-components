@@ -1,6 +1,8 @@
 ---
+import BornExhibit from '../components/BornExhibit.astro';
 import Exhibit from '../components/Exhibit.astro';
 import { baseCss, exhibits } from '../exhibits';
+import { bornExhibits } from '../exhibits/born';
 import Base from '../layouts/Base.astro';
 import { demoScope, scopeCss } from '../lib/demo';
 
@@ -9,6 +11,7 @@ const demoStyles = exhibits
     scopeCss(`${baseCss.then}\n${then.css}`, demoScope('then', name)),
     scopeCss(`${baseCss.now}\n${now.css}`, demoScope('now', name)),
   ])
+  .concat(bornExhibits.map(({ name, css }) => scopeCss(`${baseCss.now}\n${css}`, demoScope('born', name))))
   .map((css) => `<style>${css}</style>`)
   .join('\n');
 ---
@@ -43,14 +46,48 @@ const demoStyles = exhibits
     <nav class="intro__index" aria-label="Components">
       <ul>
         {exhibits.map(({ name, then }) => <li><a href={`#${name}`}>{then.meta.title}</a></li>)}
+        {bornExhibits.length > 0 && <li><a href="#born-native">Born native</a></li>}
       </ul>
     </nav>
   </section>
 
   {exhibits.map((exhibit) => <Exhibit exhibit={exhibit} />)}
+
+  {
+    bornExhibits.length > 0 && (
+      <section class="born-native" id="born-native" aria-labelledby="born-native-title">
+        <h2 class="born-native__title" id="born-native-title">Born native</h2>
+        <p class="born-native__intro">
+          These have no 2014 version. No hidden input could fake them, and until recently each one meant a script. Now
+          they are HTML and CSS. Some features are new, so every exhibit lists where it works today.
+        </p>
+        {bornExhibits.map((exhibit) => <BornExhibit exhibit={exhibit} />)}
+      </section>
+    )
+  }
 </Base>
 
 <style>
+  .born-native {
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--rule);
+  }
+
+  .born-native__title {
+    font-size: var(--step-4);
+    font-variation-settings: 'wdth' 75;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    text-transform: lowercase;
+  }
+
+  .born-native__intro {
+    max-width: var(--measure);
+    margin-top: var(--space-3);
+  }
+
   .intro {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);

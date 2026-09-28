@@ -1,4 +1,4 @@
-export type Era = 'then' | 'now';
+export type Era = 'then' | 'now' | 'born';
 
 export const demoScope = (era: Era, name: string): string => `${era}-${name}`;
 

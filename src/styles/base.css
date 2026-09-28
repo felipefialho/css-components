@@ -79,3 +79,10 @@ img {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* Cross-document view transitions between pages (used by the gallery exhibit) */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}

@@ -14,3 +14,6 @@ export type NowMeta = {
   // Web features used, each with its baseline/support status
   features: { name: string; support: string; url: string }[];
 };
+
+// Components with no 2014 version, built natively from the start
+export type BornMeta = NowMeta & { title: string };
