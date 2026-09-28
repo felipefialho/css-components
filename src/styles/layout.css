@@ -19,8 +19,7 @@
 .site-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
+  align-items: center;
   gap: var(--space-1) var(--space-3);
   max-width: var(--page);
   margin: 0 auto;
@@ -38,6 +37,7 @@
 
 .site-header__nav {
   display: flex;
+  margin-left: auto;
   align-items: center;
   gap: var(--space-3);
 
@@ -83,7 +83,10 @@
     height: 0.8em;
     border-radius: 50%;
     background: var(--ink);
-    transition: translate 0.2s ease;
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: translate 0.2s ease;
+    }
   }
 }
 

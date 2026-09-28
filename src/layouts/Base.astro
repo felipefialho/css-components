@@ -26,6 +26,7 @@ const isHome = Astro.url.pathname === '/';
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
     <script is:inline>
       /* eslint-disable -- vendor snippet, kept verbatim */
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -34,7 +35,6 @@ const isHome = Astro.url.pathname === '/';
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-N5WTHL83');
     </script>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
@@ -46,8 +46,10 @@ const isHome = Astro.url.pathname === '/';
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteTitle} />
     <meta property="og:image" content={image} />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image:alt" content="Pure CSS Components logo" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@felipefialho_" />
     <meta name="twitter:creator" content="@felipefialho_" />
     <slot name="head" />
@@ -62,12 +64,12 @@ const isHome = Astro.url.pathname === '/';
       <nav class="site-header__nav" aria-label="Main">
         <a href="/story/" aria-current={Astro.url.pathname === '/story/' ? 'page' : undefined}>The story</a>
         <a href="https://github.com/felipefialho/css-components">GitHub</a>
-        <label class="lights">
-          <input type="checkbox" id="lights" class="lights__input" />
-          <span class="lights__switch" aria-hidden="true"></span>
-          Lights
-        </label>
       </nav>
+      <label class="lights">
+        <input type="checkbox" role="switch" id="lights" class="lights__input" />
+        <span class="lights__switch" aria-hidden="true"></span>
+        <span><span class="visually-hidden">Invert </span>Lights</span>
+      </label>
     </header>
     <main id="main">
       <slot />
