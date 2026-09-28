@@ -1,0 +1,47 @@
+---
+import { adsense } from '../lib/ads';
+
+const { client, slot } = adsense;
+---
+
+{
+  slot && (
+    <aside class="ad" aria-label="Advertisement">
+      <p class="ad__label">
+        Advertisement. The components use zero JavaScript; this ad does. It keeps the archive online.
+      </p>
+      <div class="ad__frame">
+        <ins
+          class="adsbygoogle"
+          style="display:block;height:100px"
+          data-ad-client={client}
+          data-ad-slot={slot}
+          data-ad-format="horizontal"
+          data-full-width-responsive="false"
+        />
+      </div>
+      <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}`} crossorigin="anonymous" />
+      <script is:inline>(window.adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </aside>
+  )
+}
+
+<style>
+  .ad {
+    margin-top: var(--space-6);
+    font-family: var(--font-display);
+    font-size: var(--step-minus-1);
+  }
+
+  .ad__label {
+    color: var(--ink-soft);
+  }
+
+  /* Reserved height so the ad never shifts the page */
+  .ad__frame {
+    height: 100px;
+    margin-top: var(--space-1);
+    overflow: hidden;
+    border: 1px dashed var(--rule);
+  }
+</style>

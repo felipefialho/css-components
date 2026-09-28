@@ -1,4 +1,5 @@
 ---
+import AdSlot from '../components/AdSlot.astro';
 import BornExhibit from '../components/BornExhibit.astro';
 import Exhibit from '../components/Exhibit.astro';
 import { baseCss, exhibits } from '../exhibits';
@@ -52,6 +53,8 @@ const demoStyles = exhibits
   </section>
 
   {exhibits.map((exhibit) => <Exhibit exhibit={exhibit} />)}
+
+  <AdSlot />
 
   {
     bornExhibits.length > 0 && (

@@ -36,3 +36,7 @@ The original code is kept as it was, working, for history. If you are building s
 
 - <a href="https://felipefialho.com/blog/e-possivel-utilizar-componentes-desenvolvidos-apenas-com-css/" hreflang="pt-BR" lang="pt-BR">É possível utilizar componentes desenvolvidos apenas com CSS?</a>, the 2014 post that explains each component step by step
 - <a href="https://felipefialho.com/blog/html-criando-um-componente-de-collapse-nativo-com-as-tags-details-e-summary/" hreflang="pt-BR" lang="pt-BR">Criando um componente de collapse nativo com as tags details e summary</a>
+
+## Support
+
+This archive is kept online on my own time. If it helped you back then, or today, you can [sponsor my work on GitHub](https://github.com/sponsors/felipefialho).

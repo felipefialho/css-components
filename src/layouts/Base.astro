@@ -27,14 +27,6 @@ const isHome = Astro.url.pathname === '/';
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <script is:inline>
-      /* eslint-disable -- vendor snippet, kept verbatim */
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-N5WTHL83');
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
@@ -57,9 +49,6 @@ const isHome = Astro.url.pathname === '/';
     <slot name="head" />
   </head>
   <body>
-    <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5WTHL83" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="site-header__name" href="/" aria-current={isHome ? 'page' : undefined}>Pure CSS Components</a>
@@ -80,6 +69,9 @@ const isHome = Astro.url.pathname === '/';
       <p>
         Made by <a href="https://felipefialho.com">Felipe Fialho</a> in 2014, preserved in 2026.
         Released under the <a href="https://github.com/felipefialho/css-components/blob/main/license.md">MIT License</a>.
+      </p>
+      <p>
+        If it helped you back then, or today, you can <a href="https://github.com/sponsors/felipefialho">sponsor my work on GitHub</a>.
       </p>
     </footer>
   </body>
