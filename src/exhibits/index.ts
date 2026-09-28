@@ -12,6 +12,7 @@ export type Exhibit = {
   now: Demo & { meta: NowMeta };
 };
 
+// Only repo files feed the demos rendered with set:html; never point this at external content
 const raw = import.meta.glob<string>(['./*/*.html', './*/*.css', './*-base.css'], {
   query: '?raw',
   import: 'default',
@@ -33,8 +34,8 @@ const readMeta = <T extends ThenMeta | NowMeta>(path: string) => {
 
 // Shared styles each era's demos need, prepended inside every scoped stylesheet
 export const baseCss = {
-  then: raw['./then-base.css'] ?? '',
-  now: raw['./now-base.css'] ?? '',
+  then: read('./then-base.css'),
+  now: read('./now-base.css'),
 };
 
 export const exhibits: Exhibit[] = exhibitNames.map((name) => ({
