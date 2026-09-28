@@ -1,0 +1,35 @@
+{
+  "technique": "Scroll snap + ::scroll-button() + ::scroll-marker",
+  "notes": [
+    "The slides are just a list in a horizontal scroller with scroll-snap, so touch swipe, trackpads, the scrollbar and keyboard scrolling all work in every browser, and each slide snaps into place.",
+    "Where supported, the browser generates the controls: `::scroll-button(left)` and `::scroll-button(right)` are real, focusable buttons that scroll by one page and disable themselves at the ends, and `scroll-marker-group` builds a row of `::scroll-marker` dots exposed as a tablist, with arrow-key navigation and `:target-current` tracking the visible slide while the user scrolls.",
+    "Unlike the 2014 radios, the state is the scroll position itself, so it never goes out of sync. The one thing lost is wrap-around: the buttons stop at the first and last slide."
+  ],
+  "features": [
+    {
+      "name": "CSS scroll snap",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll_snap"
+    },
+    {
+      "name": "::scroll-button()",
+      "support": "Chromium 135+ (progressive enhancement)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button"
+    },
+    {
+      "name": "::scroll-marker and scroll-marker-group",
+      "support": "Chromium 135+ (progressive enhancement)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker"
+    },
+    {
+      "name": ":target-current",
+      "support": "Chromium 135+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target-current"
+    },
+    {
+      "name": "CSS anchor positioning",
+      "support": "Chrome 125+, Firefox 147+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning"
+    }
+  ]
+}

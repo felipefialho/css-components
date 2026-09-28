@@ -1,0 +1,86 @@
+.tooltips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding-block: 3rem;
+}
+
+.tooltips .button {
+  interest-delay: 200ms 150ms;
+}
+
+.tip-top { anchor-name: --now-tip-top; }
+.tip-right { anchor-name: --now-tip-right; }
+.tip-bottom { anchor-name: --now-tip-bottom; }
+.tip-left { anchor-name: --now-tip-left; }
+
+.tooltip {
+  --gap: 0.5rem;
+
+  inset: auto;
+  margin: 0;
+  padding: 0.375rem 0.625rem;
+  border: 0;
+  border-radius: calc(var(--radius) - 0.125rem);
+  background: light-dark(#18181b, #f4f4f5);
+  color: light-dark(#fafafa, #18181b);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.tooltip-top {
+  position-anchor: --now-tip-top;
+  position-area: top;
+  margin-bottom: var(--gap);
+  position-try-fallbacks: flip-block;
+}
+
+.tooltip-right {
+  position-anchor: --now-tip-right;
+  position-area: right;
+  margin-left: var(--gap);
+  position-try-fallbacks: flip-inline;
+}
+
+.tooltip-bottom {
+  position-anchor: --now-tip-bottom;
+  position-area: bottom;
+  margin-top: var(--gap);
+  position-try-fallbacks: flip-block;
+}
+
+.tooltip-left {
+  position-anchor: --now-tip-left;
+  position-area: left;
+  margin-right: var(--gap);
+  position-try-fallbacks: flip-inline;
+}
+
+/* No interest invokers: show the same popover on hover or keyboard focus */
+@supports not selector(:interest-source) {
+  .button:is(:hover, :focus-visible) + .tooltip {
+    display: block;
+    position: fixed;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tooltip {
+    transition:
+      opacity var(--duration) var(--ease),
+      display var(--duration) allow-discrete,
+      overlay var(--duration) allow-discrete;
+  }
+
+  @starting-style {
+    .tooltip:popover-open {
+      opacity: 0;
+    }
+  }
+
+  .tooltip:not(:popover-open) {
+    opacity: 0;
+  }
+}

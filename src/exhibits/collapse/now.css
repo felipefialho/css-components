@@ -1,0 +1,83 @@
+.collapse {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.collapse details + details {
+  border-block-start: 1px solid var(--line);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Safari still renders its own marker */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Decorative chevron: <summary> already exposes expanded/collapsed */
+summary::after {
+  content: "";
+  flex: none;
+  inline-size: 0.45em;
+  block-size: 0.45em;
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  translate: 0 -25%;
+  rotate: 45deg;
+}
+
+[open] > summary::after {
+  translate: 0 25%;
+  rotate: 225deg;
+}
+
+.panel {
+  padding: 0 1rem 1rem;
+}
+
+.panel > p {
+  margin: 0;
+}
+
+.panel > p + p {
+  margin-block-start: 0.5rem;
+}
+
+/* Animate the native content slot to and from height: auto */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (interpolate-size: allow-keywords) and selector(::details-content) {
+    :scope {
+      interpolate-size: allow-keywords;
+    }
+
+    summary::after {
+      transition: rotate var(--duration) var(--ease), translate var(--duration) var(--ease);
+    }
+
+    details::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        block-size var(--duration) var(--ease),
+        content-visibility var(--duration) allow-discrete;
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+    }
+  }
+}

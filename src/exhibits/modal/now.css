@@ -1,0 +1,83 @@
+.modal {
+  inline-size: min(28rem, 100% - 2rem);
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--surface);
+  color: inherit;
+  box-shadow: var(--shadow);
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 50%);
+}
+
+.modal-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close {
+  padding: 0 0.35em;
+  border: 0;
+  border-radius: var(--radius);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.close:hover {
+  background: var(--surface-muted);
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: end;
+}
+
+/*
+  Enter from @starting-style, exit back to the closed values. display and overlay
+  transition discretely so the dialog stays in the top layer until the fade ends.
+*/
+@media (prefers-reduced-motion: no-preference) {
+  .modal,
+  .modal::backdrop {
+    transition:
+      opacity var(--duration) var(--ease),
+      translate var(--duration) var(--ease),
+      display var(--duration) allow-discrete,
+      overlay var(--duration) allow-discrete;
+    opacity: 0;
+  }
+
+  .modal {
+    translate: 0 1rem;
+  }
+
+  .modal[open],
+  .modal[open]::backdrop {
+    opacity: 1;
+    translate: 0;
+  }
+
+  @starting-style {
+    .modal[open],
+    .modal[open]::backdrop {
+      opacity: 0;
+    }
+
+    .modal[open] {
+      translate: 0 1rem;
+    }
+  }
+}

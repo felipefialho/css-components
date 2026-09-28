@@ -1,0 +1,26 @@
+<button class="button trigger trigger-click" type="button" popovertarget="now-dropdown-click">One Dropdown</button>
+
+<nav id="now-dropdown-click" class="menu" popover aria-label="Dropdown">
+  <ul role="list">
+    <li><a href="#now-dropdown-click">This is nice!</a></li>
+    <li><a href="#now-dropdown-click">Good example</a></li>
+  </ul>
+</nav>
+
+<h3 class="variant">With hover</h3>
+
+<!-- interestfor opens it on hover or focus; the click fallback covers browsers without it -->
+<button
+  class="button trigger trigger-hover"
+  type="button"
+  interestfor="now-dropdown-hover"
+  popovertarget="now-dropdown-hover"
+  popovertargetaction="show"
+>One Dropdown</button>
+
+<nav id="now-dropdown-hover" class="menu menu-hover" popover aria-label="Dropdown with hover">
+  <ul role="list">
+    <li><a href="#now-dropdown-hover">This is nice!</a></li>
+    <li><a href="#now-dropdown-hover">Good example</a></li>
+  </ul>
+</nav>

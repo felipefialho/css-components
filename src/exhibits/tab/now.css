@@ -1,0 +1,73 @@
+/* Baseline look: a plain exclusive accordion, fully usable anywhere */
+.tabs {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.tabs details + details {
+  border-block-start: 1px solid var(--line);
+}
+
+summary {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:focus-visible {
+  outline-offset: -2px;
+}
+
+.panel {
+  padding: 1rem;
+}
+
+/* Tabs layout: dissolve each <details> so its summary and content slot join one grid */
+@supports selector(::details-content) {
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, max-content) 1fr;
+  }
+
+  .tabs details {
+    display: contents;
+  }
+
+  summary {
+    grid-row: 1;
+    border-block-end: 1px solid var(--line);
+    color: color-mix(in srgb, currentcolor 65%, transparent);
+  }
+
+  summary:hover {
+    color: inherit;
+  }
+
+  /* Draw the tab strip line across the empty last column too */
+  .tabs::after {
+    content: "";
+    grid-area: 1 / 4;
+    border-block-end: 1px solid var(--line);
+  }
+
+  [open] > summary {
+    color: inherit;
+    box-shadow: inset 0 -2px var(--accent);
+
+    /* A tab should not close when clicked again */
+    pointer-events: none;
+  }
+
+  details::details-content {
+    grid-area: 2 / 1 / 3 / -1;
+  }
+
+  details:not([open])::details-content {
+    display: none;
+  }
+}

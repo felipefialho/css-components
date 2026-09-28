@@ -1,0 +1,87 @@
+.trigger-click {
+  anchor-name: --now-dropdown-click;
+}
+
+.trigger-hover {
+  anchor-name: --now-dropdown-hover;
+  interest-delay: 150ms 300ms;
+}
+
+.trigger::after {
+  content: "";
+  display: inline-block;
+  inline-size: 0.4em;
+  block-size: 0.4em;
+  margin-inline-start: 0.6em;
+  border: solid currentcolor;
+  border-width: 0 2px 2px 0;
+  vertical-align: 0.2em;
+  rotate: 45deg;
+}
+
+.menu {
+  min-inline-size: 12rem;
+  padding: 0.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  box-shadow: var(--shadow);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: calc(var(--radius) - 0.25rem);
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background: var(--surface-muted);
+}
+
+.menu a:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Without anchor positioning the popover stays centered in the viewport: still usable */
+@supports (anchor-name: --a) {
+  .menu {
+    position-anchor: --now-dropdown-click;
+    position-area: block-end span-inline-end;
+    position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+    inset: auto;
+    margin: 0.375rem 0;
+  }
+
+  .menu-hover {
+    position-anchor: --now-dropdown-hover;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu {
+    transition:
+      opacity var(--duration) var(--ease),
+      display var(--duration) allow-discrete,
+      overlay var(--duration) allow-discrete;
+    opacity: 0;
+  }
+
+  .menu:popover-open {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .menu:popover-open {
+      opacity: 0;
+    }
+  }
+}

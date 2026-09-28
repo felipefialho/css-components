@@ -1,0 +1,35 @@
+{
+  "technique": "<dialog> + invoker commands",
+  "notes": [
+    "A button with `commandfor` and `command=\"show-modal\"` opens the `<dialog>` as a true modal, with no script. The browser puts it in the top layer above everything, makes the rest of the page inert, moves focus inside, closes it on Escape and returns focus to the button that opened it. The 2014 checkbox could do none of that.",
+    "`closedby=\"any\"` adds light dismiss: clicking the `::backdrop` closes the dialog. Where it is not supported yet, the dialog still closes with Escape and its buttons.",
+    "The fade and slide use `@starting-style` for the entry frame and `transition-behavior: allow-discrete` on display and overlay, so the exit animation plays before the dialog leaves the top layer. Reduced-motion users get an instant open and close."
+  ],
+  "features": [
+    {
+      "name": "<dialog>",
+      "support": "Baseline 2022",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"
+    },
+    {
+      "name": "Invoker commands (commandfor, command)",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API"
+    },
+    {
+      "name": "closedby",
+      "support": "Chromium 134+, Firefox 141+ (not in Safari yet)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby"
+    },
+    {
+      "name": "@starting-style",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style"
+    },
+    {
+      "name": "transition-behavior: allow-discrete",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-behavior"
+    }
+  ]
+}

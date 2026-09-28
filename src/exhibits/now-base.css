@@ -1,0 +1,36 @@
+/* Shared tokens: light-dark() follows whatever color-scheme the page sets */
+:scope {
+  --surface: light-dark(#fff, #1c1c1f);
+  --surface-muted: light-dark(#f4f4f5, #27272a);
+  --line: light-dark(#d4d4d8, #3f3f46);
+  --accent: light-dark(#2563eb, #8ab4ff);
+  --shadow: 0 12px 32px -12px light-dark(rgb(0 0 0 / 25%), rgb(0 0 0 / 70%));
+  --radius: 0.5rem;
+  --duration: 0.25s;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.variant {
+  margin-block: 2rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button {
+  padding: 0.5em 1em;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: var(--surface-muted);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}

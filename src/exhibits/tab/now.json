@@ -1,0 +1,30 @@
+{
+  "technique": "Exclusive <details name> laid out as tabs",
+  "notes": [
+    "HTML has no native tabs element, and the ARIA tabs pattern (tablist, arrow-key focus, aria-selected) needs JavaScript. So this version does not pretend to be one: it is a group of `<details>` sharing a name, which the browser keeps exclusive. Each `<summary>` is a real button with an expanded state, sits right before its own content in the DOM, and works with Tab, Enter and Space.",
+    "The tab look is pure layout. Each `<details>` is set to `display: contents` so every `<summary>` joins one grid row, and its `::details-content` slot is placed in the row below. Browsers without `::details-content` keep a plain accordion, which is fully usable.",
+    "Honest trade-offs: screen readers announce disclosure buttons, not tabs; arrow keys do not move between tabs; and a keyboard user can collapse the active tab (mouse clicks on it are ignored). Compared to 2014's hidden radios, whose labels were not focusable at all, it is a real improvement, but a fully spec-compliant tabs widget still needs a few lines of script."
+  ],
+  "features": [
+    {
+      "name": "<details name> (exclusive accordion)",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name"
+    },
+    {
+      "name": "::details-content",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content"
+    },
+    {
+      "name": "display: contents",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display#contents"
+    },
+    {
+      "name": "CSS grid",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout"
+    }
+  ]
+}

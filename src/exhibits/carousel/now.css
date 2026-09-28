@@ -1,0 +1,107 @@
+/* Baseline: a swipeable, snapping scroller that works everywhere */
+.carousel {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-auto-flow: column;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  border-radius: var(--radius);
+  list-style: none;
+  anchor-name: --now-carousel;
+}
+
+.carousel > li {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.carousel img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .carousel {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Browser-generated prev/next buttons and slide markers */
+@supports selector(::scroll-marker) {
+  .carousel {
+    scrollbar-width: none;
+    scroll-marker-group: after;
+  }
+
+  .carousel::scroll-button(*) {
+    position: absolute;
+    position-anchor: --now-carousel;
+    top: anchor(center);
+    translate: 0 -50%;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--surface);
+    color: inherit;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+  }
+
+  .carousel::scroll-button(*):hover {
+    background: var(--surface-muted);
+  }
+
+  .carousel::scroll-button(*):focus-visible,
+  .carousel > li::scroll-marker:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .carousel::scroll-button(*):disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  /* The text after "/" is the accessible name */
+  .carousel::scroll-button(left) {
+    content: "‹" / "Previous slide";
+    left: calc(anchor(left) + 0.75rem);
+  }
+
+  .carousel::scroll-button(right) {
+    content: "›" / "Next slide";
+    right: calc(anchor(right) + 0.75rem);
+  }
+
+  .carousel::scroll-marker-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-block-start: 1rem;
+  }
+
+  .carousel > li::scroll-marker {
+    content: "";
+    inline-size: 0.75rem;
+    block-size: 0.75rem;
+    border: 1px solid currentcolor;
+    border-radius: 50%;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .carousel > li:nth-child(1)::scroll-marker { content: "" / "Slide 1"; }
+  .carousel > li:nth-child(2)::scroll-marker { content: "" / "Slide 2"; }
+  .carousel > li:nth-child(3)::scroll-marker { content: "" / "Slide 3"; }
+
+  .carousel > li::scroll-marker:target-current {
+    background: currentcolor;
+  }
+}
