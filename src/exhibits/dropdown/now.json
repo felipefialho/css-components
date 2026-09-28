@@ -1,9 +1,8 @@
 {
   "technique": "Popover API + CSS anchor positioning",
   "notes": [
-    "`popovertarget` turns a plain button into a toggle for the `popover`: it gets `aria-expanded`, the menu opens in the top layer (never clipped by overflow), Tab moves straight from the button into the menu, and Escape or a click outside closes it and restores focus. The invisible overlay label from 2014 is gone.",
-    "Anchor positioning ties the menu to its button with `position-area`, and `position-try-fallbacks` flips it above or to the other side when there is no room below. Where anchor positioning is missing, the `popover` shows centered on screen and still works.",
-    "The hover variant uses `interestfor`, which opens the menu on hover, keyboard focus or long-press, with delays set in CSS through interest-delay. It also keeps `popovertarget` with `popovertargetaction=\"show\"`, so a click opens it in browsers without interest invokers."
+    "`popovertarget` gives you `aria-expanded`, the top layer, light dismiss, and Escape with focus return, none of which the 2014 overlay label could do. Anchor positioning pins the menu to its button and flips it when space runs out.",
+    "The hover variant adds `interestfor`, opening on hover, focus or long-press with delays from `interest-delay`. `popovertargetaction=\"show\"` keeps a click fallback where interest invokers are missing."
   ],
   "features": [
     {

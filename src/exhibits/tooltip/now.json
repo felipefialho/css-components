@@ -1,9 +1,8 @@
 {
-  "technique": "popover=\"hint\" + interestfor + anchor positioning",
+  "technique": "`popover=\"hint\"` + `interestfor` + anchor positioning",
   "notes": [
-    "Each tooltip is a `popover=\"hint\"` opened by `interestfor` on its button. The browser shows it on hover, keyboard focus or long-press, waits a short delay before showing and hiding, keeps it open while the pointer is over it, and hides it on Escape, which a `::after` tooltip could never do. The text is also linked with `aria-describedby`, so screen readers read it with the button.",
-    "Anchor positioning places each hint on its side of the button with `position-area` (top, right, bottom, left), and `position-try-fallbacks` flips it when it would overflow the viewport. As a `popover` it lives in the top layer, so no ancestor overflow or z-index can clip it.",
-    "Browsers without interest invokers fall back to CSS: the same element is shown on `:hover` and `:focus-visible` of its button and still anchored, so it works with mouse and keyboard, but it cannot be dismissed with Escape."
+    "`interestfor` with `popover=\"hint\"` gives you show and hide delays, hover, focus and long-press triggers, and Escape to dismiss, which a `::after` tooltip never had. Each icon button takes its name from its tooltip.",
+    "`position-area` puts each hint on its own side, and `position-try-fallbacks` flips it near the viewport edge. Without interest invokers, `:hover` and `:focus-visible` show the same element, but Escape cannot dismiss it."
   ],
   "features": [
     {

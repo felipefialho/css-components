@@ -1,12 +1,20 @@
-<button class="button" type="button" commandfor="now-modal" command="show-modal">Modal!</button>
+<button class="button" type="button" commandfor="now-modal" command="show-modal">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  Discard changes
+</button>
 
-<dialog id="now-modal" class="modal" closedby="any" aria-labelledby="now-modal-title">
-  <header class="modal-header">
-    <h3 id="now-modal-title">Modal in CSS?</h3>
-    <button class="close" type="button" commandfor="now-modal" command="close" aria-label="Close">×</button>
-  </header>
-  <p>One modal example here! :D</p>
+<dialog id="now-modal" class="modal" closedby="any" aria-labelledby="now-modal-title" aria-describedby="now-modal-body">
+  <button class="icon-button close" type="button" commandfor="now-modal" command="close" aria-label="Close">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+  </button>
+  <div class="modal-badge">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+  </div>
+  <h3 id="now-modal-title">Discard unsaved changes?</h3>
+  <p id="now-modal-body">Your edits to this draft will be lost. This can't be undone.</p>
   <footer class="modal-footer">
-    <button class="button" type="button" commandfor="now-modal" command="close">Nice!</button>
+    <!-- autofocus: the safe choice gets focus when the dialog opens -->
+    <button class="button" type="button" commandfor="now-modal" command="close" autofocus>Keep editing</button>
+    <button class="button button-primary" type="button" commandfor="now-modal" command="close">Discard</button>
   </footer>
 </dialog>

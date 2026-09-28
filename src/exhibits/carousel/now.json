@@ -1,9 +1,8 @@
 {
-  "technique": "Scroll snap + ::scroll-button() + ::scroll-marker",
+  "technique": "Scroll snap + `::scroll-button()` + `::scroll-marker`",
   "notes": [
-    "The slides are just a list in a horizontal scroller with scroll-snap, so touch swipe, trackpads, the scrollbar and keyboard scrolling all work in every browser, and each slide snaps into place.",
-    "Where supported, the browser generates the controls: `::scroll-button(left)` and `::scroll-button(right)` are real, focusable buttons that scroll by one page and disable themselves at the ends, and `scroll-marker-group` builds a row of `::scroll-marker` dots exposed as a tablist, with arrow-key navigation and `:target-current` tracking the visible slide while the user scrolls.",
-    "Unlike the 2014 radios, the state is the scroll position itself, so it never goes out of sync. The one thing lost is wrap-around: the buttons stop at the first and last slide."
+    "Scroll snap gives you swipe, trackpad and keyboard scrolling in every browser. The scroll position is the state, so it never drifts out of sync the way the 2014 radios could.",
+    "`::scroll-button()` and `::scroll-marker` add real, focusable controls that disable at the ends and track the visible slide with `:target-current`. They are Chromium-only for now, and there is no wrap-around."
   ],
   "features": [
     {

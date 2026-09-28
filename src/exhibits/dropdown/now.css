@@ -1,3 +1,14 @@
+/* The two variants side by side, so an open menu never covers the other */
+.variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+}
+
+.variants .variant {
+  margin-block-start: 0;
+}
+
 .trigger-click {
   anchor-name: --now-dropdown-click;
 }
@@ -7,26 +18,19 @@
   interest-delay: 150ms 300ms;
 }
 
-.trigger::after {
-  content: "";
-  display: inline-block;
-  inline-size: 0.4em;
-  block-size: 0.4em;
-  margin-inline-start: 0.6em;
-  border: solid currentcolor;
-  border-width: 0 2px 2px 0;
-  vertical-align: 0.2em;
-  rotate: 45deg;
+.caret {
+  margin-inline: -2px -4px;
+  color: var(--ink-soft);
 }
 
 .menu {
-  min-inline-size: 12rem;
-  padding: 0.25rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
-  color: inherit;
-  box-shadow: var(--shadow);
+  min-inline-size: 13rem;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-pop);
+  color: var(--ink);
 }
 
 .menu ul {
@@ -35,16 +39,34 @@
   list-style: none;
 }
 
+/* Separator between groups */
+.menu ul + ul {
+  margin-block-start: 6px;
+  padding-block-start: 6px;
+  border-block-start: 1px solid var(--border);
+}
+
 .menu a {
-  display: block;
-  padding: 0.5rem 0.75rem;
-  border-radius: calc(var(--radius) - 0.25rem);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-block-size: 36px;
+  padding-inline: 10px;
+  border-radius: 8px;
   color: inherit;
   text-decoration: none;
 }
 
-.menu a:hover {
-  background: var(--surface-muted);
+.menu a .icon {
+  color: var(--ink-soft);
+}
+
+.menu a:is(:hover, :focus-visible) {
+  background: var(--hover);
+}
+
+.menu a:is(:hover, :focus-visible) .icon {
+  color: var(--ink);
 }
 
 .menu a:focus-visible {
@@ -58,7 +80,7 @@
     position-area: block-end span-inline-end;
     position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
     inset: auto;
-    margin: 0.375rem 0;
+    margin: 6px 0;
   }
 
   .menu-hover {
@@ -70,18 +92,22 @@
   .menu {
     transition:
       opacity var(--duration) var(--ease),
+      translate var(--duration) var(--ease),
       display var(--duration) allow-discrete,
       overlay var(--duration) allow-discrete;
     opacity: 0;
+    translate: 0 -4px;
   }
 
   .menu:popover-open {
     opacity: 1;
+    translate: 0;
   }
 
   @starting-style {
     .menu:popover-open {
       opacity: 0;
+      translate: 0 -4px;
     }
   }
 }

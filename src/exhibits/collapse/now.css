@@ -1,11 +1,13 @@
 .collapse {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
+  overflow: clip;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
 }
 
 .collapse details + details {
-  border-block-start: 1px solid var(--line);
+  border-block-start: 1px solid var(--border);
 }
 
 summary {
@@ -13,8 +15,9 @@ summary {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius);
+  min-block-size: 48px;
+  padding: 10px 16px;
+  font-weight: 550;
   cursor: pointer;
   list-style: none;
 }
@@ -24,56 +27,54 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+summary:hover {
+  background: var(--hover);
+}
+
 summary:focus-visible {
   outline-offset: -2px;
 }
 
-/* Decorative chevron: <summary> already exposes expanded/collapsed */
-summary::after {
-  content: "";
-  flex: none;
-  inline-size: 0.45em;
-  block-size: 0.45em;
-  border: solid currentcolor;
-  border-width: 0 2px 2px 0;
-  translate: 0 -25%;
-  rotate: 45deg;
+/* Decorative: <summary> already exposes expanded/collapsed */
+.chevron {
+  color: var(--ink-soft);
 }
 
-[open] > summary::after {
-  translate: 0 25%;
-  rotate: 225deg;
+[open] > summary .chevron {
+  rotate: 180deg;
 }
 
 .panel {
-  padding: 0 1rem 1rem;
+  padding: 0 16px 16px;
+  color: var(--ink-soft);
 }
 
 .panel > p {
   margin: 0;
-}
-
-.panel > p + p {
-  margin-block-start: 0.5rem;
+  max-inline-size: 60ch;
 }
 
 /* Animate the native content slot to and from height: auto */
 @media (prefers-reduced-motion: no-preference) {
+  summary {
+    transition: background-color var(--duration) var(--ease);
+  }
+
+  .chevron {
+    transition: rotate 220ms var(--ease);
+  }
+
   @supports (interpolate-size: allow-keywords) and selector(::details-content) {
     :scope {
       interpolate-size: allow-keywords;
-    }
-
-    summary::after {
-      transition: rotate var(--duration) var(--ease), translate var(--duration) var(--ease);
     }
 
     details::details-content {
       block-size: 0;
       overflow-y: clip;
       transition:
-        block-size var(--duration) var(--ease),
-        content-visibility var(--duration) allow-discrete;
+        block-size 220ms var(--ease),
+        content-visibility 220ms allow-discrete;
     }
 
     details[open]::details-content {

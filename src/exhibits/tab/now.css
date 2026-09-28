@@ -1,16 +1,19 @@
 /* Baseline look: a plain exclusive accordion, fully usable anywhere */
 .tabs {
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  background: var(--surface);
+  overflow: clip;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
 }
 
 .tabs details + details {
-  border-block-start: 1px solid var(--line);
+  border-block-start: 1px solid var(--border);
 }
 
 summary {
-  padding: 0.75rem 1rem;
+  padding: 12px 16px;
+  font-weight: 550;
   cursor: pointer;
   list-style: none;
 }
@@ -24,7 +27,35 @@ summary:focus-visible {
 }
 
 .panel {
-  padding: 1rem;
+  padding: 4px 16px 16px;
+}
+
+.lead {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+}
+
+.rows {
+  margin: 0;
+}
+
+.rows > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px 1rem;
+  padding-block: 10px;
+  border-block-start: 1px solid var(--border);
+}
+
+.rows dt {
+  color: var(--ink-soft);
+}
+
+.rows dd {
+  margin: 0;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Tabs layout: dissolve each <details> so its summary and content slot join one grid */
@@ -32,6 +63,7 @@ summary:focus-visible {
   .tabs {
     display: grid;
     grid-template-columns: repeat(3, max-content) 1fr;
+    padding-inline: 8px;
   }
 
   .tabs details {
@@ -40,23 +72,24 @@ summary:focus-visible {
 
   summary {
     grid-row: 1;
-    border-block-end: 1px solid var(--line);
-    color: color-mix(in srgb, currentcolor 65%, transparent);
+    padding: 14px 10px 12px;
+    border-block-end: 1px solid var(--border);
+    color: var(--ink-soft);
   }
 
   summary:hover {
-    color: inherit;
+    color: var(--ink);
   }
 
   /* Draw the tab strip line across the empty last column too */
   .tabs::after {
     content: "";
     grid-area: 1 / 4;
-    border-block-end: 1px solid var(--line);
+    border-block-end: 1px solid var(--border);
   }
 
   [open] > summary {
-    color: inherit;
+    color: var(--ink);
     box-shadow: inset 0 -2px var(--accent);
 
     /* A tab should not close when clicked again */
@@ -69,5 +102,15 @@ summary:focus-visible {
 
   details:not([open])::details-content {
     display: none;
+  }
+
+  .panel {
+    padding: 16px 8px 4px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  summary {
+    transition: color var(--duration) var(--ease);
   }
 }

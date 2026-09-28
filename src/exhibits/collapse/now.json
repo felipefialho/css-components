@@ -1,9 +1,8 @@
 {
-  "technique": "<details> + <summary>, exclusive with name",
+  "technique": "`<details>` + `<summary>`, exclusive with `name`",
   "notes": [
-    "`<details>` is the native disclosure widget: `<summary>` is a real button, reachable with Tab, toggled with Enter or Space, and announced as expanded or collapsed. Find-in-page can search the hidden text and open the section that contains it, which a hidden checkbox never could.",
-    "The accordion is the same markup with a shared name attribute: the browser keeps only one `<details>` of the group open, the job the 2014 radio buttons were doing.",
-    "The open and close animation targets `::details-content`, the slot that wraps everything after `<summary>`. `interpolate-size`: allow-keywords lets block-size transition to and from auto, so there is no max-height guess. It only runs when the user has not asked for reduced motion; elsewhere the sections simply snap open."
+    "`<details>` gives you what the 2014 checkbox faked: a real button that works with Tab, Enter and Space, announces its state, and opens when find-in-page matches hidden text. A shared `name` makes the group exclusive.",
+    "The motion targets `::details-content` with `interpolate-size: allow-keywords`, so height eases to and from `auto` with no max-height guess. It only runs without reduced motion; other browsers snap open instead."
   ],
   "features": [
     {

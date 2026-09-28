@@ -1,50 +1,62 @@
 <div class="collapse">
   <details>
-    <summary>Lorem ipsum dolor sit amet</summary>
+    <summary>
+      Why keep the 2014 version?
+      <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
     <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+      <p>It shows how far CSS hacks had to go before the platform caught up. Each original demo still runs as it shipped.</p>
     </div>
   </details>
   <details>
-    <summary>Lorem ipsum dolor sit amet</summary>
+    <summary>
+      Can I still use the originals?
+      <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
     <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+      <p>You can, but the native versions need less code and work better with a keyboard and screen reader. Treat the originals as history.</p>
     </div>
   </details>
   <details>
-    <summary>Lorem ipsum dolor sit amet</summary>
+    <summary>
+      What replaced the checkbox trick?
+      <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
     <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+      <p>The <code>&lt;details&gt;</code> element. It toggles, announces its state and opens itself for find-in-page, with no hidden input.</p>
     </div>
   </details>
 </div>
 
-<h3 class="variant">With accordion</h3>
+<h3 class="variant">Exclusive accordion</h3>
 
 <!-- Same name = exclusive group: opening one closes the others -->
 <div class="collapse">
   <details name="now-accordion" open>
-    <summary>Lorem ipsum dolor sit amet</summary>
+    <summary>
+      Install
+      <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
     <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+      <p>Clone the repository and run <code>pnpm install</code>. Node 22.12 or newer is required.</p>
     </div>
   </details>
   <details name="now-accordion">
-    <summary>Lorem ipsum dolor sit amet</summary>
+    <summary>
+      Run locally
+      <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
     <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+      <p>Start the dev server with <code>pnpm dev</code> and open the local address it prints.</p>
     </div>
   </details>
   <details name="now-accordion">
-    <summary>Lorem ipsum dolor sit amet</summary>
+    <summary>
+      Build
+      <svg class="icon chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
     <div class="panel">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, non.</p>
+      <p><code>pnpm build</code> type-checks the project and writes a static site to <code>dist</code>.</p>
     </div>
   </details>
 </div>
