@@ -1,13 +1,137 @@
 ---
+import Exhibit from '../components/Exhibit.astro';
+import { baseCss, exhibits } from '../exhibits';
+import Base from '../layouts/Base.astro';
+import { demoScope, scopeCss } from '../lib/demo';
+
+const demoStyles = exhibits
+  .flatMap(({ name, then, now }) => [
+    scopeCss(`${baseCss.then}\n${then.css}`, demoScope('then', name)),
+    scopeCss(`${baseCss.now}\n${now.css}`, demoScope('now', name)),
+  ])
+  .map((css) => `<style>${css}</style>`)
+  .join('\n');
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pure CSS Components</title>
-  </head>
-  <body>
-    <h1>Pure CSS Components</h1>
-  </body>
-</html>
+<Base>
+  <Fragment slot="head" set:html={demoStyles} />
+
+  <section class="intro" aria-labelledby="intro-title">
+    <h1 class="intro__title" id="intro-title">Pure CSS Components</h1>
+
+    <div class="intro__placard">
+      <p class="intro__maker">Felipe Fialho</p>
+      <p class="intro__year">2014</p>
+      <p class="intro__medium">HTML and CSS: hidden form inputs, <code>:target</code>, sibling selectors</p>
+      <div class="intro__text">
+        <p>
+          In 2014, a modal, a carousel or a set of tabs usually meant a jQuery plugin. This project built six of them with
+          no JavaScript at all, storing their state in checkboxes, radio buttons and the URL hash. Front-end developers
+          across Brazil shipped them to production.
+        </p>
+        <p>
+          The platform has since caught up. Each component below sits next to the way HTML and CSS build it natively
+          today. Both versions work, so try them.
+        </p>
+      </div>
+      <p class="intro__links">
+        <a href="/story/">Read the story</a>
+        <a href="https://github.com/felipefialho/css-components">Source on GitHub</a>
+      </p>
+    </div>
+
+    <nav class="intro__index" aria-label="Components">
+      <ul>
+        {exhibits.map(({ name, then }) => <li><a href={`#${name}`}>{then.meta.title}</a></li>)}
+      </ul>
+    </nav>
+  </section>
+
+  {exhibits.map((exhibit) => <Exhibit exhibit={exhibit} />)}
+</Base>
+
+<style>
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: var(--space-4) var(--space-5);
+    align-items: end;
+    padding: var(--space-5) 0 var(--space-4);
+    border-bottom: 1px solid var(--rule);
+
+    @media (width < 56rem) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .intro__title {
+    font-size: var(--step-4);
+    font-variation-settings: 'wdth' 75;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.88;
+  }
+
+  .intro__placard {
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--brand-2014);
+    font-family: var(--font-display);
+    font-size: var(--step-minus-1);
+    line-height: 1.45;
+  }
+
+  .intro__maker {
+    font-size: var(--step-0);
+    font-weight: 700;
+  }
+
+  .intro__year {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .intro__medium {
+    margin-top: var(--space-1);
+    font-style: italic;
+  }
+
+  .intro__text {
+    margin-top: var(--space-2);
+    max-width: var(--measure);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .intro__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+  }
+
+  .intro__index {
+    grid-column: 1 / -1;
+    font-family: var(--font-display);
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-1) var(--space-3);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      color: var(--ink);
+      font-size: var(--step-1);
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,82 @@
+---
+import '@fontsource-variable/bricolage-grotesque/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz.css';
+import '@fontsource-variable/source-serif-4/opsz-italic.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const siteTitle = 'Pure CSS Components';
+const {
+  title,
+  description = 'Six UI components built with only HTML and CSS in 2014, shown next to how the web platform builds them today.',
+} = Astro.props;
+const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL('/logo-pcc.jpg', Astro.site);
+const isHome = Astro.url.pathname === '/';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline>
+      /* eslint-disable -- vendor snippet, kept verbatim */
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N5WTHL83');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content="#e6eaed" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12161b" media="(prefers-color-scheme: dark)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@felipefialho_" />
+    <meta name="twitter:creator" content="@felipefialho_" />
+    <slot name="head" />
+  </head>
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5WTHL83" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="site-header__name" href="/" aria-current={isHome ? 'page' : undefined}>Pure CSS Components</a>
+      <nav class="site-header__nav" aria-label="Main">
+        <a href="/story/" aria-current={Astro.url.pathname === '/story/' ? 'page' : undefined}>The story</a>
+        <a href="https://github.com/felipefialho/css-components">GitHub</a>
+        <label class="lights">
+          <input type="checkbox" id="lights" class="lights__input" />
+          <span class="lights__switch" aria-hidden="true"></span>
+          Lights
+        </label>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        Made by <a href="https://felipefialho.com">Felipe Fialho</a> in 2014, preserved in 2026.
+        Released under the <a href="https://github.com/felipefialho/css-components/blob/main/license.md">MIT License</a>.
+      </p>
+    </footer>
+  </body>
+</html>

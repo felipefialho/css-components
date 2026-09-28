@@ -1,0 +1,96 @@
+---
+type Feature = { name: string; support: string; url: string };
+
+type Props = {
+  title: string;
+  year: string;
+  medium: string;
+  notes: string[];
+  features?: Feature[];
+};
+
+const { title, year, medium, notes, features = [] } = Astro.props;
+
+// Notes are plain text; `backticked` segments render as code
+const segments = (text: string) =>
+  text.split('`').map((part, index) => ({ part, isCode: index % 2 === 1 }));
+---
+
+<div class="placard">
+  <p class="placard__title">{title}</p>
+  <p class="placard__year">{year}</p>
+  <p class="placard__medium">{segments(medium).map(({ part, isCode }) => (isCode ? <code>{part}</code> : part))}</p>
+  <div class="placard__notes">
+    {notes.map((note) => <p>{segments(note).map(({ part, isCode }) => (isCode ? <code>{part}</code> : part))}</p>)}
+  </div>
+  {
+    features.length > 0 && (
+      <ul class="placard__features" aria-label="Web platform features used">
+        {features.map((feature) => (
+          <li>
+            <a href={feature.url}>{feature.name}</a>
+            <span>{feature.support}</span>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>
+
+<style>
+  .placard {
+    font-family: var(--font-display);
+    font-size: var(--step-minus-1);
+    line-height: 1.45;
+  }
+
+  .placard__title {
+    font-size: var(--step-0);
+    font-weight: 700;
+  }
+
+  .placard__year {
+    margin: 0;
+    color: var(--ink-soft);
+  }
+
+  .placard__medium {
+    margin-top: var(--space-1);
+    font-style: italic;
+    font-variation-settings: 'wdth' 90;
+  }
+
+  .placard__notes {
+    margin-top: var(--space-2);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: var(--measure);
+  }
+
+  .placard code {
+    padding: 0.05em 0.3em;
+    background: var(--wall-deep);
+    font-size: 0.82em;
+  }
+
+  .placard__features {
+    display: grid;
+    gap: 0.35em;
+    margin: var(--space-2) 0 0;
+    padding: var(--space-2) 0 0;
+    border-top: 1px solid var(--rule);
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0 var(--space-2);
+    }
+
+    span {
+      color: var(--ink-soft);
+    }
+  }
+</style>

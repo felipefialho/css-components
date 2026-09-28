@@ -1,0 +1,51 @@
+/* --------------------------------------------------
+   Tokens
+   The gallery wall is cool grey; at night the lights go down.
+   The only accent is the brand blue from the 2014 variables.
+   -------------------------------------------------- */
+
+:root {
+  color-scheme: light dark;
+
+  --wall: light-dark(#e6eaed, #12161b);
+  --wall-deep: light-dark(#d9dfe3, #0c0f13);
+  --label: light-dark(#fff, #1b2027);
+  --ink: light-dark(#18202b, #e3e7eb);
+  --ink-soft: light-dark(#55606d, #9aa4ae);
+  --rule: light-dark(#c3cbd2, #2c333c);
+  --accent: light-dark(#2f6fa8, #7fb2e0);
+  --brand-2014: #428bca;
+  --font-display: 'Bricolage Grotesque Variable', 'Helvetica Neue', arial, sans-serif;
+  --font-text: 'Source Serif 4 Variable', georgia, serif;
+  --font-code: 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* Type scale: perfect fourth (1.333) from 1.125rem */
+  --step-minus-1: 0.875rem;
+  --step-0: 1.125rem;
+  --step-1: 1.5rem;
+  --step-2: 2rem;
+  --step-3: clamp(2.25rem, 1.6rem + 2.6vw, 2.667rem);
+  --step-4: clamp(3rem, 1.8rem + 6vw, 6.3rem);
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 7rem;
+  --measure: 36em;
+  --page: 76rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+}
+
+/* Lights toggle: a hidden checkbox flips the scheme, the 2014 way */
+@media (prefers-color-scheme: light) {
+  :root:has(#lights:checked) {
+    color-scheme: dark;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:has(#lights:checked) {
+    color-scheme: light;
+  }
+}
