@@ -26,6 +26,8 @@
 
 :scope h2 {
   color: #555;
+  font-family: inherit;
+  text-wrap: initial;
   font-size: 26px;
   font-weight: normal;
   line-height: 1;
