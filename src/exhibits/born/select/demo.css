@@ -106,11 +106,13 @@
   }
 
   #born-select-status option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 1rem auto 1fr;
+    place-items: center start;
+    column-gap: 10px;
     padding: 8px 10px;
     border-radius: 8px;
+    text-align: start;
   }
 
   #born-select-status option:hover,
@@ -123,9 +125,21 @@
     font-weight: 550;
   }
 
+  /* Reserve a fixed first column for the checkmark so unchecked options
+     keep the same space as the checked one, keeping dots/titles aligned */
   #born-select-status option::checkmark {
-    margin-inline-start: auto;
+    grid-column: 1;
+    justify-self: start;
+    margin-inline-start: 0;
     color: var(--accent);
+  }
+
+  #born-select-status option .dot {
+    grid-column: 2;
+  }
+
+  #born-select-status option .option-body {
+    grid-column: 3;
   }
 }
 
