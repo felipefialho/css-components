@@ -117,7 +117,7 @@ const demoStyles = exhibits
     ul {
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-1) var(--space-3);
+      gap: var(--space-1) var(--space-4);
       margin: 0;
       padding: 0;
       list-style: none;
@@ -125,12 +125,18 @@ const demoStyles = exhibits
 
     a {
       color: var(--ink);
-      font-size: var(--step-1);
-      font-weight: 600;
-      text-decoration: none;
+      font-size: var(--step-2);
+      font-variation-settings: "wdth" 80;
+      font-weight: 650;
+      letter-spacing: -0.035em;
+      text-decoration: underline 3px transparent;
+      text-transform: lowercase;
+      text-underline-offset: 0.2em;
 
-      &:hover {
+      &:hover,
+      &:focus-visible {
         color: var(--accent);
+        text-decoration-color: currentcolor;
       }
     }
   }
