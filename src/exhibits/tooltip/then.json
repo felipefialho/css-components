@@ -1,0 +1,8 @@
+{
+  "title": "Tooltip",
+  "technique": "CSS-only :hover/:focus + ::before/::after pseudo-elements reading aria-label",
+  "notes": [
+    "By Deivid Marques",
+    "Tooltip displayed with hover or focus only css. Wai-aria was used which leaves the element accessible for screen readers."
+  ]
+}

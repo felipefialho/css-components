@@ -1,0 +1,7 @@
+{
+  "title": "Dropdown",
+  "technique": "Hidden checkbox + label trigger + :checked sibling selector (or :hover for the hover variant)",
+  "notes": [
+    "The Dropdown can be used in two ways: click or hover."
+  ]
+}

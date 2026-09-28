@@ -1,0 +1,8 @@
+{
+  "title": "Carousel",
+  "technique": "Checked radio inputs + general sibling (~) selectors",
+  "notes": [
+    "The Carousel works fine!",
+    "NOTE: to add new items it is necessary to make changes in the CSS, this might require some additional work."
+  ]
+}
