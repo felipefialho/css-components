@@ -5,6 +5,13 @@
 [build.environment]
   NODE_VERSION = "24"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+
 # The zip downloads were retired; old links point to the v2.0.0 release
 [[redirects]]
   from = "/build/css-components.zip"
