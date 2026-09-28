@@ -1,0 +1,163 @@
+.doc {
+  container-type: inline-size;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 11.5rem minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+}
+
+.toc {
+  padding: 16px 12px;
+  border-inline-end: 1px solid var(--border);
+}
+
+.toc-title {
+  margin: 0 0 8px;
+  padding-inline: 10px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Turns the anchors into scroll markers for the article they point into */
+.toc-list {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scroll-target-group: auto;
+}
+
+.toc-list a {
+  display: block;
+  padding: 6px 10px;
+  border-inline-start: 2px solid transparent;
+  border-radius: 0 6px 6px 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.toc-list a:hover {
+  background: var(--hover);
+  color: var(--ink);
+}
+
+/* The link whose section is currently in view */
+.toc-list a:target-current {
+  border-inline-start-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.article {
+  block-size: 22rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 20px;
+}
+
+.article:focus-visible {
+  outline-offset: -2px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.article-title {
+  margin: 2px 0 8px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.article section {
+  padding-block-start: 12px;
+  scroll-margin-block-start: 4px;
+}
+
+/* Room for the last section to reach the top, so it can become current */
+.article section:last-child {
+  min-block-size: calc(22rem - 40px);
+}
+
+.article h5 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.article p {
+  max-inline-size: 38em;
+  margin: 0 0 0.7em;
+}
+
+/* Narrow stages: the contents become a row of chips above the article */
+@container (width < 34rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .toc {
+    padding: 10px 12px;
+    border-inline-end: 0;
+    border-block-end: 1px solid var(--border);
+  }
+
+  .toc-title {
+    padding-inline: 0;
+  }
+
+  .toc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .toc-list a {
+    padding: 3px 9px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+
+  .toc-list a:target-current {
+    border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+
+  .article {
+    block-size: 18rem;
+  }
+
+  .article section:last-child {
+    min-block-size: calc(18rem - 40px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .article {
+    scroll-behavior: smooth;
+  }
+
+  .toc-list a {
+    transition:
+      background-color var(--duration) var(--ease),
+      border-color var(--duration) var(--ease),
+      color var(--duration) var(--ease);
+  }
+}

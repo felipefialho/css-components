@@ -1,0 +1,61 @@
+<div class="app">
+  <div class="app-head">
+    <h4>Today</h4>
+    <span class="app-count">3 notes</span>
+  </div>
+
+  <ul class="notes" role="list">
+    <li>
+      <span class="note-title">Call the plumber</span>
+      <span class="note-meta">Before Thursday</span>
+    </li>
+    <li>
+      <span class="note-title">Book table for Friday</span>
+      <span class="note-meta">Four people, 8 pm</span>
+    </li>
+    <li>
+      <span class="note-title">Return library books</span>
+      <span class="note-meta">Due tomorrow</span>
+    </li>
+  </ul>
+
+  <button class="fab" type="button" popovertarget="born-radial-menu" aria-label="Quick actions">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+  </button>
+
+  <!-- Each item places itself on the arc from its own sibling-index() -->
+  <div id="born-radial-menu" class="menu" popover role="group" aria-label="Quick actions">
+    <ul role="list">
+      <li>
+        <button class="action" type="button" popovertarget="born-radial-menu" popovertargetaction="hide">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6"/><path d="M12 12v6"/><path d="M9 15h6"/></svg>
+          <span class="label">New note</span>
+        </button>
+      </li>
+      <li>
+        <button class="action" type="button" popovertarget="born-radial-menu" popovertargetaction="hide">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3Z"/><circle cx="12" cy="13" r="3"/></svg>
+          <span class="label">Photo</span>
+        </button>
+      </li>
+      <li>
+        <button class="action" type="button" popovertarget="born-radial-menu" popovertargetaction="hide">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="label">Link</span>
+        </button>
+      </li>
+      <li>
+        <button class="action" type="button" popovertarget="born-radial-menu" popovertargetaction="hide">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/></svg>
+          <span class="label">Voice memo</span>
+        </button>
+      </li>
+      <li>
+        <button class="action" type="button" popovertarget="born-radial-menu" popovertargetaction="hide">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3 2 6"/><path d="m22 6-3-3"/></svg>
+          <span class="label">Reminder</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

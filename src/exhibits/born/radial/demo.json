@@ -1,0 +1,35 @@
+{
+  "title": "Radial menu",
+  "technique": "`sibling-index()` + `sibling-count()` with `cos()`/`sin()`, opened by `popovertarget`",
+  "notes": [
+    "Fanning items around a button used to mean script measuring children, or a hand-written `:nth-child` rule for every item. `sibling-index()` and `sibling-count()` let each item compute its own angle and stagger, so the arc re-spaces itself when you add or remove one.",
+    "The popover handles toggling, Escape, light dismiss and focus order; anchor positioning centers the arc on the button. The angle is a registered custom property, so it resolves on each item and its label inherits the value instead of recounting."
+  ],
+  "features": [
+    {
+      "name": "sibling-index() and sibling-count()",
+      "support": "Baseline 2026",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index"
+    },
+    {
+      "name": "CSS trigonometric functions",
+      "support": "Baseline 2023",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sin"
+    },
+    {
+      "name": "Popover API",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API"
+    },
+    {
+      "name": "CSS anchor positioning",
+      "support": "Chrome 125+, Firefox 147+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning"
+    },
+    {
+      "name": "@starting-style",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style"
+    }
+  ]
+}

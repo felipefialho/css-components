@@ -1,0 +1,30 @@
+{
+  "title": "Scroll-spy contents",
+  "technique": "`scroll-target-group: auto` + `:target-current`",
+  "notes": [
+    "Highlighting the section you are reading used to take an IntersectionObserver, a map of ids to links and a class swapped by script. `scroll-target-group` turns plain fragment links into scroll markers, and the browser marks the current one with `:target-current`.",
+    "The links still work everywhere as ordinary anchors with smooth scrolling; only the live highlight is Chromium-only for now. Following a link also scrolls the page itself so the article comes into view."
+  ],
+  "features": [
+    {
+      "name": "scroll-target-group",
+      "support": "Chrome 140+ (plain anchor links elsewhere)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-target-group"
+    },
+    {
+      "name": ":target-current",
+      "support": "Chrome 140+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target-current"
+    },
+    {
+      "name": "scroll-behavior",
+      "support": "Baseline 2022",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scroll-behavior"
+    },
+    {
+      "name": "Container queries",
+      "support": "Baseline 2023",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Containment/Container_queries"
+    }
+  ]
+}

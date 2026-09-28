@@ -1,0 +1,30 @@
+{
+  "title": "Reading progress",
+  "technique": "`animation-timeline: scroll()` + `view()` with `animation-range`",
+  "notes": [
+    "A reading bar and reveal-on-scroll effects used to mean scroll listeners, IntersectionObserver and style writes on every frame. Scroll-driven animations tie an ordinary keyframe animation to scroll position, so the browser runs it off the main thread.",
+    "Everything sits behind `@supports (animation-timeline: scroll())`: without it the bar is hidden and the steps simply stay visible. The reveal also respects reduced motion, while the bar, which carries information, always tracks scrolling."
+  ],
+  "features": [
+    {
+      "name": "Scroll-driven animations",
+      "support": "Chrome 115+, Safari 26+ (static content elsewhere)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations"
+    },
+    {
+      "name": "view() timeline",
+      "support": "Chrome 115+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-timeline/view"
+    },
+    {
+      "name": "animation-range",
+      "support": "Chrome 115+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-range"
+    },
+    {
+      "name": "position: sticky",
+      "support": "Baseline 2019",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position"
+    }
+  ]
+}
