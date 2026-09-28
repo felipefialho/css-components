@@ -26,7 +26,7 @@ Many developers used these components in production, including me, and the repos
 
 ## Why it's an archive now
 
-The tricks had real limits. Hidden inputs are invisible to assistive technology, a checkbox is not a dialog, and focus, Escape and keyboard navigation were never handled. The carousel needs CSS changes to add a slide.
+The tricks had real limits. Hidden inputs are invisible to assistive technology, a checkbox is not a dialog, and focus, Escape and keyboard navigation were never handled.
 
 And the guess turned out right, just not the way I pictured it. The browser learned to do these things itself: `<details>` for disclosure, `<dialog>` for modals, the Popover API and anchor positioning for dropdowns and tooltips, scroll snapping and scroll markers for carousels. Each exhibit on the [home page](/) shows the 2014 original next to its native version, so you can compare them.
 
@@ -34,5 +34,5 @@ The original code is kept as it was, working, for history. If you are building s
 
 ## Read more (in Portuguese)
 
-- [É possível utilizar componentes desenvolvidos apenas com CSS?](https://felipefialho.com/blog/e-possivel-utilizar-componentes-desenvolvidos-apenas-com-css/), the 2014 post that explains each component step by step
-- [Criando um componente de collapse nativo com as tags details e summary](https://felipefialho.com/blog/html-criando-um-componente-de-collapse-nativo-com-as-tags-details-e-summary/)
+- <a href="https://felipefialho.com/blog/e-possivel-utilizar-componentes-desenvolvidos-apenas-com-css/" hreflang="pt-BR" lang="pt-BR">É possível utilizar componentes desenvolvidos apenas com CSS?</a>, the 2014 post that explains each component step by step
+- <a href="https://felipefialho.com/blog/html-criando-um-componente-de-collapse-nativo-com-as-tags-details-e-summary/" hreflang="pt-BR" lang="pt-BR">Criando um componente de collapse nativo com as tags details e summary</a>
