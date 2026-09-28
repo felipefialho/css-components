@@ -1,0 +1,25 @@
+{
+  "title": "Custom select",
+  "technique": "`appearance: base-select` + `<selectedcontent>`",
+  "notes": [
+    "`select, ::picker(select) { appearance: base-select }` turns a plain `<select>` into a fully styleable control: real `<option>` markup with icons and descriptions, a `::checkmark`, and a picker positioned by anchor positioning. No script needed.",
+    "`<selectedcontent>` clones the selected option's markup into the closed button, so the status dot updates itself; a CSS rule hides the description in that clone. Chrome and Safari support it; Firefox falls back to a plain, fully usable select."
+  ],
+  "features": [
+    {
+      "name": "Customizable select",
+      "support": "Chrome 135+, Safari 27+, not Firefox",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select"
+    },
+    {
+      "name": "::checkmark",
+      "support": "Chrome 135+, Safari 27+, not Firefox",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/::checkmark"
+    },
+    {
+      "name": "::picker-icon",
+      "support": "Chrome 135+, Safari 27+, not Firefox",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/::picker-icon"
+    }
+  ]
+}

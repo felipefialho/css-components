@@ -1,0 +1,147 @@
+.stack {
+  display: grid;
+  gap: 20px;
+  max-inline-size: 22rem;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.switch-row-text {
+  display: grid;
+  gap: 2px;
+}
+
+.switch-row-title {
+  font-weight: 550;
+}
+
+.switch-row-desc {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+}
+
+/* appearance: none discards the platform checkbox/switch rendering so the same look applies everywhere the switch attribute lands differently */
+.switch {
+  flex: none;
+  inline-size: 42px;
+  block-size: 26px;
+  margin: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--hover);
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  inset-block: 2px;
+  inset-inline-start: 2px;
+  inline-size: 20px;
+  block-size: 20px;
+  border-radius: 50%;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.switch:checked {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.switch:checked::before {
+  inset-inline-start: calc(100% - 22px);
+  background: var(--label);
+}
+
+.segmented {
+  position: relative;
+  display: inline-grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin: 0;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--hover);
+}
+
+.segmented legend {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.segmented label {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-block-size: 32px;
+  padding-inline: 18px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-weight: 550;
+  cursor: pointer;
+}
+
+.segmented label:has(:checked) {
+  color: var(--ink);
+}
+
+.segmented label:has(:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.segmented input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+}
+
+/* The sliding indicator: one shared thumb, moved by which radio :has() reports checked */
+.segmented::before {
+  content: "";
+  position: absolute;
+  inset-block: 3px;
+  inset-inline-start: 3px;
+  inline-size: calc(50% - 3px);
+  border-radius: 999px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.segmented:has(#born-switch-yearly:checked)::before {
+  translate: 100% 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .switch,
+  .switch::before {
+    transition: background-color var(--duration) var(--ease), border-color var(--duration) var(--ease), inset-inline-start var(--duration) var(--ease);
+  }
+
+  .segmented::before {
+    transition: translate var(--duration) var(--ease);
+  }
+}

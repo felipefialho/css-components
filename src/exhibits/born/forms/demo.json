@@ -1,0 +1,25 @@
+{
+  "title": "Feedback form",
+  "technique": "`field-sizing: content` + `:user-valid`/`:user-invalid`",
+  "notes": [
+    "`field-sizing: content` grows the textarea to fit what's typed, the auto-resize trick that used to need an `input` listener measuring `scrollHeight` on every keystroke. `:user-valid` and `:user-invalid` add per-field feedback that waits for a real interaction, not just page load.",
+    "Honest caveat: the inline messages are `::before` generated content, so they're `aria-hidden` and decorative; the static, always-present hint underneath is what assistive tech actually reads. The dimmed submit button is a visual cue only, real blocking still comes from `required`."
+  ],
+  "features": [
+    {
+      "name": "field-sizing",
+      "support": "Baseline 2026",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/field-sizing"
+    },
+    {
+      "name": ":user-valid / :user-invalid",
+      "support": "Baseline 2023",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:user-invalid"
+    },
+    {
+      "name": ":has()",
+      "support": "Baseline 2023",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:has"
+    }
+  ]
+}

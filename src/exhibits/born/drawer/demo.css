@@ -1,0 +1,168 @@
+.drawer {
+  --drawer-pad: 20px;
+
+  position: fixed;
+  inset: auto 0 0;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  max-block-size: min(85vh, 32rem);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-block-end: 0;
+  border-start-start-radius: 20px;
+  border-start-end-radius: 20px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-pop);
+  color: var(--ink);
+}
+
+.drawer::backdrop {
+  background: light-dark(rgb(15 20 27 / 40%), rgb(0 0 0 / 60%));
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .drawer::backdrop {
+    backdrop-filter: blur(3px);
+  }
+}
+
+.drawer-handle {
+  inline-size: 36px;
+  block-size: 4px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: var(--border-strong);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px var(--drawer-pad) 4px;
+}
+
+.drawer-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+}
+
+.drawer-body {
+  display: grid;
+  gap: 20px;
+  padding: 16px var(--drawer-pad);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.drawer-section {
+  display: grid;
+  gap: 8px;
+  scroll-snap-align: start;
+}
+
+.drawer-section h4 {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.drawer-section label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-block-size: 30px;
+}
+
+.drawer-footer {
+  position: sticky;
+  inset-block-end: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px var(--drawer-pad);
+  border-block-start: 1px solid var(--border);
+  background: var(--surface-raised);
+}
+
+/* The filter groups scroll as a snap container, so keyboard/scroll navigation settles on a section boundary instead of stopping mid-list */
+@supports (scroll-snap-type: y proximity) {
+  .drawer-body {
+    scroll-snap-type: y proximity;
+  }
+}
+
+@supports (scroll-initial-target: nearest) {
+  #born-drawer-status {
+    scroll-initial-target: nearest;
+  }
+}
+
+/* Wide viewport: a side panel instead of a bottom sheet */
+@media (width >= 56rem) {
+  .drawer {
+    inset: 0 0 0 auto;
+    inline-size: min(22rem, 100%);
+    max-block-size: 100%;
+    border-block-end: 1px solid var(--border);
+    border-inline-start: 1px solid var(--border);
+    border-start-start-radius: 20px;
+    border-end-start-radius: 20px;
+    border-start-end-radius: 0;
+  }
+
+  .drawer-handle {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .drawer,
+  .drawer::backdrop {
+    transition:
+      opacity var(--duration) var(--ease),
+      translate var(--duration) var(--ease),
+      display var(--duration) allow-discrete,
+      overlay var(--duration) allow-discrete;
+    opacity: 0;
+  }
+
+  .drawer {
+    translate: 0 100%;
+  }
+
+  .drawer[open],
+  .drawer[open]::backdrop {
+    opacity: 1;
+  }
+
+  .drawer[open] {
+    translate: 0;
+  }
+
+  @starting-style {
+    .drawer[open],
+    .drawer[open]::backdrop {
+      opacity: 0;
+    }
+
+    .drawer[open] {
+      translate: 0 100%;
+    }
+  }
+
+  @media (width >= 56rem) {
+    .drawer {
+      translate: 100% 0;
+    }
+
+    @starting-style {
+      .drawer[open] {
+        translate: 100% 0;
+      }
+    }
+  }
+}

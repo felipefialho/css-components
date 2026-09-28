@@ -1,0 +1,34 @@
+<div class="field">
+  <label for="born-select-status">Status</label>
+
+  <!-- appearance: base-select opts this <select> and its picker into full styling; unsupported browsers fall back to a normal, fully usable select -->
+  <select id="born-select-status" name="status">
+    <!-- <button><selectedcontent> is the select button; the arrow is the browser's own ::picker-icon, not authored markup -->
+    <button type="button">
+      <!-- selectedcontent clones the selected option's markup, so the dot updates itself; the description is hidden here by CSS, not by the browser -->
+      <selectedcontent></selectedcontent>
+    </button>
+
+    <option value="draft">
+      <span class="dot dot-draft" aria-hidden="true"></span>
+      <span class="option-body">
+        <span class="option-label">Draft</span>
+        <span class="option-desc">Only visible to you</span>
+      </span>
+    </option>
+    <option value="review" selected>
+      <span class="dot dot-review" aria-hidden="true"></span>
+      <span class="option-body">
+        <span class="option-label">In review</span>
+        <span class="option-desc">Shared with your team</span>
+      </span>
+    </option>
+    <option value="published">
+      <span class="dot dot-published" aria-hidden="true"></span>
+      <span class="option-body">
+        <span class="option-label">Published</span>
+        <span class="option-desc">Live on the site</span>
+      </span>
+    </option>
+  </select>
+</div>

@@ -1,0 +1,37 @@
+<form class="form">
+  <p class="lead">Leave feedback</p>
+
+  <div class="row">
+    <label for="born-forms-email">Email</label>
+    <input
+      class="input"
+      type="email"
+      id="born-forms-email"
+      name="email"
+      required
+      aria-describedby="born-forms-email-hint"
+    >
+    <p class="hint" id="born-forms-email-hint">We only use this to follow up on your report.</p>
+    <!-- Decorative: :user-valid/:user-invalid drive the text, so it stays silent until CSS support and real interaction agree. The hint above carries the description for assistive tech either way -->
+    <p class="validation" aria-hidden="true"></p>
+  </div>
+
+  <div class="row">
+    <label for="born-forms-message">Message</label>
+    <!-- field-sizing: content grows the textarea with what you type, up to its max-height, no resize handle needed -->
+    <textarea
+      class="input textarea"
+      id="born-forms-message"
+      name="message"
+      required
+      minlength="20"
+      aria-describedby="born-forms-message-hint"
+    ></textarea>
+    <p class="hint" id="born-forms-message-hint">At least 20 characters, so we have something to go on.</p>
+    <p class="validation" aria-hidden="true"></p>
+  </div>
+
+  <p class="summary" role="alert">Fix the highlighted field before sending.</p>
+
+  <button class="button button-primary" type="submit">Send feedback</button>
+</form>

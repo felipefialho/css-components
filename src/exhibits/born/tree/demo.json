@@ -1,0 +1,20 @@
+{
+  "title": "File tree",
+  "technique": "Nested `<details>`/`<summary>` + `::details-content`",
+  "notes": [
+    "Nested `<details>` and `<summary>` give a collapsible tree for free: keyboard toggling, state that survives without a data layer, and folders that open independently. `::details-content` turns the hidden panel into a real box CSS can size and animate.",
+    "Honest caveat: this is a disclosure widget, not an ARIA `tree`. Tab moves between rows and enter toggles them, but arrow keys don't navigate the hierarchy the way a real tree role would. `interpolate-size` lets the open/close height tween instead of snapping."
+  ],
+  "features": [
+    {
+      "name": "::details-content",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/::details-content"
+    },
+    {
+      "name": "interpolate-size",
+      "support": "Chrome 129+, not Firefox/Safari",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/interpolate-size"
+    }
+  ]
+}
