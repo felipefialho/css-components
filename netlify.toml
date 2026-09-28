@@ -14,6 +14,16 @@
 
 # The zip downloads were retired; old links point to the v2.0.0 release
 [[redirects]]
+  from = "/story/"
+  to = "/why/"
+  status = 301
+
+[[redirects]]
+  from = "/story"
+  to = "/why/"
+  status = 301
+
+[[redirects]]
   from = "/build/css-components.zip"
   to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/css-components.zip"
   status = 301

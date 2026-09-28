@@ -7,7 +7,7 @@
 
 > A set of common UI components built in 2014 using the power of CSS and without JavaScript
 
-**[See the components](https://css-components.felipefialho.com)** · [Read the story](https://css-components.felipefialho.com/story/)
+**[See the components](https://css-components.felipefialho.com)** · [Why](https://css-components.felipefialho.com/why/)
 
 ## ⚠️ This project is an archive
 

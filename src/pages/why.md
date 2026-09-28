@@ -1,10 +1,10 @@
 ---
 layout: ../layouts/Story.astro
-title: The story
+title: Why
 description: Why Pure CSS Components was built in 2014, how it worked, and why it is kept as an archive.
 ---
 
-I have always loved things built with nothing but CSS. It started in 2012, when I saw the Homer that Bernard de Luna drew in pure CSS. I built a Cartman the same day and never really stopped. After the drawings and experiments, I started looking for something more useful: CSS solutions I could ship in real projects.
+I have always loved things built with nothing but CSS. It started in 2012, when I drew [Cartman in pure CSS](https://codepen.io/felipefialho/pen/qzDCJ) and never really stopped. After that drawing and other experiments, I started looking for something more useful: CSS solutions I could ship in real projects.
 
 I had built a few interface components on their own, and it made sense to put them together in one place. In March 2014 that became Pure CSS Components: a carousel, a collapse, a dropdown, a modal, tabs and tooltips, with no JavaScript at all.
 
