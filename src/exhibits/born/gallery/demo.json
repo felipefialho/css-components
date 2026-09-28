@@ -1,0 +1,20 @@
+{
+  "title": "Gallery with page morph",
+  "technique": "`@view-transition { navigation: auto }` + shared `view-transition-name`",
+  "notes": [
+    "Morphing a thumbnail into a full page used to require a single-page app: a router, a history listener and a script to measure and animate both images. Cross-document view transitions do it across two ordinary page loads.",
+    "Both pages opt in with `@view-transition`, and each thumbnail shares its `view-transition-name` with the image on its own page. Browsers without support simply load the page, and reduced motion turns the opt-in off."
+  ],
+  "features": [
+    {
+      "name": "Cross-document view transitions",
+      "support": "Chrome 126+, Safari 18.2+ (plain navigation elsewhere)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@view-transition"
+    },
+    {
+      "name": "view-transition-name",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/view-transition-name"
+    }
+  ]
+}

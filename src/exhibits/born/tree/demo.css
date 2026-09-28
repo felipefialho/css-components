@@ -1,0 +1,105 @@
+.tree {
+  max-inline-size: 22rem;
+  font-family: var(--font-code);
+  font-size: 13px;
+}
+
+.tree summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.tree summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree summary,
+.tree-file {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-block-size: 26px;
+  padding-inline: 4px;
+  border-radius: 6px;
+}
+
+.tree summary:hover,
+.tree-file:hover {
+  background: var(--hover);
+}
+
+.tree-file {
+  color: var(--ink-soft);
+}
+
+.tree-file.muted {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* Chevron: rotates open, folder icon: filled when open */
+.tree summary .icon:first-child {
+  flex: none;
+  inline-size: 12px;
+  block-size: 12px;
+  color: var(--ink-soft);
+}
+
+.tree .icon.type {
+  flex: none;
+  inline-size: 14px;
+  block-size: 14px;
+  fill: color-mix(in srgb, var(--accent) 22%, transparent);
+  stroke: var(--ink-soft);
+}
+
+.tree-file .icon.type {
+  fill: none;
+}
+
+details[open] > summary .icon.type {
+  stroke: var(--accent);
+}
+
+/* Indentation guide: a rule under each nested group, offset to sit under the parent's chevron */
+.tree-group {
+  margin-inline-start: 10px;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid var(--border);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tree summary .icon:first-child {
+    transition: rotate var(--duration) var(--ease);
+  }
+
+  details[open] > summary .icon:first-child {
+    rotate: 90deg;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  details[open] > summary .icon:first-child {
+    rotate: 90deg;
+  }
+}
+
+/* Animate the disclosure open/close, guarded twice: ::details-content to reach inside <details>, interpolate-size to let block-size tween to its natural height */
+@supports selector(::details-content) and (interpolate-size: allow-keywords) {
+  @media (prefers-reduced-motion: no-preference) {
+    .tree details::details-content {
+      interpolate-size: allow-keywords;
+      block-size: 0;
+      overflow: clip;
+      opacity: 0;
+      transition:
+        block-size var(--duration) var(--ease),
+        opacity var(--duration) var(--ease);
+    }
+
+    .tree details[open]::details-content {
+      block-size: auto;
+      opacity: 1;
+    }
+  }
+}

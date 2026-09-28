@@ -1,0 +1,34 @@
+{
+  "technique": "`<details>` + `<summary>`, exclusive with `name`",
+  "notes": [
+    "`<details>` gives you what the 2014 checkbox faked: a real button that works with Tab, Enter and Space, announces its state, and opens when find-in-page matches hidden text. A shared `name` makes the group exclusive.",
+    "The motion targets `::details-content` with `interpolate-size: allow-keywords`, so height eases to and from `auto` with no max-height guess. It only runs without reduced motion; other browsers snap open instead."
+  ],
+  "features": [
+    {
+      "name": "<details> and <summary>",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details"
+    },
+    {
+      "name": "<details name> (exclusive accordion)",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name"
+    },
+    {
+      "name": "::details-content",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content"
+    },
+    {
+      "name": "interpolate-size",
+      "support": "Chromium 129+ (progressive enhancement)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/interpolate-size"
+    },
+    {
+      "name": "transition-behavior: allow-discrete",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-behavior"
+    }
+  ]
+}

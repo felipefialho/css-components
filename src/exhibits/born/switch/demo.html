@@ -1,0 +1,22 @@
+<div class="stack">
+  <!-- A real checkbox with the switch attribute: same behavior as a checkbox, switch semantics for assistive tech -->
+  <label class="switch-row" for="born-switch-notify">
+    <span class="switch-row-text">
+      <span class="switch-row-title">Email notifications</span>
+      <span class="switch-row-desc">Get a weekly summary of activity on your projects</span>
+    </span>
+    <input class="switch" type="checkbox" id="born-switch-notify" name="notify" switch role="switch" checked>
+  </label>
+
+  <fieldset class="segmented">
+    <legend>Billing</legend>
+    <label>
+      <input type="radio" name="born-switch-billing" id="born-switch-monthly" value="monthly" checked>
+      <span>Monthly</span>
+    </label>
+    <label>
+      <input type="radio" name="born-switch-billing" id="born-switch-yearly" value="yearly">
+      <span>Yearly</span>
+    </label>
+  </fieldset>
+</div>

@@ -1,0 +1,34 @@
+{
+  "technique": "Popover API + CSS anchor positioning",
+  "notes": [
+    "`popovertarget` gives you `aria-expanded`, the top layer, light dismiss, and Escape with focus return, none of which the 2014 overlay label could do. Anchor positioning pins the menu to its button and flips it when space runs out.",
+    "The hover variant adds `interestfor`, opening on hover, focus or long-press with delays from `interest-delay`. `popovertargetaction=\"show\"` keeps a click fallback where interest invokers are missing."
+  ],
+  "features": [
+    {
+      "name": "Popover API",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API"
+    },
+    {
+      "name": "CSS anchor positioning",
+      "support": "Chrome 125+, Firefox 147+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning"
+    },
+    {
+      "name": "position-try-fallbacks",
+      "support": "Chrome 128+, Firefox 147+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position-try-fallbacks"
+    },
+    {
+      "name": "Interest invokers (interestfor)",
+      "support": "Chromium 142+ (click fallback elsewhere)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using_interest_invokers"
+    },
+    {
+      "name": "@starting-style",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style"
+    }
+  ]
+}

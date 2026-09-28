@@ -1,0 +1,30 @@
+{
+  "title": "Smart header",
+  "technique": "`container-type: scroll-state` + `scroll-state(stuck)` and `scroll-state(scrolled)`",
+  "notes": [
+    "A header that shadows once stuck and hides while you read used to need a scroll listener, a sentinel element and a class toggled on every frame. Scroll-state queries let CSS ask whether a sticky element is stuck and which way its scroller last moved.",
+    "The sticky bar queries itself for `stuck: top`, while the page queries `scrolled: bottom` to slide it away. Where these queries are missing it stays a plain sticky header, and `:focus-within` keeps it visible for keyboard users."
+  ],
+  "features": [
+    {
+      "name": "Container scroll-state queries (stuck)",
+      "support": "Chrome 133+ (plain sticky header elsewhere)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Conditional_rules/Container_scroll-state_queries"
+    },
+    {
+      "name": "scroll-state(scrolled)",
+      "support": "Chrome 144+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@container"
+    },
+    {
+      "name": "position: sticky",
+      "support": "Baseline 2019",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/position"
+    },
+    {
+      "name": "backdrop-filter",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+/* The two variants side by side, so an open menu never covers the other */
+.variants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+}
+
+.variants .variant {
+  margin-block-start: 0;
+}
+
+.trigger-click {
+  anchor-name: --now-dropdown-click;
+}
+
+.trigger-hover {
+  anchor-name: --now-dropdown-hover;
+  interest-delay: 150ms 300ms;
+}
+
+.caret {
+  margin-inline: -2px -4px;
+  color: var(--ink-soft);
+}
+
+.menu {
+  min-inline-size: 13rem;
+  padding: 6px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-pop);
+  color: var(--ink);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Separator between groups */
+.menu ul + ul {
+  margin-block-start: 6px;
+  padding-block-start: 6px;
+  border-block-start: 1px solid var(--border);
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-block-size: 36px;
+  padding-inline: 10px;
+  border-radius: 8px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu a .icon {
+  color: var(--ink-soft);
+}
+
+.menu a:is(:hover, :focus-visible) {
+  background: var(--hover);
+}
+
+.menu a:is(:hover, :focus-visible) .icon {
+  color: var(--ink);
+}
+
+.menu a:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Without anchor positioning the popover stays centered in the viewport: still usable */
+@supports (anchor-name: --a) {
+  .menu {
+    position-anchor: --now-dropdown-click;
+    position-area: block-end span-inline-end;
+    position-try-fallbacks: flip-block, flip-inline, flip-block flip-inline;
+    inset: auto;
+    margin: 6px 0;
+  }
+
+  .menu-hover {
+    position-anchor: --now-dropdown-hover;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .menu {
+    transition:
+      opacity var(--duration) var(--ease),
+      translate var(--duration) var(--ease),
+      display var(--duration) allow-discrete,
+      overlay var(--duration) allow-discrete;
+    opacity: 0;
+    translate: 0 -4px;
+  }
+
+  .menu:popover-open {
+    opacity: 1;
+    translate: 0;
+  }
+
+  @starting-style {
+    .menu:popover-open {
+      opacity: 0;
+      translate: 0 -4px;
+    }
+  }
+}

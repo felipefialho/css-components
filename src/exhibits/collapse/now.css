@@ -1,0 +1,84 @@
+.collapse {
+  overflow: clip;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.collapse details + details {
+  border-block-start: 1px solid var(--border);
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-block-size: 48px;
+  padding: 10px 16px;
+  font-weight: 550;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Safari still renders its own marker */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:hover {
+  background: var(--hover);
+}
+
+summary:focus-visible {
+  outline-offset: -2px;
+}
+
+/* Decorative: <summary> already exposes expanded/collapsed */
+.chevron {
+  color: var(--ink-soft);
+}
+
+[open] > summary .chevron {
+  rotate: 180deg;
+}
+
+.panel {
+  padding: 0 16px 16px;
+  color: var(--ink-soft);
+}
+
+.panel > p {
+  margin: 0;
+  max-inline-size: 60ch;
+}
+
+/* Animate the native content slot to and from height: auto */
+@media (prefers-reduced-motion: no-preference) {
+  summary {
+    transition: background-color var(--duration) var(--ease);
+  }
+
+  .chevron {
+    transition: rotate 220ms var(--ease);
+  }
+
+  @supports (interpolate-size: allow-keywords) and selector(::details-content) {
+    :scope {
+      interpolate-size: allow-keywords;
+    }
+
+    details::details-content {
+      block-size: 0;
+      overflow-y: clip;
+      transition:
+        block-size 220ms var(--ease),
+        content-visibility 220ms allow-discrete;
+    }
+
+    details[open]::details-content {
+      block-size: auto;
+    }
+  }
+}

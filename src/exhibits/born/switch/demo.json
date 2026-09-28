@@ -1,0 +1,20 @@
+{
+  "title": "Switch & segmented control",
+  "technique": "`<input type=\"checkbox\" switch>` + `:has()`",
+  "notes": [
+    "The `switch` attribute keeps a checkbox as a checkbox, form submission and all, while exposing switch semantics to assistive tech instead of the usual `role=\"switch\"` markup. `appearance: none` and `:checked` give it one look across browsers, supported or not.",
+    "The billing control is a real radio group; its sliding thumb is one `::before` moved with `:has(#id:checked)`, no JavaScript. Only Safari implements `switch` today; elsewhere it renders as a plain checkbox, which this demo styles identically either way."
+  ],
+  "features": [
+    {
+      "name": "<input type=\"checkbox\" switch>",
+      "support": "Safari 17.4+, not Chrome/Firefox",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input/checkbox"
+    },
+    {
+      "name": ":has()",
+      "support": "Baseline 2023",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/:has"
+    }
+  ]
+}

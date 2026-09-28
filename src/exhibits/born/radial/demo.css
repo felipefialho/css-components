@@ -1,0 +1,223 @@
+/* Registered, so each item's angle is computed once on the <li> and inherited as a value */
+@property --born-radial-angle {
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+}
+
+.app {
+  position: relative;
+  max-inline-size: 26rem;
+  min-block-size: 20rem;
+  margin-inline: auto;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+}
+
+.app-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-block-end: 12px;
+}
+
+.app-head h4 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.app-count {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.notes {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notes li {
+  display: grid;
+  padding-block: 10px;
+  border-block-start: 1px solid var(--border);
+}
+
+.note-title {
+  font-weight: 550;
+}
+
+.note-meta {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.fab {
+  position: absolute;
+  inset-block-end: 18px;
+  inset-inline-end: 18px;
+  display: grid;
+  place-items: center;
+  inline-size: 52px;
+  block-size: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  box-shadow: var(--shadow-pop);
+  color: var(--label);
+  cursor: pointer;
+  anchor-name: --born-radial-fab;
+}
+
+.fab .icon {
+  inline-size: 22px;
+  block-size: 22px;
+  stroke-width: 2;
+}
+
+.app:has(.menu:popover-open) .fab .icon {
+  rotate: 45deg;
+}
+
+/* The notes step back while the actions are out */
+.app:has(.menu:popover-open) .notes {
+  opacity: 0.3;
+}
+
+/* A zero-size popover centered on the button: the arc is drawn around that point */
+.menu {
+  --radius: 8.5rem;
+
+  inline-size: 0;
+  block-size: 0;
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* A quarter circle from left (180deg) to up (270deg), spaced by the item count */
+.menu li {
+  --born-radial-angle: calc(180deg + (sibling-index() - 1) * 90deg / (sibling-count() - 1));
+
+  position: absolute;
+  inset-block-start: -22px;
+  inset-inline-start: -22px;
+  translate:
+    calc(cos(var(--born-radial-angle)) * var(--radius))
+    calc(sin(var(--born-radial-angle)) * var(--radius));
+}
+
+.action {
+  display: grid;
+  place-items: center;
+  inline-size: 44px;
+  block-size: 44px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-pop);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.action:hover {
+  background: color-mix(in srgb, var(--ink) 6%, var(--surface-raised));
+}
+
+.action .icon {
+  inline-size: 18px;
+  block-size: 18px;
+}
+
+/* The name stays readable to assistive tech and appears on hover or focus, pushed outward along the arc */
+.label {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--label);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  translate:
+    calc(-50% + cos(var(--born-radial-angle)) * (50% + 30px))
+    calc(-50% + sin(var(--born-radial-angle)) * (50% + 30px));
+}
+
+.action:is(:hover, :focus-visible) .label {
+  opacity: 1;
+}
+
+@supports (anchor-name: --a) {
+  .menu {
+    position-anchor: --born-radial-fab;
+    position-area: center;
+    inset: auto;
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fab .icon {
+    transition: rotate 220ms var(--ease);
+  }
+
+  .notes {
+    transition: opacity 220ms var(--ease);
+  }
+
+  .label {
+    transition: opacity 120ms var(--ease);
+  }
+
+  /* The popover stays rendered while the items fly back in */
+  .menu {
+    transition:
+      display 360ms allow-discrete,
+      overlay 360ms allow-discrete;
+  }
+
+  .menu li {
+    transition:
+      translate 240ms var(--ease),
+      opacity 200ms var(--ease),
+      scale 240ms var(--ease);
+    transition-delay: calc((sibling-count() - sibling-index()) * 30ms);
+  }
+
+  .menu:not(:popover-open) li {
+    translate: 0 0;
+    opacity: 0;
+    scale: 0.4;
+  }
+
+  .menu:popover-open li {
+    transition-delay: calc((sibling-index() - 1) * 30ms);
+  }
+
+  @starting-style {
+    .menu:popover-open li {
+      translate: 0 0;
+      opacity: 0;
+      scale: 0.4;
+    }
+  }
+}

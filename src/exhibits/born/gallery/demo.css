@@ -1,0 +1,81 @@
+.hint {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.thumb {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.thumb img {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  object-fit: cover;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+/* Says up front that this is a navigation, not a lightbox */
+.opens {
+  color: var(--ink-soft);
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.opens::after {
+  content: ' \2192' / '';
+}
+
+.thumb:hover .title {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2em;
+}
+
+.thumb:hover img {
+  box-shadow: var(--shadow-pop);
+}
+
+.thumb:focus-visible {
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .thumb img {
+    transition:
+      box-shadow var(--duration) var(--ease),
+      translate var(--duration) var(--ease);
+  }
+
+  .thumb:hover img {
+    translate: 0 -2px;
+  }
+}

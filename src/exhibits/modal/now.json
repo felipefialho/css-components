@@ -1,0 +1,34 @@
+{
+  "technique": "`<dialog>` + invoker commands",
+  "notes": [
+    "`command=\"show-modal\"` opens a true modal `<dialog>` with no script: top layer, inert page, focus moved inside, Escape to close, and focus returned to the trigger. `closedby=\"any\"` adds backdrop clicks where supported.",
+    "`autofocus` lands on the safe choice. The entry frame comes from `@starting-style`, and `allow-discrete` on `display` and `overlay` keeps the dialog in the top layer until its exit fade ends."
+  ],
+  "features": [
+    {
+      "name": "<dialog>",
+      "support": "Baseline 2022",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog"
+    },
+    {
+      "name": "Invoker commands (commandfor, command)",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API"
+    },
+    {
+      "name": "closedby",
+      "support": "Chromium 134+, Firefox 141+ (not in Safari yet)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby"
+    },
+    {
+      "name": "@starting-style",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style"
+    },
+    {
+      "name": "transition-behavior: allow-discrete",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/transition-behavior"
+    }
+  ]
+}

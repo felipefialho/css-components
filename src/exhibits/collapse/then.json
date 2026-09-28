@@ -1,0 +1,7 @@
+{
+  "title": "Collapse",
+  "technique": "Hidden checkbox/radio + general sibling (~) selector",
+  "notes": [
+    "The \"Collapse\" component can be used in two ways: one that opens each element that is clicked OR like an accordion, where only the last clicked element remains open."
+  ]
+}

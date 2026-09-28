@@ -1,0 +1,81 @@
+---
+import type { BornExhibit } from '../exhibits/born';
+import { demoScope } from '../lib/demo';
+import CodeBlock from './CodeBlock.astro';
+import Placard from './Placard.astro';
+
+type Props = { exhibit: BornExhibit };
+
+const { exhibit } = Astro.props;
+const { name, html, css, meta } = exhibit;
+---
+
+<section class="born" id={name} aria-labelledby={`${name}-title`}>
+  <h3 class="born__title" id={`${name}-title`}>{meta.title}</h3>
+  <div class="born__body">
+    <div class="born__stage" data-demo={demoScope('born', name)} set:html={html} />
+    <div class="born__side">
+      <Placard title="Native" year="2026" medium={meta.technique} notes={meta.notes} features={meta.features} />
+      <details class="born__code">
+        <summary>View the code</summary>
+        <CodeBlock code={html} lang="html" label="HTML" />
+        <CodeBlock code={css} lang="css" label="CSS" />
+      </details>
+    </div>
+  </div>
+</section>
+
+<style>
+  .born {
+    padding-top: var(--space-5);
+    scroll-margin-top: var(--space-3);
+  }
+
+  .born__title {
+    font-size: var(--step-2);
+    font-variation-settings: 'wdth' 80;
+    letter-spacing: -0.035em;
+    text-transform: lowercase;
+  }
+
+  .born__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: var(--space-4) var(--space-5);
+    align-items: start;
+    margin-top: var(--space-3);
+
+    @media (width < 56rem) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .born__stage {
+    position: relative;
+    min-height: 16rem;
+    padding: var(--space-4) var(--space-3);
+    background: var(--label);
+    border-top: 3px solid var(--accent);
+    box-shadow: 0 1px 0 var(--rule), 0 18px 40px -28px light-dark(#18202b66, #000c);
+  }
+
+  .born__side {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .born__code {
+    font-family: var(--font-display);
+    font-size: var(--step-minus-1);
+
+    summary {
+      width: fit-content;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    &[open] summary {
+      margin-bottom: var(--space-2);
+    }
+  }
+</style>

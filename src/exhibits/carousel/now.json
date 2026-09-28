@@ -1,0 +1,34 @@
+{
+  "technique": "Scroll snap + `::scroll-button()` + `::scroll-marker`",
+  "notes": [
+    "Scroll snap gives you swipe, trackpad and keyboard scrolling in every browser. The scroll position is the state, so it never drifts out of sync the way the 2014 radios could.",
+    "`::scroll-button()` and `::scroll-marker` add real, focusable controls that disable at the ends and track the visible slide with `:target-current`. They are Chromium-only for now, and there is no wrap-around."
+  ],
+  "features": [
+    {
+      "name": "CSS scroll snap",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll_snap"
+    },
+    {
+      "name": "::scroll-button()",
+      "support": "Chromium 135+ (progressive enhancement)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-button"
+    },
+    {
+      "name": "::scroll-marker and scroll-marker-group",
+      "support": "Chromium 135+ (progressive enhancement)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::scroll-marker"
+    },
+    {
+      "name": ":target-current",
+      "support": "Chromium 135+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:target-current"
+    },
+    {
+      "name": "CSS anchor positioning",
+      "support": "Chrome 125+, Firefox 147+, Safari 26+",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Anchor_positioning"
+    }
+  ]
+}

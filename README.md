@@ -1,114 +1,86 @@
+![Pure CSS Components Logo](public/logo-pcc.jpg "Pure CSS Components")
 
-## ⚠️ Disclaimer
-
-This is an old project, when I made it in 2014 I was tried use some possibilities about HTML/CSS and I loved the result. So I know a lot of people that used these components in production projects (I've used a lot of times).
-
-But the things changed in the nexts years and there are better choices to made these components.
-
-So I just maintain this project as an experimental thing and I probability won't make changes anymore.
-
-But you is free to use it as you want 😁❤️
-
-___
-
-![Pure CSS Components Logo](logo-pcc.jpg "Pure CSS Components")
+# Pure CSS Components
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/566334bb-2cd1-4548-91b0-b2869a85158b/deploy-status)](https://app.netlify.com/sites/css-components/deploys)
 [![license](https://img.shields.io/github/license/felipefialho/css-components.svg)](./license.md)
-[![GitHub contributors](https://img.shields.io/github/contributors/felipefialho/css-components.svg)](https://github.com/felipefialho/css-components/graphs/contributors)
 
-> A set of common UI Components using the power of CSS and without Javascript
+> UI components built with HTML and CSS only. Zero JavaScript, in 2014 and today.
 
-[View the project](https://css-components.felipefialho.com)
+**[See the components](https://css-components.felipefialho.com)** · [Why](https://css-components.felipefialho.com/why/)
 
-## Install
+In 2014, a modal, a carousel or a set of tabs meant a jQuery plugin. This project built them with no JavaScript at all, storing their state in hidden checkboxes, radio buttons and the URL hash. A lot of people shipped them to production.
 
-Install via [Bower](https://bower.io/) or
-[download the zip](https://css-components.felipefialho.com/build/css-components.zip)
+Twelve years later, the browser does it natively. `<details>`, `<dialog>`, invoker commands, the Popover API, anchor positioning and CSS carousels turned those hacks into real, accessible platform features. So the idea is relevant again, and the site now shows both sides.
 
-```bash
-bower install css-components
+## What's inside
+
+### Then and now
+
+Each of the six original components, working as it was written in 2014, next to the way HTML and CSS build it natively today.
+
+| Component | 2014 | Today |
+| --- | --- | --- |
+| [Carousel](https://css-components.felipefialho.com/#carousel) | Radio inputs + labels | `scroll-snap`, `::scroll-button()`, `::scroll-marker` |
+| [Collapse](https://css-components.felipefialho.com/#collapse) | Hidden checkbox / radios | `<details name>`, `::details-content` |
+| [Dropdown](https://css-components.felipefialho.com/#dropdown) | Hidden checkbox, `:hover` | Popover API, anchor positioning, `interestfor` |
+| [Modal](https://css-components.felipefialho.com/#modal) | Hidden checkbox | `<dialog>`, `commandfor`, `@starting-style` |
+| [Tab](https://css-components.felipefialho.com/#tab) | Radio inputs | Exclusive `<details name>` laid out as tabs |
+| [Tooltip](https://css-components.felipefialho.com/#tooltip) | `:hover` + `::after` | `popover="hint"`, `interestfor`, anchor positioning |
+
+### Born native
+
+Components with no 2014 version. No hidden input could fake them, and until recently each one needed a script.
+
+- [Custom select](https://css-components.felipefialho.com/#select): `appearance: base-select`, `::picker(select)`
+- [Switch and segmented control](https://css-components.felipefialho.com/#switch): `<input switch>`, `:has()`
+- [Smarter forms](https://css-components.felipefialho.com/#forms): `field-sizing: content`, `:user-invalid`
+- [File tree](https://css-components.felipefialho.com/#tree): nested `<details>`
+- [Filters drawer](https://css-components.felipefialho.com/#drawer): `<dialog closedby>`, invoker commands
+- [Sticky header](https://css-components.felipefialho.com/#header): scroll-state container queries
+- [Scroll-spy table of contents](https://css-components.felipefialho.com/#toc): `scroll-target-group`, `:target-current`
+- [Reading progress](https://css-components.felipefialho.com/#progress): scroll-driven animations
+- [Radial menu](https://css-components.felipefialho.com/#radial): `sibling-index()`, `sibling-count()`
+- [Gallery](https://css-components.felipefialho.com/#gallery): cross-document view transitions
+
+Some of these features are new. Every exhibit lists where it works today, and browsers without support get a plain version that still works.
+
+## Principles
+
+- **Zero JavaScript.** Not in the components, not on the site. It works with JavaScript turned off.
+- **Honest support.** Every native feature shows its real browser support.
+- **Progressive enhancement.** New features sit behind `@supports`, so nothing breaks where they are missing.
+- **Accessible by default.** The native versions use real elements with focus, keyboard and screen reader support built in.
+
+## Using the code
+
+Each component shows its HTML and CSS on the site, ready to copy. The 2014 originals are kept for history: if you are building something today, use the native versions.
+
+The original Stylus sources and zip downloads are in the [v2.0.0 release](https://github.com/felipefialho/css-components/releases/tag/v2.0.0).
+
+## Running locally
+
+Requires Node.js 22.12+ and [pnpm](https://pnpm.io/). Built with [Astro](https://astro.build/).
+
+```sh
+pnpm install
+pnpm dev
 ```
 
-## Components
+- `pnpm dev`: start the dev server
+- `pnpm build`: type-check and build to `dist`
+- `pnpm lint`: lint scripts and styles
 
-- [Carousel](https://css-components.felipefialho.com/#component-carousel "Carousel")
-- [Collapse](https://css-components.felipefialho.com/#component-collapse "Collapse")
-- [Dropdown](https://css-components.felipefialho.com/#component-dropdown "Dropdown")
-- [Modal](https://css-components.felipefialho.com/#component-modal "Modal")
-- [Tab](https://css-components.felipefialho.com/#component-tab "Tab")
-- [Tooltip](https://css-components.felipefialho.com/#component-tooltip "Tooltip")
+Each component lives in its own folder:
 
-## Browser Support
+- `src/exhibits/<name>/then.*`: the 2014 original
+- `src/exhibits/<name>/now.*`: the native version
+- `src/exhibits/born/<name>/demo.*`: born native components
 
-|          | Chrome  | Firefox  | Edge     | Safari 
-| -------- | ------- | -------- | -------- | ---- |
-| Android  | Yes     | Yes      | Yes      | Yes  | 
-| iOS      | Yes     | Yes      | Yes      | Yes  | 
-| Mac OS X | Yes     | Yes      | Yes      | Yes  | 
-| Windows  | Yes     | Yes      | Yes.     | Yes  |
+## Support
 
-
-\* [CSS3 transitions](https://caniuse.com/#search=css%20transition) are not supported in IE8 and below.
-\*\* Janky z-index. See [tooltip on right example](https://css-components.felipefialho.com/#component-tooltip).
-
-**Notes:**
-
-- Most tests performed with Browserstack.
-- Components that perform action on hover may not work on touchscreens eg. _dropdown with hover_. Oddly _tooltip_ does work. Bootstrap mentions this, “[Sticky :hover/:focus on mobile.](https://getbootstrap.com/getting-started/#support-sticky-hover-mobile)
-  Even though real hovering isn't possible on most touchscreens, most mobile browsers emulate hovering support and make :hover ‘sticky’. In other words, :hover styles start applying after tapping an element and only stop applying after the user taps some other element.”
-- Probably the main reason why the components fail in earlier versions of IE is because they use [advanced CSS selectors](https://caniuse.com/#search=CSS3%20selectors) which aren’t supported. It may be possible to patch this with the use of something like [selectivizr](https://selectivizr.com). This may defeat the purpose of using these javascript free components but on the other hand it may be acceptable for older IE.
-- The components do not fail gracefully. In most cases some elements are visible but interaction will not have any effect. The _carousel_ component won't show anything.
-- Some layout issues with _tab_ when wrapping on smaller screen sizes.
-- Weird flash when _carousel_ loops around to first slide.
-
-## Contributing
-
-Please read this [Coding Style](https://github.com/felipefialho/coding-style/) for [Issues](https://github.com/felipefialho/css-components/issues), pull requests and coding standards.
-
-All changes must be made in `/dev` folder. The CSS should be modified using the [Stylus](https://learnboost.github.io/stylus/) preprocessor.
-
-### Getting Started
-
-```bash
-
-# 1. Fork this repository and clone it into the current directory
-git clone https://github.com/<your-username>/css-components.git
-
-# 2. Navigate to the newly cloned directory
-cd css-components
-
-# 3. Install the dependencies
-npm install
-
-```
-
-### Development
-
-```bash
-
-# For start the server, watching your .styl files changes and compile CSS
-grunt w
-
-```
-
-### Pull Requests
-
-```bash
-
-# Compress zip files
-grunt build
-
-# Build the project for deploy
-grunt dist
-
-# View your project release in GhPages
-https://<your-username>.github.io/css-components/
-
-# Open your Pull Request
-
-```
+If this project helped you, back then or today, you can [sponsor my work on GitHub](https://github.com/sponsors/felipefialho).
 
 ## License
 
-MIT License © Felipe Fialho
+MIT License © [Felipe Fialho](https://www.linkedin.com/in/felipefialho/)

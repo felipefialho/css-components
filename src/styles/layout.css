@@ -1,0 +1,128 @@
+/* --------------------------------------------------
+   Layout: header, footer, page frame
+   -------------------------------------------------- */
+
+.skip-link {
+  position: absolute;
+  left: var(--gutter);
+  top: -3rem;
+  z-index: 10;
+  padding: var(--space-1) var(--space-2);
+  background: var(--label);
+  font-family: var(--font-display);
+
+  &:focus {
+    top: var(--space-1);
+  }
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-3);
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: var(--space-3) var(--gutter);
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  letter-spacing: -0.01em;
+  text-transform: lowercase;
+}
+
+.site-header__name {
+  color: var(--ink);
+  font-weight: 750;
+  font-variation-settings: "wdth" 85;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.site-header__nav {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: var(--space-3);
+
+  a {
+    color: var(--ink-soft);
+    font-weight: 500;
+    text-decoration: underline 2px transparent;
+    text-underline-offset: 0.35em;
+
+    &:hover,
+    &[aria-current='page'] {
+      color: var(--ink);
+      text-decoration-color: var(--accent);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    }
+  }
+}
+
+/* Lights: a real checkbox, restyled as a wall switch */
+.lights {
+  display: inline-flex;
+  color: var(--ink-soft);
+  font-weight: 500;
+  align-items: center;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.lights__input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.lights__switch {
+  position: relative;
+  width: 2.1em;
+  height: 1.2em;
+  border: 1px solid var(--ink-soft);
+  border-radius: 1em;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0.15em;
+    left: 0.15em;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    background: var(--ink);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: translate 0.2s ease;
+    }
+  }
+}
+
+.lights__input:checked + .lights__switch::after {
+  translate: 0.9em 0;
+}
+
+.lights__input:focus-visible + .lights__switch {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+main {
+  max-width: var(--page);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.site-footer {
+  max-width: var(--page);
+  margin: var(--space-6) auto 0;
+  padding: var(--space-4) var(--gutter);
+  border-top: 1px solid var(--rule);
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: var(--step-minus-1);
+}

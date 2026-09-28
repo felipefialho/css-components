@@ -1,0 +1,126 @@
+:scope {
+  display: grid;
+  place-items: center;
+}
+
+.toolbar {
+  display: inline-flex;
+  gap: 2px;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow-sm);
+}
+
+.toolbar .icon-button {
+  interest-delay: 200ms 150ms;
+}
+
+.tip-top { anchor-name: --now-tip-top; }
+.tip-right { anchor-name: --now-tip-right; }
+.tip-bottom { anchor-name: --now-tip-bottom; }
+.tip-left { anchor-name: --now-tip-left; }
+
+.tooltip {
+  --gap: 8px;
+
+  overflow: visible;
+  inset: auto;
+  margin: 0;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--ink);
+  box-shadow: var(--shadow-sm);
+  color: var(--label);
+  font-size: 12.5px;
+  font-weight: 550;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Arrow: a rotated square that sits half outside the facing edge */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  inline-size: 7px;
+  block-size: 7px;
+  background: inherit;
+  rotate: 45deg;
+}
+
+.tooltip-top {
+  position-anchor: --now-tip-top;
+  position-area: top;
+  margin-bottom: var(--gap);
+  position-try-fallbacks: flip-block;
+}
+
+.tooltip-top::before {
+  inset: auto auto -3px calc(50% - 3.5px);
+}
+
+.tooltip-right {
+  position-anchor: --now-tip-right;
+  position-area: right;
+  margin-left: var(--gap);
+  position-try-fallbacks: flip-inline;
+}
+
+.tooltip-right::before {
+  inset: calc(50% - 3.5px) auto auto -3px;
+}
+
+.tooltip-bottom {
+  position-anchor: --now-tip-bottom;
+  position-area: bottom;
+  margin-top: var(--gap);
+  position-try-fallbacks: flip-block;
+}
+
+.tooltip-bottom::before {
+  inset: -3px auto auto calc(50% - 3.5px);
+}
+
+.tooltip-left {
+  position-anchor: --now-tip-left;
+  position-area: left;
+  margin-right: var(--gap);
+  position-try-fallbacks: flip-inline;
+}
+
+.tooltip-left::before {
+  inset: calc(50% - 3.5px) -3px auto auto;
+}
+
+/* No interest invokers: show the same popover on hover or keyboard focus */
+@supports not selector(:interest-source) {
+  .icon-button:is(:hover, :focus-visible) + .tooltip {
+    display: block;
+    position: fixed;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tooltip {
+    transition:
+      opacity 150ms var(--ease),
+      scale 150ms var(--ease),
+      display 150ms allow-discrete,
+      overlay 150ms allow-discrete;
+  }
+
+  @starting-style {
+    .tooltip:popover-open {
+      opacity: 0;
+      scale: 0.96;
+    }
+  }
+
+  .tooltip:not(:popover-open) {
+    opacity: 0;
+    scale: 0.96;
+  }
+}

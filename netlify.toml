@@ -1,0 +1,59 @@
+[build]
+  command = "pnpm build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+
+# The zip downloads were retired; old links point to the v2.0.0 release
+[[redirects]]
+  from = "/story/"
+  to = "/why/"
+  status = 301
+
+[[redirects]]
+  from = "/story"
+  to = "/why/"
+  status = 301
+
+[[redirects]]
+  from = "/build/css-components.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/css-components.zip"
+  status = 301
+
+[[redirects]]
+  from = "/build/carousel.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/carousel.zip"
+  status = 301
+
+[[redirects]]
+  from = "/build/collapse.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/collapse.zip"
+  status = 301
+
+[[redirects]]
+  from = "/build/dropdown.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/dropdown.zip"
+  status = 301
+
+[[redirects]]
+  from = "/build/modal.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/modal.zip"
+  status = 301
+
+[[redirects]]
+  from = "/build/tab.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/tab.zip"
+  status = 301
+
+[[redirects]]
+  from = "/build/tooltip.zip"
+  to = "https://github.com/felipefialho/css-components/releases/download/v2.0.0/tooltip.zip"
+  status = 301

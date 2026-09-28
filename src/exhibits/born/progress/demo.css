@@ -1,0 +1,139 @@
+.hint {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.page {
+  block-size: 22rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+}
+
+.page:focus-visible {
+  outline-offset: 3px;
+}
+
+/* Hidden unless scroll-driven animations can drive it */
+.progress {
+  display: none;
+}
+
+.article {
+  padding: 20px 20px 28px;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.article h4 {
+  margin: 2px 0 8px;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.lede,
+.outro {
+  max-inline-size: 36em;
+  margin: 0;
+}
+
+.outro {
+  color: var(--ink-soft);
+}
+
+.steps {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 2px 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.step-number {
+  display: grid;
+  grid-row: span 2;
+  place-items: center;
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.step h5 {
+  margin: 3px 0 0;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.step p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+@supports (animation-timeline: scroll()) {
+  /* Sticks to the top of the scroller and grows with its scroll position */
+  .progress {
+    display: block;
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 1;
+    block-size: 3px;
+    margin-block-end: -3px;
+    background: var(--accent);
+    transform-origin: 0 50%;
+    animation: born-progress-grow linear both;
+    animation-timeline: scroll(nearest block);
+  }
+
+  @keyframes born-progress-grow {
+    from {
+      scale: 0 1;
+    }
+
+    to {
+      scale: 1 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* Each step reveals over the first part of its entry into the scrollport */
+    .step {
+      animation: born-progress-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 90%;
+    }
+
+    @keyframes born-progress-reveal {
+      from {
+        opacity: 0;
+        translate: 0 16px;
+        scale: 0.97;
+      }
+    }
+  }
+}

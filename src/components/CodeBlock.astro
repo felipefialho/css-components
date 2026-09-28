@@ -1,0 +1,51 @@
+---
+import { Code } from 'astro:components';
+
+type Props = {
+  code: string;
+  lang: 'html' | 'css';
+  label: string;
+};
+
+const { code, lang, label } = Astro.props;
+---
+
+<figure class="code-block">
+  <figcaption class="code-block__label">{label}</figcaption>
+  <Code code={code.trim()} lang={lang} themes={{ light: 'github-light', dark: 'github-dark-dimmed' }} defaultColor={false} />
+</figure>
+
+<style>
+  .code-block {
+    margin: 0;
+
+    & + & {
+      margin-top: var(--space-3);
+    }
+  }
+
+  .code-block__label {
+    margin-bottom: var(--space-1);
+    color: var(--ink-soft);
+    font-family: var(--font-display);
+    font-size: var(--step-minus-1);
+  }
+
+  .code-block :global(.astro-code) {
+    max-height: 28rem;
+    margin: 0;
+    padding: var(--space-2);
+    overflow: auto;
+    border: 1px solid var(--rule);
+    background-color: light-dark(var(--shiki-light-bg), var(--shiki-dark-bg)) !important;
+    font-family: var(--font-code);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    tab-size: 2;
+  }
+
+  /* Shiki emits both palettes as custom properties; pick one per color scheme */
+  .code-block :global(.astro-code span) {
+    color: light-dark(var(--shiki-light), var(--shiki-dark)) !important;
+  }
+</style>

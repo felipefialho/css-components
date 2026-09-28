@@ -1,0 +1,7 @@
+{
+  "title": "Tab",
+  "technique": "Hidden radio inputs + label navigation + :checked sibling selector",
+  "notes": [
+    "The \"tab\" component presents an interesting behavior and could be used without any issues. You do not need any special adaptation in the CSS."
+  ]
+}

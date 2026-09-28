@@ -1,0 +1,29 @@
+{
+  "technique": "Exclusive `<details name>` laid out as tabs",
+  "notes": [
+    "An exclusive `<details>` group gives you focusable tabs with a real expanded state and no hidden radios. With `display: contents`, every `<summary>` joins one grid row and its `::details-content` fills the row below.",
+    "Honest caveat: HTML still has no tabs element. Screen readers hear disclosure buttons, arrow keys do not move between tabs, and full ARIA tabs still need a little script. Older browsers show a plain accordion."
+  ],
+  "features": [
+    {
+      "name": "<details name> (exclusive accordion)",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/details#name"
+    },
+    {
+      "name": "::details-content",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::details-content"
+    },
+    {
+      "name": "display: contents",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display#contents"
+    },
+    {
+      "name": "CSS grid",
+      "support": "Baseline widely available",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout"
+    }
+  ]
+}

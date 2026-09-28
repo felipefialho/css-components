@@ -1,0 +1,107 @@
+---
+import type { Exhibit } from '../exhibits';
+import { demoScope } from '../lib/demo';
+import CodeBlock from './CodeBlock.astro';
+import Placard from './Placard.astro';
+
+type Props = { exhibit: Exhibit };
+
+const { exhibit } = Astro.props;
+const { name, then, now } = exhibit;
+const title = then.meta.title;
+---
+
+<section class="exhibit" id={name} aria-labelledby={`${name}-title`}>
+  <h2 class="exhibit__title" id={`${name}-title`}>{title}</h2>
+
+  <div class="exhibit__cases">
+    <article class="case case--then" aria-label={`${title}, 2014 version`}>
+      <div class="case__stage" data-demo={demoScope('then', name)} set:html={then.html} />
+      <Placard title="Original" year="2014" medium={then.meta.technique} notes={then.meta.notes} />
+      <details class="case__code">
+        <summary>View the 2014 code</summary>
+        <CodeBlock code={then.html} lang="html" label="HTML" />
+        <CodeBlock code={then.css} lang="css" label="CSS" />
+      </details>
+    </article>
+
+    <article class="case case--now" aria-label={`${title}, native version`}>
+      <div class="case__stage" data-demo={demoScope('now', name)} set:html={now.html} />
+      <Placard
+        title="Native"
+        year="2026"
+        medium={now.meta.technique}
+        notes={now.meta.notes}
+        features={now.meta.features}
+      />
+      <details class="case__code">
+        <summary>View the native code</summary>
+        <CodeBlock code={now.html} lang="html" label="HTML" />
+        <CodeBlock code={now.css} lang="css" label="CSS" />
+      </details>
+    </article>
+  </div>
+</section>
+
+<style>
+  .exhibit {
+    padding-top: var(--space-6);
+    scroll-margin-top: var(--space-3);
+  }
+
+  .exhibit__title {
+    font-size: var(--step-3);
+    font-variation-settings: 'wdth' 80;
+    letter-spacing: -0.035em;
+    text-transform: lowercase;
+  }
+
+  .exhibit__cases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+    gap: var(--space-4) var(--space-5);
+    margin-top: var(--space-4);
+  }
+
+  .case {
+    display: grid;
+    align-content: start;
+    gap: var(--space-3);
+    min-width: 0;
+  }
+
+  /* The vitrine: 2014 demos always sit on the white page they were designed for */
+  .case__stage {
+    position: relative;
+    min-height: 16rem;
+    padding: var(--space-4) var(--space-3);
+    background: var(--label);
+    box-shadow: 0 1px 0 var(--rule), 0 18px 40px -28px light-dark(#18202b66, #000c);
+  }
+
+  .case--then .case__stage {
+    color-scheme: light;
+    background: #fff;
+    color: #222;
+    border-top: 3px solid var(--brand-2014);
+  }
+
+  .case--now .case__stage {
+    border-top: 3px solid var(--ink);
+  }
+
+  .case__code {
+    font-family: var(--font-display);
+    font-size: var(--step-minus-1);
+
+    summary {
+      width: fit-content;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    &[open] summary {
+      margin-bottom: var(--space-2);
+    }
+  }
+</style>

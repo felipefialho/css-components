@@ -1,0 +1,45 @@
+<button class="button" type="button" commandfor="born-drawer-filters" command="show-modal">
+  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>
+  Filters
+</button>
+
+<!-- closedby="any" adds light-dismiss (backdrop click, Escape) on top of the commandfor/command buttons below -->
+<dialog id="born-drawer-filters" class="drawer" closedby="any" aria-labelledby="born-drawer-title">
+  <div class="drawer-handle" aria-hidden="true"></div>
+
+  <header class="drawer-header">
+    <h3 id="born-drawer-title">Filters</h3>
+    <button class="icon-button" type="button" commandfor="born-drawer-filters" command="close" aria-label="Close">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </header>
+
+  <div class="drawer-body">
+    <section class="drawer-section" id="born-drawer-status">
+      <h4>Status</h4>
+      <label><input type="checkbox" name="status" value="draft"> Draft</label>
+      <label><input type="checkbox" name="status" value="review" checked> In review</label>
+      <label><input type="checkbox" name="status" value="published" checked> Published</label>
+    </section>
+
+    <section class="drawer-section" id="born-drawer-sort">
+      <h4>Sort by</h4>
+      <label><input type="radio" name="born-drawer-sort" value="updated" checked> Last updated</label>
+      <label><input type="radio" name="born-drawer-sort" value="created"> Date created</label>
+      <label><input type="radio" name="born-drawer-sort" value="name"> Name</label>
+    </section>
+
+    <section class="drawer-section" id="born-drawer-tags">
+      <h4>Tags</h4>
+      <label><input type="checkbox" name="tags" value="css"> CSS</label>
+      <label><input type="checkbox" name="tags" value="html"> HTML</label>
+      <label><input type="checkbox" name="tags" value="a11y"> Accessibility</label>
+      <label><input type="checkbox" name="tags" value="perf"> Performance</label>
+    </section>
+  </div>
+
+  <footer class="drawer-footer">
+    <button class="button" type="button" commandfor="born-drawer-filters" command="close">Reset</button>
+    <button class="button button-primary" type="button" commandfor="born-drawer-filters" command="close">Apply</button>
+  </footer>
+</dialog>

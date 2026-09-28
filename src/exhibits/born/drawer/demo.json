@@ -1,0 +1,30 @@
+{
+  "title": "Filters drawer",
+  "technique": "`<dialog closedby=\"any\">` + `scroll-snap-type`",
+  "notes": [
+    "`command=\"show-modal\"` opens a real modal `<dialog>`: top layer, inert page behind it, focus trapped and returned on close, all without a script. `closedby=\"any\"` adds backdrop-click and Escape dismissal on top of the Reset and Apply buttons, which close it with `command=\"close\"`.",
+    "It slides in from `@starting-style` with `transition-behavior: allow-discrete` keeping it in the top layer through the exit fade, becoming a bottom sheet on narrow screens and a side panel from 56rem up. Caveat: swipe-to-dismiss still needs a script."
+  ],
+  "features": [
+    {
+      "name": "<dialog closedby>",
+      "support": "Chromium 134+, Firefox 141+ (not in Safari yet)",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby"
+    },
+    {
+      "name": "Invoker commands (commandfor, command)",
+      "support": "Baseline 2025",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API"
+    },
+    {
+      "name": "@starting-style",
+      "support": "Baseline 2024",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style"
+    },
+    {
+      "name": "scroll-snap-type",
+      "support": "Baseline 2020",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+.hint {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+/* The mini page is its own scroller, so the effect stays inside the stage */
+.page {
+  position: relative;
+  block-size: 22rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-surface);
+  background: var(--surface-raised);
+  container: born-header-page / scroll-state;
+}
+
+.page:focus-visible {
+  outline-offset: 3px;
+}
+
+.notice {
+  margin: 0;
+  padding: 8px 16px;
+  background: var(--ink);
+  color: var(--label);
+  font-size: 12px;
+  font-weight: 550;
+  text-align: center;
+}
+
+/* The sticky element is also a scroll-state container, so its child can react to being stuck */
+.bar {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
+  container-type: scroll-state;
+}
+
+.bar-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+  padding: 12px 16px;
+  border-block-end: 1px solid transparent;
+  background: var(--surface-raised);
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.links {
+  display: flex;
+  gap: 2px;
+  margin-inline: -8px;
+}
+
+.links a {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background: var(--hover);
+  color: var(--ink);
+}
+
+.links a[aria-current='page'] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.article {
+  padding: 16px 16px 24px;
+}
+
+.article p {
+  max-inline-size: 38em;
+  margin: 0 0 0.9em;
+}
+
+.eyebrow {
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.article h4 {
+  margin: 0 0 0.5em;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.photo {
+  block-size: 7rem;
+  margin-block-end: 1em;
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 78% 30%, light-dark(#f2f4f6, #c9d3dc) 0 7%, transparent 7.5%),
+    linear-gradient(170deg, transparent 58%, light-dark(#18202b, #0c0f13) 58.5%),
+    linear-gradient(185deg, transparent 48%, light-dark(#28629a, #2f5d88) 48.5%),
+    linear-gradient(light-dark(#bcd3e6, #3b5670), light-dark(#e6eaed, #1f2a36));
+}
+
+/* Stuck: the bar turns translucent and lifts off the page */
+@container scroll-state(stuck: top) {
+  .bar-inner {
+    border-block-end-color: var(--border);
+    background: color-mix(in srgb, var(--surface-raised) 76%, transparent);
+    box-shadow: 0 8px 20px -12px light-dark(rgb(24 32 43 / 30%), rgb(0 0 0 / 70%));
+    backdrop-filter: blur(10px) saturate(1.4);
+  }
+
+  /* Reading down hides it; any scroll up brings it back */
+  @container born-header-page scroll-state(scrolled: bottom) {
+    .bar-inner:not(:focus-within) {
+      translate: 0 -100%;
+      box-shadow: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page {
+    scroll-behavior: smooth;
+  }
+
+  .bar-inner {
+    transition:
+      translate 240ms var(--ease),
+      background-color var(--duration) var(--ease),
+      box-shadow var(--duration) var(--ease);
+  }
+}

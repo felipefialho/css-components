@@ -1,0 +1,192 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+
+type Photo = {
+  id: string;
+  title: string;
+  alt: string;
+  caption: string;
+};
+
+// getStaticPaths is hoisted out of the component, so its data lives inside it
+export const getStaticPaths = (() => {
+  // The four pieces shown in the "Gallery with page morph" exhibit, in display order
+  const photos: Photo[] = [
+    {
+      id: 'tide',
+      title: 'Tide',
+      alt: 'Three bands of blue waves rolling under a pale sun, with a small black flag on the shore.',
+      caption: 'Three waves, three blues. The flag marks where the water reached this morning.',
+    },
+    {
+      id: 'meridian',
+      title: 'Meridian',
+      alt: 'Two blue half circles split by a thin vertical line on a dark ground, with a pale disc at the center.',
+      caption: 'A line through the middle of everything, and the half that catches the light.',
+    },
+    {
+      id: 'quarry',
+      title: 'Quarry',
+      alt: 'Stacked grey, black and blue blocks on a pale ground, with an outlined sun in the corner.',
+      caption: 'Blocks cut, stacked and left to weather. Nothing here is quite level.',
+    },
+    {
+      id: 'nocturne',
+      title: 'Nocturne',
+      alt: 'Dark hills under a night sky fading to blue, with a crescent moon, a few stars and one lit window.',
+      caption: 'Hills after dark, a thin moon and one window where someone is still awake.',
+    },
+  ];
+
+  return photos.map((photo, index) => ({
+    params: { id: photo.id },
+    props: {
+      photo,
+      position: index + 1,
+      total: photos.length,
+      prev: photos[(index - 1 + photos.length) % photos.length],
+      next: photos[(index + 1) % photos.length],
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+type Props = {
+  photo: Photo;
+  position: number;
+  total: number;
+  prev: Photo;
+  next: Photo;
+};
+
+const { photo, position, total, prev, next } = Astro.props;
+---
+
+<Base title={photo.title} description={`${photo.title}, one of four pieces in the gallery exhibit of Pure CSS Components.`}>
+  <article class="photo">
+    <p class="photo__back"><a href="/#gallery">Back to the gallery</a></p>
+
+    <figure class="photo__figure">
+      <img
+        class="photo__image"
+        src={`/exhibits/gallery/${photo.id}.svg`}
+        alt={photo.alt}
+        width="1200"
+        height="900"
+        style={`view-transition-name: born-gallery-${photo.id}`}
+      />
+      <figcaption class="photo__caption">
+        <h1 class="photo__title">{photo.title}</h1>
+        <p class="photo__meta">{position} of {total} · Vector on screen, 2026</p>
+        <p class="photo__text">{photo.caption}</p>
+      </figcaption>
+    </figure>
+
+    <nav class="photo__nav" aria-label="Gallery">
+      <a href={`/gallery/${prev.id}/`} rel="prev"><span class="photo__dir">Previous</span> {prev.title}</a>
+      <a href={`/gallery/${next.id}/`} rel="next"><span class="photo__dir">Next</span> {next.title}</a>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .photo {
+    padding: var(--space-3) 0 var(--space-5);
+    font-family: var(--font-display);
+  }
+
+  .photo__back a {
+    color: var(--ink-soft);
+    font-size: var(--step-minus-1);
+    text-decoration: none;
+
+    &::before {
+      content: '\2190\00a0' / '';
+    }
+
+    &:hover {
+      color: var(--ink);
+    }
+  }
+
+  .photo__figure {
+    display: grid;
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+    gap: var(--space-3) var(--space-4);
+    align-items: end;
+    margin: var(--space-3) 0 0;
+
+    @media (width < 56rem) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .photo__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-top: 3px solid var(--accent);
+    box-shadow: 0 1px 0 var(--rule), 0 24px 48px -30px light-dark(#18202b80, #000d);
+  }
+
+  .photo__caption {
+    padding-left: var(--space-3);
+    border-left: 3px solid var(--rule);
+  }
+
+  .photo__title {
+    font-size: var(--step-3);
+    font-variation-settings: 'wdth' 80;
+    letter-spacing: -0.035em;
+    text-transform: lowercase;
+  }
+
+  .photo__meta {
+    margin-top: var(--space-1);
+    color: var(--ink-soft);
+    font-size: var(--step-minus-1);
+  }
+
+  .photo__text {
+    margin-top: var(--space-2);
+    font-family: var(--font-text);
+  }
+
+  .photo__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--rule);
+
+    a {
+      color: var(--ink);
+      font-weight: 600;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+
+    [rel='next'] {
+      text-align: right;
+    }
+  }
+
+  .photo__dir {
+    display: block;
+    color: var(--ink-soft);
+    font-size: var(--step-minus-1);
+    font-weight: 400;
+
+    [rel='prev'] &::before {
+      content: '\2190\00a0' / '';
+    }
+
+    [rel='next'] &::after {
+      content: '\00a0\2192' / '';
+    }
+  }
+</style>

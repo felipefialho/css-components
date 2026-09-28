@@ -1,0 +1,120 @@
+.form {
+  display: grid;
+  gap: 18px;
+  max-inline-size: 24rem;
+}
+
+.lead {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.row {
+  display: grid;
+  gap: 6px;
+}
+
+.row label {
+  color: var(--ink-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input {
+  inline-size: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface-raised);
+  color: var(--ink);
+  font: inherit;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.textarea {
+  min-block-size: 2.6em;
+  max-block-size: 10em;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* field-sizing: content grows the box to fit what's typed, so the resize handle stops being necessary */
+@supports (field-sizing: content) {
+  .textarea {
+    field-sizing: content;
+    resize: none;
+  }
+}
+
+.hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+}
+
+.validation {
+  margin: 0;
+  min-block-size: 1em;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* Only render a message once the user has actually interacted with the field */
+.input:user-invalid ~ .validation::before {
+  content: "That doesn't look right yet";
+  color: light-dark(#c23b3b, #ff8080);
+}
+
+.input:user-valid ~ .validation::before {
+  content: "Looks good";
+  color: light-dark(#2f9e5c, #4bc27f);
+}
+
+.input:user-invalid {
+  border-color: light-dark(#c23b3b, #ff8080);
+}
+
+.input:user-valid {
+  border-color: light-dark(#2f9e5c, #4bc27f);
+}
+
+.summary {
+  display: none;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid light-dark(#c23b3b, #ff8080);
+  border-radius: var(--radius-control);
+  background: color-mix(in srgb, light-dark(#c23b3b, #ff8080) 10%, transparent);
+  color: light-dark(#a32f2f, #ff8080);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* A form-level summary appears only once a field has been touched and is still invalid */
+.form:has(.input:user-invalid) .summary {
+  display: block;
+}
+
+.button {
+  justify-self: start;
+}
+
+/* Not truly disabled (typing an invalid value shouldn't trap focus): a visual hint only, backed by the browser's own required-field blocking on submit */
+.form:has(.input:user-invalid) .button-primary {
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .input {
+    transition: border-color var(--duration) var(--ease);
+  }
+
+  .button-primary {
+    transition: opacity var(--duration) var(--ease);
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Modal",
+  "technique": "Hidden checkbox + label triggers + :checked sibling selector",
+  "notes": [
+    "The Modal uses the `<input hidden>` technique and works fine! :D",
+    "It's possible close the modal by clicking on background."
+  ]
+}
