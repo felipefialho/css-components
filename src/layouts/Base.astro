@@ -15,11 +15,12 @@ type Props = {
 const siteTitle = 'Pure CSS Components';
 const {
   title,
-  description = 'Six UI components built with only HTML and CSS in 2014, shown next to how the web platform builds them today.',
+  description = 'UI components built with HTML and CSS only: the 2014 originals next to their native 2026 versions, plus components that were born native.',
 } = Astro.props;
 const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const image = new URL('/logo-pcc.jpg', Astro.site);
+const image = new URL('/og-image.png', Astro.site);
+const imageAlt = 'Pure CSS Components: UI components with HTML and CSS only, the 2014 originals and today’s native versions.';
 const isHome = Astro.url.pathname === '/';
 ---
 
@@ -42,8 +43,12 @@ const isHome = Astro.url.pathname === '/';
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:image" content={image} />
-    <meta property="og:image:alt" content="Pure CSS Components logo" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <meta name="twitter:site" content="@felipefialho_" />
     <meta name="twitter:creator" content="@felipefialho_" />
     <slot name="head" />
