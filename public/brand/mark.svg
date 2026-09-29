@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Pure CSS Components">
+  <path d="M21 7H14V27L8 32L14 37V57H21M43 7H50V27L56 32L50 37V57H43" fill="none" stroke="#18202b" stroke-width="6.5" stroke-miterlimit="10"/>
+  <rect x="22" y="22" width="20" height="20" rx="3" fill="#2f6fa8"/>
+</svg>
