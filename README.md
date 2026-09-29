@@ -1,4 +1,7 @@
-![Pure CSS Components Logo](public/logo-pcc.jpg "Pure CSS Components")
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="public/brand/logo-dark.svg">
+  <img src="public/brand/logo.svg" alt="Pure CSS Components" width="415" height="64">
+</picture>
 
 # Pure CSS Components
 

@@ -15,11 +15,12 @@ type Props = {
 const siteTitle = 'Pure CSS Components';
 const {
   title,
-  description = 'Six UI components built with only HTML and CSS in 2014, shown next to how the web platform builds them today.',
+  description = 'UI components built with HTML and CSS only: the 2014 originals next to their native 2026 versions, plus components that were born native.',
 } = Astro.props;
 const pageTitle = title ? `${title} | ${siteTitle}` : siteTitle;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const image = new URL('/logo-pcc.jpg', Astro.site);
+const image = new URL('/og-image.png', Astro.site);
+const imageAlt = 'Pure CSS Components: UI components with HTML and CSS only, the 2014 originals and today’s native versions.';
 const isHome = Astro.url.pathname === '/';
 ---
 
@@ -42,8 +43,12 @@ const isHome = Astro.url.pathname === '/';
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:image" content={image} />
-    <meta property="og:image:alt" content="Pure CSS Components logo" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     <meta name="twitter:site" content="@felipefialho_" />
     <meta name="twitter:creator" content="@felipefialho_" />
     <slot name="head" />
@@ -51,7 +56,13 @@ const isHome = Astro.url.pathname === '/';
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <a class="site-header__name" href="/" aria-current={isHome ? 'page' : undefined}>Pure CSS Components</a>
+      <a class="site-header__name" href="/" aria-current={isHome ? 'page' : undefined}>
+        <svg class="site-header__mark" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M21 7H14V27L8 32L14 37V57H21M43 7H50V27L56 32L50 37V57H43" />
+          <rect x="22" y="22" width="20" height="20" rx="3" />
+        </svg>
+        Pure CSS Components
+      </a>
       <nav class="site-header__nav" aria-label="Main">
         <a href="/why/" aria-current={Astro.url.pathname === '/why/' ? 'page' : undefined}>Why</a>
         <a href="https://github.com/felipefialho/css-components">GitHub</a>

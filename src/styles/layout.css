@@ -31,11 +31,31 @@
 }
 
 .site-header__name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
   color: var(--ink);
   font-weight: 750;
   font-variation-settings: "wdth" 85;
   letter-spacing: -0.03em;
   text-decoration: none;
+}
+
+.site-header__mark {
+  flex: none;
+  width: 1.4em;
+  height: 1.4em;
+
+  path {
+    fill: none;
+    stroke: currentcolor;
+    stroke-width: 6.5;
+    stroke-miterlimit: 10;
+  }
+
+  rect {
+    fill: var(--accent);
+  }
 }
 
 .site-header__nav {
