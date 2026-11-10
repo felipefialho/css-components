@@ -1,2 +1,5 @@
 allowBuilds:
   esbuild: true
+overrides:
+  '@emnapi/runtime': 1.11.3
+  '@emnapi/core': 1.11.3
