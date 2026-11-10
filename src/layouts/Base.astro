@@ -54,6 +54,16 @@ const isHome = Astro.url.pathname === '/';
     <meta name="twitter:site" content="@felipefialho_" />
     <meta name="twitter:creator" content="@felipefialho_" />
     <slot name="head" />
+    {
+      import.meta.env.PROD && (
+        <script
+          is:inline
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "ab00964c753f49cfb6f5eea2fe8b295d"}'
+        />
+      )
+    }
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
