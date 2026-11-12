@@ -2,3 +2,6 @@ dist
 node_modules
 .astro
 .DS_Store
+
+# Netlify CLI
+.netlify/
